@@ -1,4 +1,4 @@
-package com.aurora.aurora.BaseApp.CustomDialog
+package com.aurora.aurora.AppConfig.CustomView.CustomDialog
 
 import android.app.Dialog
 import android.content.Context
