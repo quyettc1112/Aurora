@@ -1,4 +1,4 @@
-package com.aurora.aurora.UI.Activity.Splash
+package com.aurora.aurora.UI.Activity.SplashActivity
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,13 +7,12 @@ import android.os.Looper
 import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.aurora.aurora.AppConfig.BaseConfig.BaseActivity
 import com.aurora.aurora.Common.TokenManager.TokenManager
 import com.aurora.aurora.R
-import com.aurora.aurora.UI.Activity.MainActivity.MainActivity
+import com.aurora.aurora.UI.Activity.StartActivity.StartActivity
 import com.aurora.aurora.databinding.ActivitySplashBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -47,12 +46,12 @@ class SplashActivity : BaseActivity() {
         val isFirstStart = TokenManager.isFirstStart(this)
         Handler(Looper.getMainLooper()).postDelayed({
             if (isFirstStart == true) {
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, StartActivity::class.java)
                 startActivity(intent)
                 TokenManager.saveFirstStart(this)
                 finish()
             } else {
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, StartActivity::class.java)
                 startActivity(intent)
                 finish()
             }
