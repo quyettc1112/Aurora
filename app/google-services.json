@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "209925546596",
+    "project_id": "aurora-d6391",
+    "storage_bucket": "aurora-d6391.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209925546596:android:cf2f9e0d94eb8c7286b571",
+        "android_client_info": {
+          "package_name": "com.aurora.aurora"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209925546596-2kjd8lpfkhs16othou4pv4tc0gegl4un.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aurora.aurora",
+            "certificate_hash": "e1a97a7638a29792253dcffb8e5e549bef2f66ed"
+          }
+        },
+        {
+          "client_id": "209925546596-uofsn36arqlaq7accpnaoajp7k1km4m9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNR6yKIMuVcZZWf23-C0QcVzTMd7g6iGw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209925546596-uofsn36arqlaq7accpnaoajp7k1km4m9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
