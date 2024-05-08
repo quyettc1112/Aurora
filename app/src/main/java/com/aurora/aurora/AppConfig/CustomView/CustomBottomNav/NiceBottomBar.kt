@@ -131,7 +131,6 @@ class NiceBottomBar : View {
                 item.title = item.title.dropLast(1)
                 shorted = true
             }
-
             // Add ellipsis character to item text if it is shorted
             if (shorted) {
                 item.title = item.title.dropLast(1)
