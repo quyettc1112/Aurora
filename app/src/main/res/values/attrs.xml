@@ -29,6 +29,17 @@
         </attr>
     </declare-styleable>
 
+    <declare-styleable name="CustomToolbar">
+        <attr name="android:title"/>
+        <attr name="textStart" format="string"/>
+        <attr name="startIcon" format="reference"/>
+        <attr name="endIcon" format="reference"/>
+        <attr name="showStartIcon" format="boolean"/>
+        <attr name="showEndIcon" format="boolean"/>
+        <attr name="showStartText" format="boolean"/>
+        <attr name="showShadow" format="boolean"/>
+    </declare-styleable>
+
 
 
 </resources>
