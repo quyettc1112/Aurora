@@ -4,12 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.animation.AnimationUtils
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.aurora.aurora.AppConfig.BaseConfig.BaseActivity
 import com.aurora.aurora.R
 import com.aurora.aurora.UI.Activity.AuthActivity.RegisterActivity.RegisterActivity
+import com.aurora.aurora.UI.Activity.MainActivity.MainActivity
 import com.aurora.aurora.databinding.ActivityLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -28,6 +28,7 @@ class LoginActivity : BaseActivity() {
         }
         clickLoginButton()
         setAnimation()
+        backButtonClick()
     }
 
     private fun clickLoginButton() {
@@ -48,6 +49,12 @@ class LoginActivity : BaseActivity() {
         binding.imageLogin.startAnimation(topAnimation)
         binding.imageContent.startAnimation(bottomAnimation)
 
+    }
+
+    private fun backButtonClick() {
+        binding.customToolbar.onStartIconClick = {
+            goBackActivity(this, MainActivity::class.java)
+        }
     }
 
 
