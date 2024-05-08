@@ -26,20 +26,20 @@ class StartActivity : BaseActivity() {
     private val introSliderAdapter = IntroSliderAdapter(
         listOf(
             IntroSliderAdapter.IntroSlide(
-                title = "Auty E-Learning",
-                description = "Bắt đầu hành trình học tập số với Auty và thiết lập thông tin cá nhân cho trải nghiệm tốt nhất.",
+                title = "Aurora Toy-Store",
+                description = "Bắt đầu hành trình khám phá thế giới đồ chơi dành cho trẻ cùng Aurora Toy-Store",
                 image = R.drawable.ic_material_start_1,
                 imageDecor = R.drawable.decor_splash
             ),
             IntroSliderAdapter.IntroSlide(
-                title = "Khoá Học Phong Phú",
-                description = "Tiếp cận hàng trăm khoá học được thiết kế đặc biệt cho mọi lứa tuổi và năng lực học tập",
+                title = "Kiến Thức Phong Phú",
+                description = "Khám phá thế giới đồ chơi đặc biệt dành cho trẻ tự kỷ và tìm hiểu sâu hơn về tự kỷ cùng Aurora Toy-Store",
                 image = R.drawable.ic_material_start_2,
                 imageDecor = R.drawable.decor_splash2
             ),
             IntroSliderAdapter.IntroSlide(
-                title = "Học Mọi Lúc, Mọi Nơi",
-                description = "Tận dụng các tài nguyên học tập đa dạng trên mọi thiết bị, giúp con bạn học mọi lúc mọi nơi.",
+                title = "Trải Nghiệm Mọi Lúc, Mọi Nơi",
+                description = "Lan toả câu chuyện cộng đồng về sự phát triển tiềm năng của trẻ cùng Aurora Toy-Store",
                 image = R.drawable.ic_material_start_3,
                 imageDecor = R.drawable.image_decor_rm_bg
             )
