@@ -14,7 +14,8 @@ class Constant {
         const val DEFAULT_TEXT_COLOR = "#444444"
         const val DEFAULT_TEXT_COLOR_ACTIVE = "#426dfe"
 
-        const val DEFAULT_PRIMARY_COLOR = "#17A4FE"
-        const val DEFAULT_PRIMARY_COLOR_ACTIVE = "#85C6EF"
+        const val DEFAULT_PRIMARY_COLOR = "#FF4949"
+        const val DEFAULT_PRIMARY_COLOR_ACTIVE = "#C9C9C9"
+
     }
 }
