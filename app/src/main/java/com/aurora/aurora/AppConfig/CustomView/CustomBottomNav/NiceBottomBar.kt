@@ -27,8 +27,8 @@ import java.lang.Math.abs
 class NiceBottomBar : View {
 
     // Default attribute values
-    private var barBackgroundColor = Color.parseColor(Constant.DEFAULT_PRIMARY_COLOR)
-    private var barIndicatorColor = Color.parseColor(Constant.WHITE_COLOR_HEX)
+    private var barBackgroundColor = Color.parseColor(Constant.WHITE_COLOR_HEX)
+    private var barIndicatorColor = Color.parseColor(Constant.DEFAULT_PRIMARY_COLOR)
     private var barIndicatorInterpolator = 4
     private var barIndicatorWidth = d2p(50f)
     private var barIndicatorEnabled = true
@@ -36,7 +36,7 @@ class NiceBottomBar : View {
     private var itemIconSize = d2p(18.5f)
     private var itemIconMargin = d2p(2.5f)
     private var itemTextColor = Color.parseColor(Constant.DEFAULT_PRIMARY_COLOR_ACTIVE)
-    private var itemTextColorActive = Color.parseColor(Constant.WHITE_COLOR_HEX)
+    private var itemTextColorActive = Color.parseColor(Constant.DEFAULT_PRIMARY_COLOR)
     private var itemTextSize = d2p(12f)
     private var itemBadgeColor = itemTextColorActive
     private var itemFontFamily = 0
