@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.Activity.AuthActivity.RegisterActivity.RegisterActivity_Screen3">
+
+    <com.aurora.aurora.AppConfig.CustomView.CustomToolBar.CustomToolbar
+        android:id="@+id/customToolbar_screen3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="Tạo tài khoản"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:textStart="Quay Lại"/>
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/app_font_bold"
+        android:text="Thông tin của bạn"
+        android:textSize="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customToolbar_screen3"/>
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_marginTop="16dp"
+        android:id="@+id/anime"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:lottie_rawRes="@raw/anim_user_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+    </com.airbnb.lottie.LottieAnimationView>
+
+
+    <EditText
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="16dp"
+        android:id="@+id/edt_register_name"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/background_custome_input"
+        android:drawableStart="@drawable/ic_name"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="Tên của bạn"
+        android:inputType="text"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/anime" />
+
+    <EditText
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="16dp"
+        android:id="@+id/edt_register_phone"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/background_custome_input"
+        android:drawableStart="@drawable/ic_phone"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="Số điện thoại"
+        android:inputType="phone"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_register_name" />
+
+
+
+    <EditText
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="16dp"
+        android:id="@+id/edt_register_address"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/background_custome_input"
+        android:drawableStart="@drawable/ic_birthday"
+        android:drawablePadding="12dp"
+        android:drawableEnd="@drawable/ic_chaneg"
+        android:ems="10"
+        android:hint="Ngày Sinh"
+        android:inputType="datetime"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_register_phone" />
+
+    <EditText
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="16dp"
+        android:id="@+id/edt_register_gender"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/background_custome_input"
+        android:drawableStart="@drawable/ic_gender"
+        android:drawableEnd="@drawable/ic_chaneg"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="Giới tính"
+        android:inputType="text"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_register_address" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginTop="16dp"
+        android:id="@+id/btn_register_screen3"
+        android:layout_width="160dp"
+        android:layout_height="45dp"
+        android:background="@drawable/ripple_effect"
+        android:fontFamily="@font/app_font_black"
+        android:text="Tạo tài khoản"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_register_gender" />
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
