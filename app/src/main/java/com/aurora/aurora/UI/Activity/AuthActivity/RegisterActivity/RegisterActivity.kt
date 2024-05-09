@@ -43,6 +43,8 @@ class RegisterActivity : BaseActivity() {
 
         backToLogin()
         showEmailInfo()
+
+        nextToRegisterScreen2()
     }
 
     private fun initializedGoogle() {
@@ -55,14 +57,12 @@ class RegisterActivity : BaseActivity() {
             goBackActivity(this, LoginActivity::class.java)
         }
     }
-
     private fun showEmailInfo() {
         googleSignInClient.signOut().addOnCompleteListener {
             val intent = googleSignInClient.signInIntent
             startActivityForResult(intent, 42141)
         }
     }
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 42141) {
@@ -91,6 +91,13 @@ class RegisterActivity : BaseActivity() {
         } catch (e: ApiException) {
             // Bắt lỗi khi không có tài khoản nào được chọn hoặc có sự cố khác
             Toast.makeText(this, "Error signing in: ${e.statusCode}", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun nextToRegisterScreen2() {
+        binding.btnRegister.setOnClickListener {
+            val intent = Intent(this, RegisterActivity_Screen2::class.java)
+            startActivity(intent)
         }
     }
 
