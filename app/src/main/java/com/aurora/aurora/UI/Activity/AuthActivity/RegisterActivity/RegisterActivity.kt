@@ -53,36 +53,44 @@ class RegisterActivity : BaseActivity() {
     private fun backToLogin(){
         binding.customToolbar3.onStartIconClick = {
             goBackActivity(this, LoginActivity::class.java)
-
         }
     }
 
     private fun showEmailInfo() {
-        googleSignInClient.signOut()
-        val intent = googleSignInClient.signInIntent
-        startActivityForResult(intent, 42141);
+        googleSignInClient.signOut().addOnCompleteListener {
+            val intent = googleSignInClient.signInIntent
+            startActivityForResult(intent, 42141)
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == 42141) { // Check if the requestCode matches the one used to start the activity
+        if (requestCode == 42141) {
+            if (data != null) { // Kiểm tra xem có dữ liệu trả về không
                 val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
-                handleSignInResult(task)
+                if (task.isSuccessful) {
+                    handleSignInResult(task)
+                } else {
+                    Toast.makeText(this, "No email selected", Toast.LENGTH_SHORT).show()
+                }
+            }
         } else {
             Log.d("Request Code", "Received unexpected request code: $requestCode")
         }
     }
     private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
         try {
-            val account: GoogleSignInAccount = completedTask.getResult(
-                ApiException::class.java
-            )
+            val account: GoogleSignInAccount? = completedTask.getResult(ApiException::class.java)
             if (account != null) {
                 val email = account.email
                 binding.edtRegisterEmail.setText(email.toString())
+            } else {
+                // Trường hợp này xảy ra khi không có tài khoản nào được chọn
+                Toast.makeText(this, "Login failed or no account selected", Toast.LENGTH_SHORT).show()
             }
         } catch (e: ApiException) {
-            Log.w("CheckResult", "signInResult:failed code=" + e.statusCode)
+            // Bắt lỗi khi không có tài khoản nào được chọn hoặc có sự cố khác
+            Toast.makeText(this, "Error signing in: ${e.statusCode}", Toast.LENGTH_SHORT).show()
         }
     }
 
