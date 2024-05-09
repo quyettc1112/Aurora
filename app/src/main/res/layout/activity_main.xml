@@ -6,33 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".UI.Activity.MainActivity.MainActivity">
 
-    <com.aurora.aurora.AppConfig.CustomView.CustomToolBar.CustomToolbar
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp2_main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </com.aurora.aurora.AppConfig.CustomView.CustomToolBar.CustomToolbar>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="0dp"/>
 
-    <Button
-        android:id="@+id/btn"
-        android:text="Test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </Button>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        app:cardCornerRadius="15dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="13dp"
+        android:translationZ="10dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <com.aurora.aurora.AppConfig.CustomView.CustomBottomNav.NiceBottomBar
+            android:id="@+id/nice_bottom_nav"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            app:menu="@menu/menu"
+            android:layout_height="wrap_content">
+        </com.aurora.aurora.AppConfig.CustomView.CustomBottomNav.NiceBottomBar>
+    </androidx.cardview.widget.CardView>
 
 
 
