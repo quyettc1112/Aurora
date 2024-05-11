@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="220dp"
+    android:layout_marginEnd="16dp"
+    android:background="@drawable/background_home_course_recommend"
+    android:layout_height="220dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/lo_content"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        app:cardCornerRadius="10dp"
+        android:background="@drawable/background_home_course_recommend"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:scaleType="fitXY"
+            android:id="@+id/iv_course_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_material_aytism"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <TextView
+        android:textStyle="bold"
+        android:textColor="@color/gray_text"
+        android:id="@+id/tv_course_title_main"
+        android:layout_margin="5dp"
+        android:text="3 Paket Soal Try Ou"
+        android:layout_width="match_parent"
+        android:maxLines="2"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/lo_content">
+    </TextView>
+
+
+    <TextView
+        android:id="@+id/tv_course_originalPrice_main"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginStart="5dp"
+        android:textSize="12dp"
+        android:textStyle="normal"
+        android:text="350.000 VND"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_course_title_main"/>
+
+
+    <TextView
+        android:id="@+id/tv_course_discountedPrice_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:text="300.000 VND"
+        android:textColor="@color/primaryColor"
+        android:textSize="14dp"
+        app:layout_constraintStart_toEndOf="@+id/tv_course_originalPrice_main"
+        app:layout_constraintTop_toBottomOf="@+id/tv_course_title_main"/>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="80dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_course_originalPrice_main">
+
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/ratingbar_main"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numStars="5"
+            android:padding="0dp"
+            android:progressTint="@color/orange_option"
+            android:rating="3.5"
+            android:scaleX="0.95"
+            android:scaleY="0.95"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_numRating_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="@font/app_font_light"
+        android:layout_marginBottom="3dp"
+        android:text="(4.152)"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout9"
+        app:layout_constraintTop_toBottomOf="@+id/tv_course_originalPrice_main" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
