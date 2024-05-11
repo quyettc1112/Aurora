@@ -64,4 +64,12 @@
     <color name="background_profile">#F2FBFF</color>
 
     <color name="textCountry">#ffd60a</color>
+
+    <color name="redPrimary">#FF4949</color>
+
+    <color name="redLight_primary">#FF8989</color>
+
+    <color name="orange_option">#FED444</color>
+    <color name="gray_text">#666666</color>
+
 </resources>
