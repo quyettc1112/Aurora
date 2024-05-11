@@ -1,24 +1,23 @@
 package com.aurora.aurora.UI.Fragment.HomeFragment
 
-import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.aurora.aurora.R
+import com.aurora.aurora.Common.CommonAdapter.VideoMainAdapter
+import com.aurora.aurora.Common.Constant.Constant
+import com.aurora.aurora.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = HomeFragment()
-    }
+    private lateinit var binding: FragmentHomeBinding
+    private lateinit var videoAdapter: VideoMainAdapter
 
-    private val viewModel: HomeViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        videoAdapter = VideoMainAdapter(Constant.getListCourse())
         // TODO: Use the ViewModel
     }
 
@@ -26,6 +25,16 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
+        setUpVideoMainRecycleView()
+
+        return binding.root
+    }
+
+
+
+
+    private fun setUpVideoMainRecycleView(){
+        binding.rvVideo.adapter = videoAdapter
     }
 }
