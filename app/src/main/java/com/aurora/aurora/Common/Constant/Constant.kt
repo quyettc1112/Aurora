@@ -25,7 +25,7 @@ class Constant {
             return listOf(
                 VideoMainAdapter.Course(
                     title = "Độ tuổi dễ bị tổn thương sâu sắc về tình cảm",
-                    image = R.drawable.ic_material_aytism,
+                    image = R.drawable.ic_material_video,
                     rating = 4.5,
                     reviews = 4242,
                     originalPrice = 400000.0,
@@ -33,16 +33,7 @@ class Constant {
                 ),
                 VideoMainAdapter.Course(
                     title = "Độ tuổi dễ bị tổn thương sâu sắc về tình cảm",
-                    image = R.drawable.ic_material_aytism,
-                    rating = 4.5,
-                    reviews = 4242,
-                    originalPrice = 400000.0,
-                    discountedPrice = 350000.0
-                ),
-
-                VideoMainAdapter.Course(
-                    title = "Độ tuổi dễ bị tổn thương sâu sắc về tình cảm",
-                    image = R.drawable.ic_material_aytism,
+                    image = R.drawable.ic_material_video,
                     rating = 4.5,
                     reviews = 4242,
                     originalPrice = 400000.0,
@@ -51,7 +42,16 @@ class Constant {
 
                 VideoMainAdapter.Course(
                     title = "Độ tuổi dễ bị tổn thương sâu sắc về tình cảm",
-                    image = R.drawable.ic_material_aytism,
+                    image = R.drawable.ic_material_video,
+                    rating = 4.5,
+                    reviews = 4242,
+                    originalPrice = 400000.0,
+                    discountedPrice = 350000.0
+                ),
+
+                VideoMainAdapter.Course(
+                    title = "Độ tuổi dễ bị tổn thương sâu sắc về tình cảm",
+                    image = R.drawable.ic_material_video,
                     rating = 4.5,
                     reviews = 4242,
                     originalPrice = 400000.0,
