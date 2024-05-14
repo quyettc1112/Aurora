@@ -7,4 +7,13 @@
 
 
     <style name="Theme.Aurora" parent="Base.Theme.Aurora" />
+
+    <style name="Theme.Aurora.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Aurora.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Aurora.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

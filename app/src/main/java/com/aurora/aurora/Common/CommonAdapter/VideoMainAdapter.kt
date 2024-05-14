@@ -18,22 +18,24 @@ class VideoMainAdapter(private val courseList: List<Course>): RecyclerView.Adapt
     inner class CourseMainViewHodler(view: View): RecyclerView.ViewHolder(view){
         private val image = view.findViewById<ImageView>(R.id.iv_course_main)
         private val title = view.findViewById<TextView>(R.id.tv_course_title_main)
+/*
         private val originalPrice = view.findViewById<TextView>(R.id.tv_course_originalPrice_main)
         private val discountedPrice = view.findViewById<TextView>(R.id.tv_course_discountedPrice_main)
         private val rating = view.findViewById<RatingBar>(R.id.ratingbar_main)
         private val reviews = view.findViewById<TextView>(R.id.tv_numRating_main)
+*/
 
         fun bind(course: Course) {
             image.setImageResource(course.image)
             title.text = course.title
-            originalPrice.text =  "${formatPrice(course.originalPrice)} VND"
+        /*    originalPrice.text =  "${formatPrice(course.originalPrice)} VND"
             val spannableString = SpannableString(originalPrice.text)
             spannableString.setSpan(StrikethroughSpan(), 0, originalPrice.text.length, SpannableString.SPAN_INCLUSIVE_EXCLUSIVE)
             originalPrice.text = spannableString
 
             discountedPrice.text = "${formatPrice(course.discountedPrice)} VND"
             rating.rating = course.rating.toFloat()
-            reviews.text ="(${course.reviews})"
+            reviews.text ="(${course.reviews})"*/
         }
         fun formatPrice(price: Double): String {
             val formatter = DecimalFormat("#,###")
