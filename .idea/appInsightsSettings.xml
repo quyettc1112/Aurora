@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="com.aurora.aurora" />
-                  <option name="mobileSdkAppId" value="1:209925546596:android:cf2f9e0d94eb8c7286b571" />
-                  <option name="projectId" value="aurora-d6391" />
-                  <option name="projectNumber" value="209925546596" />
+                  <option name="appId" value="PLACEHOLDER" />
+                  <option name="mobileSdkAppId" value="" />
+                  <option name="projectId" value="" />
+                  <option name="projectNumber" value="" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
