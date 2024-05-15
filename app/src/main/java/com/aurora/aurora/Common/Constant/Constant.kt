@@ -1,5 +1,6 @@
 package com.aurora.aurora.Common.Constant
 
+import com.aurora.aurora.Common.CommonAdapter.CategoryOptionAdapter
 import com.aurora.aurora.Common.CommonAdapter.VideoMainAdapter
 import com.aurora.aurora.R
 
@@ -59,6 +60,17 @@ class Constant {
                 )
             )
 
+
+        }
+
+
+        fun getListString(): List<CategoryOptionAdapter.CategoryString> {
+            return listOf(
+                CategoryOptionAdapter.CategoryString("All"),
+                CategoryOptionAdapter.CategoryString("Newest"),
+                CategoryOptionAdapter.CategoryString("Popular"),
+                CategoryOptionAdapter.CategoryString("Specials"),
+            )
 
         }
     }
