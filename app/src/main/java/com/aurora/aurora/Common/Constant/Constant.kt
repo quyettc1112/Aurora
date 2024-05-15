@@ -2,6 +2,7 @@ package com.aurora.aurora.Common.Constant
 
 import com.aurora.aurora.Common.CommonAdapter.CategoryOptionAdapter
 import com.aurora.aurora.Common.CommonAdapter.VideoMainAdapter
+import com.aurora.aurora.Model.ToyModel
 import com.aurora.aurora.R
 
 class Constant {
@@ -71,6 +72,76 @@ class Constant {
                 CategoryOptionAdapter.CategoryString("Phổ Biến"),
                 CategoryOptionAdapter.CategoryString("Đặt Biệt"),
             )
+
+        }
+
+        fun getListToys(): List<ToyModel> {
+            return listOf(
+                ToyModel(
+                    id = 1,
+                    toyName ="Đồ chơi trẻ em",
+                    toyImage = R.drawable.ic_material_toy,
+                    toyDescription = "Đồ chơi trẻ em vip pro",
+                    toyRating = 4.5,
+                    isLike = true,
+                    toyPrice = 145.000
+                ),
+                ToyModel(
+                    id = 2,
+                    toyName ="Đồ chơi trẻ em",
+                    toyImage = R.drawable.ic_material_toy,
+                    toyDescription = "Đồ chơi trẻ em vip pro",
+                    toyRating = 4.5,
+                    isLike = true,
+                    toyPrice = 145.000
+                ),
+                ToyModel(
+                    id = 3,
+                    toyName ="Đồ chơi trẻ em",
+                    toyImage = R.drawable.ic_material_toy,
+                    toyDescription = "Đồ chơi trẻ em vip pro",
+                    toyRating = 4.5,
+                    isLike = true,
+                    toyPrice = 145.000
+                ),
+                ToyModel(
+                    id = 4,
+                    toyName ="Đồ chơi trẻ em",
+                    toyImage = R.drawable.ic_material_toy,
+                    toyDescription = "Đồ chơi trẻ em vip pro",
+                    toyRating = 4.5,
+                    isLike = true,
+                    toyPrice = 145.000
+                ),
+                ToyModel(
+                    id = 5,
+                    toyName ="Đồ chơi trẻ em",
+                    toyImage = R.drawable.ic_material_toy,
+                    toyDescription = "Đồ chơi trẻ em vip pro",
+                    toyRating = 4.5,
+                    isLike = true,
+                    toyPrice = 145.000
+                ),
+                ToyModel(
+                    id = 6,
+                    toyName ="Đồ chơi trẻ em",
+                    toyImage = R.drawable.ic_material_toy,
+                    toyDescription = "Đồ chơi trẻ em vip pro",
+                    toyRating = 4.5,
+                    isLike = true,
+                    toyPrice = 145.000
+                ),
+                ToyModel(
+                    id = 7,
+                    toyName ="Đồ chơi trẻ em",
+                    toyImage = R.drawable.ic_material_toy,
+                    toyDescription = "Đồ chơi trẻ em vip pro",
+                    toyRating = 4.5,
+                    isLike = true,
+                    toyPrice = 145.000
+                )
+            )
+
 
         }
     }
