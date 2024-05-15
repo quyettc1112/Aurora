@@ -66,10 +66,10 @@ class Constant {
 
         fun getListString(): List<CategoryOptionAdapter.CategoryString> {
             return listOf(
-                CategoryOptionAdapter.CategoryString("All"),
-                CategoryOptionAdapter.CategoryString("Newest"),
-                CategoryOptionAdapter.CategoryString("Popular"),
-                CategoryOptionAdapter.CategoryString("Specials"),
+                CategoryOptionAdapter.CategoryString("Tất Cả"),
+                CategoryOptionAdapter.CategoryString("Mới Nhất"),
+                CategoryOptionAdapter.CategoryString("Phổ Biến"),
+                CategoryOptionAdapter.CategoryString("Đặt Biệt"),
             )
 
         }
