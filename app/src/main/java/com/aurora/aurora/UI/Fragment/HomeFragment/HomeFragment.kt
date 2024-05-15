@@ -11,20 +11,23 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.get
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.aurora.aurora.Common.CommonAdapter.CategoryOptionAdapter
+import com.aurora.aurora.Common.CommonAdapter.CategoryOptionInteraction
 import com.aurora.aurora.Common.CommonAdapter.VideoMainAdapter
 import com.aurora.aurora.Common.Constant.Constant
 import com.aurora.aurora.R
 import com.aurora.aurora.databinding.FragmentHomeBinding
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), CategoryOptionInteraction {
 
     private lateinit var binding: FragmentHomeBinding
     private lateinit var videoAdapter: VideoMainAdapter
-
+    private lateinit var cateOptionAdapter: CategoryOptionAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         videoAdapter = VideoMainAdapter(Constant.getListCourse())
+        cateOptionAdapter = CategoryOptionAdapter(Constant.getListString(), this)
         // TODO: Use the ViewModel
     }
 
@@ -38,7 +41,15 @@ class HomeFragment : Fragment() {
         setIndicator()
         setCurrentIndicator(0)
 
+        setRecycleCateOption()
+
         return binding.root
+    }
+
+    private fun setRecycleCateOption() {
+        binding.myRecyclerView.adapter = cateOptionAdapter
+
+
     }
 
 
@@ -103,5 +114,10 @@ class HomeFragment : Fragment() {
             }
         }
 
+    }
+
+    override fun setActive(position: Int) {
+        val viewHolder = binding.myRecyclerView.findViewHolderForAdapterPosition(position) as? CategoryOptionAdapter.CateOptionViewHolder
+        viewHolder?.setActiveItem()
     }
 }
