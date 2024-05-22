@@ -8,18 +8,18 @@
         />
     <item
         android:id="@+id/drugstores"
-        android:title="Toy List"
+        android:title="Đồ Chơi"
         android:icon="@drawable/ic_toy_list" />
 
 
     <item
         android:id="@+id/record"
-        android:title="Cart"
+        android:title="Giỏ Hàng"
         android:icon="@drawable/baseline_add_shopping_cart_24" />
 
     <item
         android:id="@+id/user_manager"
-        android:title="Profile"
+        android:title="Người Dùng"
         android:icon="@drawable/ic_profile"
         />
 

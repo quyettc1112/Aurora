@@ -1,5 +1,6 @@
 package com.aurora.aurora.UI.Activity.MainActivity
 
+import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -25,7 +26,6 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
         setUpFragmentWithViewPager()
         setUpBottomNav()
@@ -57,6 +57,17 @@ class MainActivity : BaseActivity() {
         binding.niceBottomNav.onItemSelected = {idFragemnt ->
               binding.vp2Main.setCurrentItem(idFragemnt, true)
         }
+
+    }
+
+    override fun onBackPressed() {
+           AlertDialog.Builder(this)
+            .setMessage("Bạn muốn thoát khỏi ứng dụng ?")
+            .setPositiveButton("Có") { _, _ ->
+                super.onBackPressed()
+            }
+            .setNegativeButton("Không", null)
+            .show()
 
     }
 }

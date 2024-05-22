@@ -29,11 +29,11 @@ class ProfileFragment : Fragment() {
     ): View {
         binding = FragmentProfileBinding.inflate(layoutInflater, container, false)
 
-        binding.button.setOnClickListener {
+        binding.logout.setOnClickListener {
             val intent = Intent(requireActivity(), LoginActivity::class.java)
             requireActivity().startActivity(intent)
+            requireActivity().finish()
         }
-
         return binding.root
     }
 }
