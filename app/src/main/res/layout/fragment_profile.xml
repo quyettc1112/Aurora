@@ -114,7 +114,7 @@
                             android:text="Cài Đặt"
                             android:textColor="@color/black"
                             android:textSize="16dp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                         <ImageView
                             android:layout_width="match_parent"
@@ -291,9 +291,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="16dp"
+                        android:layout_marginBottom="100dp"
                         android:background="@drawable/ripple_effect"
                         android:text="Đăng Xuất"
-                        android:layout_marginBottom="100dp"
                         android:textColor="@color/white"
                         android:textStyle="bold"></androidx.appcompat.widget.AppCompatButton>
 
