@@ -37,7 +37,6 @@ class ProfileFragment : Fragment() {
             showLogoutDialog()
         }
 
-
         return binding.root
     }
 

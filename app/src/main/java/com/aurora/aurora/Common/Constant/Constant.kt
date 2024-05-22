@@ -84,7 +84,7 @@ class Constant {
                     toyDescription = "Đồ chơi trẻ em vip pro",
                     toyRating = 4.5,
                     isLike = true,
-                    toyPrice = 145.000
+                    toyPrice = 145000.0
                 ),
                 ToyModel(
                     id = 2,
@@ -93,7 +93,7 @@ class Constant {
                     toyDescription = "Đồ chơi trẻ em vip pro",
                     toyRating = 4.5,
                     isLike = true,
-                    toyPrice = 145.000
+                    toyPrice = 145000.0
                 ),
                 ToyModel(
                     id = 3,
@@ -102,7 +102,7 @@ class Constant {
                     toyDescription = "Đồ chơi trẻ em vip pro",
                     toyRating = 4.5,
                     isLike = true,
-                    toyPrice = 145.000
+                    toyPrice = 145000.0
                 ),
                 ToyModel(
                     id = 4,
@@ -111,7 +111,7 @@ class Constant {
                     toyDescription = "Đồ chơi trẻ em vip pro",
                     toyRating = 4.5,
                     isLike = true,
-                    toyPrice = 145.000
+                    toyPrice = 145000.0
                 ),
                 ToyModel(
                     id = 5,
@@ -120,7 +120,7 @@ class Constant {
                     toyDescription = "Đồ chơi trẻ em vip pro",
                     toyRating = 4.5,
                     isLike = true,
-                    toyPrice = 145.000
+                    toyPrice = 145000.0
                 ),
                 ToyModel(
                     id = 6,
@@ -129,7 +129,7 @@ class Constant {
                     toyDescription = "Đồ chơi trẻ em vip pro",
                     toyRating = 4.5,
                     isLike = true,
-                    toyPrice = 145.000
+                    toyPrice = 145000.0
                 ),
                 ToyModel(
                     id = 7,
@@ -138,7 +138,7 @@ class Constant {
                     toyDescription = "Đồ chơi trẻ em vip pro",
                     toyRating = 4.5,
                     isLike = true,
-                    toyPrice = 145.000
+                    toyPrice = 145000.0
                 )
             )
 

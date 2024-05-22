@@ -71,5 +71,8 @@
 
     <color name="orange_option">#FED444</color>
     <color name="gray_text">#666666</color>
+    <color name="gray_bg">#F6F6F6</color>
+
+
 
 </resources>
