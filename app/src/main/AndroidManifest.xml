@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Aurora"
         tools:targetApi="31">
         <activity
+            android:name=".UI.Activity.VideoActivity.VideoActivity"
+            android:exported="false" />
+        <activity
             android:name=".UI.Activity.AuthActivity.RegisterActivity.RegisterActivity_Screen3"
             android:exported="false" />
         <activity
