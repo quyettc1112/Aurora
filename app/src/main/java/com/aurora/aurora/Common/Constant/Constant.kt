@@ -3,6 +3,7 @@ package com.aurora.aurora.Common.Constant
 import com.aurora.aurora.Common.CommonAdapter.CategoryOptionAdapter
 import com.aurora.aurora.Common.CommonAdapter.VideoMainAdapter
 import com.aurora.aurora.Model.ToyModel
+import com.aurora.aurora.Model.VideoModel
 import com.aurora.aurora.R
 
 class Constant {
@@ -144,5 +145,7 @@ class Constant {
 
 
         }
+
+
     }
 }

@@ -173,8 +173,9 @@ dependencies {
     // Lottie
     implementation ("com.airbnb.android:lottie:6.4.0")
 
-    //TabScollAtacher
-  //  implementation("com.github.iammert:TabScrollAttacher:1.0.2")
+
+    // ExoPlayer
+    implementation ("com.google.android.exoplayer:exoplayer:2.19.1")
 
 
 
