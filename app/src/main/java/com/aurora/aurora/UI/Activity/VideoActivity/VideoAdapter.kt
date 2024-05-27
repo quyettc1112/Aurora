@@ -18,7 +18,7 @@ class VideoAdapter(val videoList: List<VideoModel>, val context: VideoActivity, 
 {
 
     inner class VideoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val playerView: PlayerView = view.findViewById(R.id.pl_video)
+        val playerView: com.google.android.exoplayer2.ui.PlayerView = view.findViewById(R.id.pl_video)
         val titleTextView: TextView = view.findViewById(R.id.tv_video_header)
         val tv_video_description: TextView = view.findViewById(R.id.tv_video_description)
         var player: ExoPlayer? = null

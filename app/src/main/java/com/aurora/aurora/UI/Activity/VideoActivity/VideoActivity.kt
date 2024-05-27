@@ -16,13 +16,11 @@ import dagger.hilt.android.AndroidEntryPoint
 class VideoActivity : BaseActivity() {
 
     private lateinit var binding: ActivityVideoBinding
-    private lateinit var videoAdapter: VideoAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityVideoBinding.inflate(layoutInflater)
-        videoAdapter = VideoAdapter(Constant.getListVideos(), this, binding)
 
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -31,7 +29,7 @@ class VideoActivity : BaseActivity() {
             insets
         }
 
-        binding.rvVideos.adapter = videoAdapter
+
 
 
         backToMain()
