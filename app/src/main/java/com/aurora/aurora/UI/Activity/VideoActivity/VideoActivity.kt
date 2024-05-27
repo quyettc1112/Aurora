@@ -3,6 +3,7 @@ package com.aurora.aurora.UI.Activity.VideoActivity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -41,7 +42,7 @@ class VideoActivity : BaseActivity() {
 
 
 
-        callYoutubeVideoList()
+       callYoutubeVideoList()
 
         backToMain()
     }
@@ -59,26 +60,46 @@ class VideoActivity : BaseActivity() {
         youtubeapiRepository.getVideoList(
             id = "7lCDEYXw3mM",
             apiKey = "AIzaSyCfH9LJPxphcne7DED5y7YzUvEM7TZ43UI",
-            part = "snippet,contentDetails,statistics,status"
+            part = "snippet,contentDetails"
         ).enqueue(object : Callback<YouTubeVideoListResponse>{
             override fun onResponse(
-                call: retrofit2.Call<YouTubeVideoListResponse>,
+                call: Call<YouTubeVideoListResponse>,
                 response: Response<YouTubeVideoListResponse>
             ) {
                 if (response.isSuccessful) {
                     val videoListResponse = response.body()
                     videoListResponse?.let {
-                      //  Log.d("YouTubeApi", "Video List Response: $it")
-                        it.items.forEach { videoItem ->
-                            Log.d("YouTubeApi", "Video ID: ${videoItem.id}")
-                            Log.d("YouTubeApi", "Title: ${videoItem.snippet.title}")
-                            Log.d("YouTubeApi", "Description: ${videoItem.snippet.description}")
-                            Log.d("YouTubeApi", "Published At: ${videoItem.snippet.publishedAt}")
-                            Log.d("YouTubeApi", "Channel Title: ${videoItem.snippet.channelTitle}")
-                            Log.d("YouTubeApi", "View Count: ${videoItem.statistics.viewCount}")
-                            Log.d("YouTubeApi", "Like Count: ${videoItem.statistics.likeCount}")
-                            Log.d("YouTubeApi", "Comment Count: ${videoItem.statistics.commentCount}")
-                            // Log other details as needed
+                        val youTubeVideoListResponse = YouTubeVideoListResponse(
+                            kind = it.kind,
+                            etag = it.etag,
+                            items = it.items.map { videoItem ->
+                                YouTubeVideoListResponse.VideoItem(
+                                    kind = videoItem.kind,
+                                    etag = videoItem.etag,
+                                    id = videoItem.id,
+                                    snippet = YouTubeVideoListResponse.Snippet(
+                                        title = videoItem.snippet.title,
+                                        description = videoItem.snippet.description,
+                                        thumbnails = YouTubeVideoListResponse.Thumbnails(
+                                            default = videoItem.snippet.thumbnails.default,
+                                            medium = videoItem.snippet.thumbnails.medium,
+                                            high = videoItem.snippet.thumbnails.high
+                                        ),
+                                    )
+                                )
+                            },
+                            pageInfo = YouTubeVideoListResponse.PageInfo(
+                                totalResults = it.pageInfo.totalResults,
+                                resultsPerPage = it.pageInfo.resultsPerPage
+                            )
+                        )
+                        val firstVideoId = youTubeVideoListResponse.items.firstOrNull()
+                        firstVideoId?.let {
+                            Log.d("YouTubeApi", "ID of the first video: ${it?.id}")
+                            Log.d("YouTubeApi", "ID of the first video: ${it?.snippet?.title}")
+                            Log.d("YouTubeApi", "ID of the first video: ${it?.snippet?.description}")
+                        } ?: run {
+                            Log.d("YouTubeApi", "No videos found in the response")
                         }
                     } ?: run {
                         Log.d("YouTubeApi", "Response body is null")
@@ -89,12 +110,9 @@ class VideoActivity : BaseActivity() {
             }
 
             override fun onFailure(call: Call<YouTubeVideoListResponse>, t: Throwable) {
-                Log.d("YouTubeApi", "Failed to retrieve data: ${t.message}")
+                TODO("Not yet implemented")
             }
-
-
         })
-
     }
 
 

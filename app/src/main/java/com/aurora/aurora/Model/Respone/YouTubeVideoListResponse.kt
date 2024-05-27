@@ -12,23 +12,13 @@ data class YouTubeVideoListResponse(
         @SerializedName("kind") val kind: String,
         @SerializedName("etag") val etag: String,
         @SerializedName("id") val id: String,
-        @SerializedName("snippet") val snippet: Snippet,
-        @SerializedName("contentDetails") val contentDetails: ContentDetails,
-        @SerializedName("status") val status: Status,
-        @SerializedName("statistics") val statistics: Statistics
+        @SerializedName("snippet") val snippet: Snippet
     )
 
     data class Snippet(
-        @SerializedName("publishedAt") val publishedAt: String,
-        @SerializedName("channelId") val channelId: String,
         @SerializedName("title") val title: String,
         @SerializedName("description") val description: String,
         @SerializedName("thumbnails") val thumbnails: Thumbnails,
-        @SerializedName("channelTitle") val channelTitle: String,
-        @SerializedName("tags") val tags: List<String>,
-        @SerializedName("categoryId") val categoryId: String,
-        @SerializedName("liveBroadcastContent") val liveBroadcastContent: String,
-        @SerializedName("localized") val localized: Localized
     )
 
     data class Thumbnails(
