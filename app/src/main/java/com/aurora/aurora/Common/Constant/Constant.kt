@@ -1,5 +1,7 @@
 package com.aurora.aurora.Common.Constant
 
+import android.net.Uri
+import android.os.Environment
 import com.aurora.aurora.Common.CommonAdapter.CategoryOptionAdapter
 import com.aurora.aurora.Common.CommonAdapter.VideoMainAdapter
 import com.aurora.aurora.Model.ToyModel
@@ -143,6 +145,23 @@ class Constant {
                 )
             )
 
+
+        }
+
+
+        fun getListVideos(): List<VideoModel> {
+            val videoFileName = "PHƯƠNG MỸ CHI x DTAP - VŨ TRỤ CÓ ANH ft. Pháo _ Official Music Video.mp4"
+            val downloadsPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).absolutePath
+            val videoFilePath = "$downloadsPath/$videoFileName"
+
+
+            return listOf(
+                VideoModel("Vũ Trụ Có Anh", "PHƯƠNG MỸ CHI x DTAP - VŨ TRỤ CÓ ANH ft. Pháo _ Official Music Video.mp4", Uri.parse(videoFilePath)),
+                VideoModel("Vũ Trụ Có Anh", "PHƯƠNG MỸ CHI x DTAP - VŨ TRỤ CÓ ANH ft. Pháo _ Official Music Video.mp4", Uri.parse(videoFilePath)),
+                VideoModel("Vũ Trụ Có Anh", "PHƯƠNG MỸ CHI x DTAP - VŨ TRỤ CÓ ANH ft. Pháo _ Official Music Video.mp4", Uri.parse(videoFilePath)),
+                VideoModel("Vũ Trụ Có Anh", "PHƯƠNG MỸ CHI x DTAP - VŨ TRỤ CÓ ANH ft. Pháo _ Official Music Video.mp4", Uri.parse(videoFilePath)),
+                VideoModel("Vũ Trụ Có Anh", "PHƯƠNG MỸ CHI x DTAP - VŨ TRỤ CÓ ANH ft. Pháo _ Official Music Video.mp4", Uri.parse(videoFilePath))
+            )
 
         }
 
