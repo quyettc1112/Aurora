@@ -1,5 +1,6 @@
 package com.aurora.aurora.UI.Fragment.HomeFragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -20,6 +21,7 @@ import com.aurora.aurora.Common.CommonAdapter.VideoMainAdapter
 import com.aurora.aurora.Common.Constant.Constant
 import com.aurora.aurora.Model.ToyModel
 import com.aurora.aurora.R
+import com.aurora.aurora.UI.Activity.VideoActivity.VideoActivity
 import com.aurora.aurora.Until.BottomMarginItemDecoration
 import com.aurora.aurora.Until.NonScrollableGridLayoutManager
 import com.aurora.aurora.databinding.FragmentHomeBinding
@@ -53,6 +55,7 @@ class HomeFragment : Fragment(), CategoryOptionInteraction {
         setCurrentIndicator(0)
         setRecycleCateOption()
         setRecycleToysList()
+        intentToVideoActivity()
 
         return binding.root
     }
@@ -152,5 +155,13 @@ class HomeFragment : Fragment(), CategoryOptionInteraction {
     private fun convertDpToPx(dp: Int): Int {
         val density = requireContext().resources.displayMetrics.density
         return (dp * density).toInt()
+    }
+
+    private fun intentToVideoActivity() {
+        binding.tvSeeAllVideo.setOnClickListener {
+            startActivity(Intent(requireActivity(), VideoActivity::class.java))
+        }
+
+
     }
 }
