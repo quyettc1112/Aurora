@@ -1,11 +1,11 @@
-package com.aurora.aurora.API_Interface
+package com.aurora.aurora.API_Services
 
 import com.aurora.aurora.Model.Respone.YouTubeVideoListResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface YoutubeAPI {
+interface YoutubeAPI_Service {
 
     @GET("videos")
     fun getVideoList(
