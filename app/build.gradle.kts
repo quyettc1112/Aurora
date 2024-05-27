@@ -2,6 +2,8 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
+    id ("com.google.dagger.hilt.android")
+    id("org.jetbrains.kotlin.kapt")
 }
 
 android {
@@ -99,9 +101,7 @@ dependencies {
     // Dagger Hilt
     var dagger_hilt_version = "2.48.1"
     implementation ("com.google.dagger:hilt-android:$dagger_hilt_version")
-/*
     kapt("com.google.dagger:hilt-android-compiler:$dagger_hilt_version")
-*/
 
     // Moshi Version
     var moshi_version = "1.11.0"

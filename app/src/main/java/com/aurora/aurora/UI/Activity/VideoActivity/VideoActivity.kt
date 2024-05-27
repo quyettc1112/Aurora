@@ -41,7 +41,7 @@ class VideoActivity : BaseActivity() {
 
 
 
-      // callYoutubeVideoList()
+        callYoutubeVideoList()
 
         backToMain()
     }
@@ -68,7 +68,7 @@ class VideoActivity : BaseActivity() {
                 if (response.isSuccessful) {
                     val videoListResponse = response.body()
                     videoListResponse?.let {
-                        Log.d("YouTubeApi", "Video List Response: $it")
+                      //  Log.d("YouTubeApi", "Video List Response: $it")
                         it.items.forEach { videoItem ->
                             Log.d("YouTubeApi", "Video ID: ${videoItem.id}")
                             Log.d("YouTubeApi", "Title: ${videoItem.snippet.title}")
