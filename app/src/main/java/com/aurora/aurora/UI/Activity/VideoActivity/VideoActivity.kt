@@ -44,14 +44,12 @@ class VideoActivity : BaseActivity() {
 
         backToMain()
     }
-
     private fun backToMain() {
         binding.ctToolbar.onStartIconClick = {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }
-
     }
 
     private fun callYoutubeVideoList() {

@@ -18,6 +18,8 @@ class VideoAdapter(val videoList: List<VideoModel>, val context: VideoActivity, 
 {
 
     inner class VideoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+
+
         fun bind(video: VideoModel) {
 
         }
