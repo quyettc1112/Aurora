@@ -18,6 +18,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
@@ -58,7 +59,7 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
@@ -94,7 +95,7 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-scalars:2.9.0")
 
     // OkHttp3
-    implementation("com.squareup.okhttp3:okhttp:4.9.0")
+    implementation("com.squareup.okhttp3:okhttp:4.11.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
 
 
@@ -126,17 +127,17 @@ dependencies {
 
     // =================== Google Services ===========================
     // Gson Version
-    implementation("com.google.code.gson:gson:2.8.8")
+    implementation("com.google.code.gson:gson:2.10.1")
 
     // GooglePlay Services Version
-    implementation("com.google.android.gms:play-services-auth:20.7.0")
-    implementation ("androidx.biometric:biometric:1.2.0-alpha03")
+    implementation("com.google.android.gms:play-services-auth:21.2.0")
+    implementation ("androidx.biometric:biometric:1.2.0-alpha05")
 
     // Access Token Outh2
     implementation("com.google.cloud:google-cloud-core:2.27.0")
 
     // FireBase Version
-    implementation(platform("com.google.firebase:firebase-bom:32.5.0"))
+    implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
     implementation("com.google.firebase:firebase-storage")
 
     // =================== Google Services ===========================
@@ -159,9 +160,9 @@ dependencies {
     implementation("androidx.paging:paging-runtime-ktx:3.2.1")
 
     // Google Map
-    implementation("com.google.android.gms:play-services-maps:18.1.0")
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
     implementation("com.google.android.gms:play-services-location:21.2.0")
-    implementation("com.google.android.libraries.places:places:3.3.0")
+    implementation("com.google.android.libraries.places:places:3.4.0")
 
 
     // swip
