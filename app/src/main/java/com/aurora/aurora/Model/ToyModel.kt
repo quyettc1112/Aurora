@@ -1,7 +1,7 @@
 package com.aurora.aurora.Model
 
 data class ToyModel(
-    private val id: Int,
+     val id: Int,
      val toyName: String,
      val toyPrice: Double,
      val toyImage: Int,
