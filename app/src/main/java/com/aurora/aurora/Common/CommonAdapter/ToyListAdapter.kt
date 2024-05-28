@@ -57,6 +57,7 @@ class ToyListAdapter(private val toys: List<ToyModel> )
     override fun onBindViewHolder(holder: ToyListViewHolder, position: Int) {
         val item = toys[position]
         holder.bind(item)
+        
     }
 
 }
