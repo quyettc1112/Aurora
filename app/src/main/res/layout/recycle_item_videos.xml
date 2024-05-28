@@ -11,15 +11,25 @@
     android:layout_height="wrap_content">
 
 
-    <com.google.android.exoplayer2.ui.PlayerView
-
-        android:id="@+id/pl_video"
+    <LinearLayout
+        android:id="@+id/layout"
+        android:background="@drawable/background_recycle_video"
         android:layout_width="match_parent"
-        android:layout_height="230dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </com.google.android.exoplayer2.ui.PlayerView>
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="230dp">
+        <ImageView
+            android:id="@+id/im_video"
+            android:src="@drawable/ic_material_thumbnail_3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+          >
+        </ImageView>
+
+    </LinearLayout>
+
+
 
 
     <LinearLayout
@@ -27,7 +37,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:translationZ="10dp"
-        app:layout_constraintTop_toBottomOf="@id/pl_video">
+        app:layout_constraintTop_toBottomOf="@id/layout">
 
         <TextView
             android:id="@+id/tv_video_header"

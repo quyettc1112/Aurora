@@ -2,6 +2,8 @@ package com.aurora.aurora.Common.Constant
 
 import android.net.Uri
 import android.os.Environment
+import androidx.appcompat.app.AppCompatActivity
+import com.aurora.aurora.BuildConfig
 import com.aurora.aurora.Common.CommonAdapter.CategoryOptionAdapter
 import com.aurora.aurora.Common.CommonAdapter.VideoMainAdapter
 import com.aurora.aurora.Model.ToyModel
@@ -24,6 +26,8 @@ class Constant {
 
         const val DEFAULT_PRIMARY_COLOR = "#FF4949"
         const val DEFAULT_PRIMARY_COLOR_ACTIVE = "#C9C9C9"
+
+
 
 
         fun getListCourse(): List<VideoMainAdapter.Course> {
@@ -150,17 +154,13 @@ class Constant {
 
 
         fun getListVideos(): List<VideoModel> {
-            val videoFileName = "PHƯƠNG MỸ CHI x DTAP - VŨ TRỤ CÓ ANH ft. Pháo _ Official Music Video.mp4"
-            val downloadsPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).absolutePath
-            val videoFilePath = "$downloadsPath/$videoFileName"
-
-
             return listOf(
-                VideoModel("Vũ Trụ Có Anh", "PHƯƠNG MỸ CHI x DTAP - VŨ TRỤ CÓ ANH ft. Pháo _ Official Music Video.mp4", Uri.parse(videoFilePath)),
-                VideoModel("Vũ Trụ Có Anh", "PHƯƠNG MỸ CHI x DTAP - VŨ TRỤ CÓ ANH ft. Pháo _ Official Music Video.mp4", Uri.parse(videoFilePath)),
-                VideoModel("Vũ Trụ Có Anh", "PHƯƠNG MỸ CHI x DTAP - VŨ TRỤ CÓ ANH ft. Pháo _ Official Music Video.mp4", Uri.parse(videoFilePath)),
-                VideoModel("Vũ Trụ Có Anh", "PHƯƠNG MỸ CHI x DTAP - VŨ TRỤ CÓ ANH ft. Pháo _ Official Music Video.mp4", Uri.parse(videoFilePath)),
-                VideoModel("Vũ Trụ Có Anh", "PHƯƠNG MỸ CHI x DTAP - VŨ TRỤ CÓ ANH ft. Pháo _ Official Music Video.mp4", Uri.parse(videoFilePath))
+                VideoModel("czbB8AQsBzU"),
+                VideoModel("UFAKw0wgcjA"),
+                VideoModel("kv26Mw4l8jg"),
+                VideoModel("hn_teOwL_iA"),
+                VideoModel("3-gjAL20WGE"),
+                VideoModel("9mL-TS0gcmA"),
             )
 
         }
