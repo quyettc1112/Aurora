@@ -1,5 +1,6 @@
 package com.aurora.aurora.UI.Activity.VideoActivity
 
+import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import android.os.Bundle
@@ -29,6 +30,7 @@ class VideoActivity_Screen2 : BaseActivity() {
     private lateinit var binding: ActivityVideoScreen2Binding
     private lateinit var youtubePlayer: YouTubePlayer
     private var isFullScreen = false
+    private lateinit var videoIDItent: String
 
     // Cấu hình OnBackPressed
     private val onBackPressedCallback = object: OnBackPressedCallback(true) {
@@ -39,7 +41,6 @@ class VideoActivity_Screen2 : BaseActivity() {
                 finish()
             }
         }
-
     }
 
 
@@ -50,6 +51,9 @@ class VideoActivity_Screen2 : BaseActivity() {
         setContentView(binding.root)
         onBackPressedDispatcher.addCallback(onBackPressedCallback)
         lifecycle.addObserver(binding.wvVideoIframes)
+        backToVideoActityScreen1()
+
+        videoIDItent = intent.getStringExtra("VIDEO_ID") ?: ""
 
         binding.wvVideoIframes.addFullscreenListener(object : FullscreenListener {
             override fun onEnterFullscreen(fullscreenView: View, exitFullscreen: () -> Unit) {
@@ -66,7 +70,6 @@ class VideoActivity_Screen2 : BaseActivity() {
                 if (requestedOrientation != ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
                     requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE
                 }
-
             }
             override fun onExitFullscreen() {
                 isFullScreen = false
@@ -91,12 +94,10 @@ class VideoActivity_Screen2 : BaseActivity() {
         val youtubeListener = object : AbstractYouTubePlayerListener() {
             override fun onReady(youTubePlayer: YouTubePlayer) {
                 this@VideoActivity_Screen2.youtubePlayer = youTubePlayer
-                val videoId = "YJm5pExRkKA"
+                val videoId = videoIDItent
                 youTubePlayer.loadOrCueVideo(lifecycle,videoId, 0f)
             }
-
         }
-
         val iFramePlayerOption = IFramePlayerOptions.Builder()
             .controls(1)
             .fullscreen(1)
@@ -104,9 +105,6 @@ class VideoActivity_Screen2 : BaseActivity() {
 
         binding.wvVideoIframes.enableAutomaticInitialization = false
         binding.wvVideoIframes.initialize(youtubeListener, iFramePlayerOption)
-
-
-
 
     }
 
@@ -121,6 +119,13 @@ class VideoActivity_Screen2 : BaseActivity() {
                 youtubePlayer.toggleFullscreen()
             }
         }
+    }
+
+    private fun backToVideoActityScreen1() {
+        binding.ctToolbarVideoActivity.onStartIconClick = {
+            startActivity(Intent(this@VideoActivity_Screen2, VideoActivity::class.java))
+        }
+
     }
 
 

@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.aurora.aurora.API_Repotitory.YoutubeAPI_Repository
 import com.aurora.aurora.Model.Respone.YouTubeVideoListResponse
+import com.aurora.aurora.Model.ToyModel
 import com.aurora.aurora.Model.VideoModel
 import com.aurora.aurora.R
 import com.aurora.aurora.databinding.ActivityVideoBinding
@@ -22,6 +23,8 @@ import retrofit2.Response
 class VideoAdapter(val videoList: List<VideoModel>, val context: VideoActivity, youtubeapiRepository: YoutubeAPI_Repository)
     : RecyclerView.Adapter<VideoAdapter.VideoViewHolder>()
 {
+    var onItemClickListener: ((VideoModel) -> Unit)? = null
+
     private var youtubeapiRepositoryIner: YoutubeAPI_Repository = youtubeapiRepository
     private lateinit var videoListResponseItem: YouTubeVideoListResponse.VideoItem
     private val apiKey = context.getString(R.string.API_YOUTUBE_KEY)
@@ -107,6 +110,9 @@ class VideoAdapter(val videoList: List<VideoModel>, val context: VideoActivity, 
     override fun onBindViewHolder(holder: VideoViewHolder, position: Int) {
         val video = videoList[position]
         holder.bind(video)
+        holder.itemView.setOnClickListener {
+            onItemClickListener?.invoke(video)
+        }
     }
 
     override fun onViewRecycled(holder: VideoViewHolder) {

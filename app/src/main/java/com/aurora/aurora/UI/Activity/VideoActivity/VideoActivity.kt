@@ -41,8 +41,6 @@ class VideoActivity : BaseActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-     //   callYoutubeVideoList()
         setListVideoAdapter()
         backToMain()
     }
@@ -56,6 +54,11 @@ class VideoActivity : BaseActivity() {
 
     private fun setListVideoAdapter() {
         binding.rvVideos.adapter = videoAdapter
+        videoAdapter.onItemClickListener = {
+            val intent = Intent(this@VideoActivity, VideoActivity_Screen2::class.java)
+            intent.putExtra("VIDEO_ID", it.id)
+            startActivity(intent)
+        }
 
     }
 
