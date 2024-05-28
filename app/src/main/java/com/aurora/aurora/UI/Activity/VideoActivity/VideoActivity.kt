@@ -24,6 +24,7 @@ import javax.inject.Inject
 class VideoActivity : BaseActivity() {
 
     private lateinit var binding: ActivityVideoBinding
+    private lateinit var videoAdapter: VideoAdapter
 
     @Inject
     lateinit var youtubeapiRepository: YoutubeAPI_Repository
@@ -32,6 +33,7 @@ class VideoActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityVideoBinding.inflate(layoutInflater)
+        videoAdapter = VideoAdapter(Constant.getListVideos(), this@VideoActivity, youtubeapiRepository)
 
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -40,8 +42,8 @@ class VideoActivity : BaseActivity() {
             insets
         }
 
-        callYoutubeVideoList()
-
+     //   callYoutubeVideoList()
+        setListVideoAdapter()
         backToMain()
     }
     private fun backToMain() {
@@ -50,6 +52,11 @@ class VideoActivity : BaseActivity() {
             startActivity(intent)
             finish()
         }
+    }
+
+    private fun setListVideoAdapter() {
+        binding.rvVideos.adapter = videoAdapter
+
     }
 
     private fun callYoutubeVideoList() {
