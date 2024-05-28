@@ -175,12 +175,8 @@ dependencies {
     // Lottie
     implementation ("com.airbnb.android:lottie:6.4.0")
 
-
-    // ExoPlayer
-    implementation ("com.google.android.exoplayer:exoplayer:2.19.1")
-    implementation ("com.google.android.exoplayer:exoplayer-core:2.19.1")
-    implementation ("com.google.android.exoplayer:exoplayer-ui:2.19.1")
-
+    // PlayerView
+    implementation("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0")
 
 
 }
