@@ -42,7 +42,6 @@ class ToyListFragment : Fragment(), CategoryOptionInteraction {
 
     private fun setCateRecycleView() {
         binding.myRecyclerView.adapter = categoryAdapter
-
     }
 
     override fun setActive(position: Int) {
@@ -54,18 +53,14 @@ class ToyListFragment : Fragment(), CategoryOptionInteraction {
         binding.rvToys.let {
             it.layoutManager = GridLayoutManager(requireContext(), 2)
             it.adapter = toyListAdapter
-           /* val bottomMarginInPx = convertDpToPx(20)
-            it.addItemDecoration(BottomMarginItemDecoration(bottomMarginInPx))
-            val itemCount = toyListAdapter?.itemCount ?: 0
-            val rowCount = if (itemCount % 2 == 0) itemCount / 2 else (itemCount / 2) + 1
-            val newHeight = rowCount * convertDpToPx(270) + (rowCount - 1) * bottomMarginInPx
-            it.layoutParams = it.layoutParams.apply {
-                height = newHeight
-            }*/
         }
     }
-    private fun convertDpToPx(dp: Int): Int {
-        val density = requireContext().resources.displayMetrics.density
-        return (dp * density).toInt()
+
+    private fun addToCart() {
+        toyListAdapter.onItemCartClickListener = {
+
+
+        }
+
     }
 }
