@@ -16,6 +16,13 @@
         android:theme="@style/Theme.Aurora"
         tools:targetApi="31">
         <activity
+            android:name=".UI.Activity.VideoActivity.VideoActivity_Screen2"
+            android:exported="true"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+         />
+
+
+        <activity
             android:name=".UI.Activity.VideoActivity.VideoActivity"
             android:exported="true" />
         <activity
