@@ -18,26 +18,8 @@ class VideoAdapter(val videoList: List<VideoModel>, val context: VideoActivity, 
 {
 
     inner class VideoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val playerView: com.google.android.exoplayer2.ui.PlayerView = view.findViewById(R.id.pl_video)
-        val titleTextView: TextView = view.findViewById(R.id.tv_video_header)
-        val tv_video_description: TextView = view.findViewById(R.id.tv_video_description)
-        var player: ExoPlayer? = null
-
         fun bind(video: VideoModel) {
-            titleTextView.text = video.titleVideo
-            tv_video_description.text = video.descriptionVideo
-           // initializePlayer(video.uriVideo)
-            player = ExoPlayer.Builder(itemView.context).build().also { exoPlayer ->
-                playerView.player = exoPlayer
-                val mediaItem = MediaItem.fromUri(video.uriVideo)
-                exoPlayer.setMediaItem(mediaItem)
-                exoPlayer.prepare()
-                exoPlayer.playWhenReady = false
-            }
-        }
-        fun releasePlayer() {
-            player?.release()
-            player = null
+
         }
     }
 
@@ -57,7 +39,7 @@ class VideoAdapter(val videoList: List<VideoModel>, val context: VideoActivity, 
 
     override fun onViewRecycled(holder: VideoViewHolder) {
         super.onViewRecycled(holder)
-        holder.releasePlayer()
+
     }
 
 }

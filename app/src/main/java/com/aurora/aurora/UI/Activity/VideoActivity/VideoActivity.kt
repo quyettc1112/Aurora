@@ -40,9 +40,7 @@ class VideoActivity : BaseActivity() {
             insets
         }
 
-
-
-       callYoutubeVideoList()
+        callYoutubeVideoList()
 
         backToMain()
     }
@@ -110,7 +108,7 @@ class VideoActivity : BaseActivity() {
             }
 
             override fun onFailure(call: Call<YouTubeVideoListResponse>, t: Throwable) {
-                TODO("Not yet implemented")
+                Log.d("YouTubeApi", "Call Failure")
             }
         })
     }

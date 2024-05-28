@@ -5,5 +5,5 @@ import android.net.Uri
 data class VideoModel(
      val titleVideo: String,
      val descriptionVideo: String,
-     val uriVideo: Uri
+     val Image: Int
 )
