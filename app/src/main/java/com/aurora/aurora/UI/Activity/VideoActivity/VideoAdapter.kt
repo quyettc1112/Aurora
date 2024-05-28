@@ -14,9 +14,6 @@ import com.aurora.aurora.Model.VideoModel
 import com.aurora.aurora.R
 import com.aurora.aurora.databinding.ActivityVideoBinding
 import com.bumptech.glide.Glide
-import com.google.android.exoplayer2.ExoPlayer
-import com.google.android.exoplayer2.MediaItem
-import com.google.android.exoplayer2.ui.PlayerView
 import org.w3c.dom.Text
 import retrofit2.Call
 import retrofit2.Callback
@@ -36,8 +33,6 @@ class VideoAdapter(val videoList: List<VideoModel>, val context: VideoActivity, 
         val tv_video_description = view.findViewById<TextView>(R.id.tv_video_description)
         fun bind(video: VideoModel) {
             callYoutubeVideoList(video.id, im_video, tv_video_header, tv_video_description)
-
-
 
         }
     }
