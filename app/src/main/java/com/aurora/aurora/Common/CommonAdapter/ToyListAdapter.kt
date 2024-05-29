@@ -40,10 +40,6 @@ class ToyListAdapter(private val toys: List<ToyModel> )
                 val formatter = DecimalFormat("#,###")
                 return formatter.format(price)
             }
-
-
-
-
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ToyListViewHolder {

@@ -82,8 +82,8 @@ class Constant {
 
         }
 
-        fun getListToys(): List<ToyModel> {
-            return listOf(
+        fun getListToys(): MutableList<ToyModel> {
+            return mutableListOf(
                 ToyModel(
                     id = 1,
                     toyName ="Đồ chơi trẻ em",
