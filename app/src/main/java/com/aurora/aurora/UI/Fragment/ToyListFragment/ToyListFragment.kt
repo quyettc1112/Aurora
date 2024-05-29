@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -16,7 +17,9 @@ import com.aurora.aurora.Common.CommonAdapter.CategoryOptionInteraction
 import com.aurora.aurora.Common.CommonAdapter.ToyListAdapterBase
 import com.aurora.aurora.Common.Constant.Constant
 import com.aurora.aurora.Model.ToyModel
+import com.aurora.aurora.R
 import com.aurora.aurora.databinding.FragmentToyListBinding
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class ToyListFragment : Fragment(), CategoryOptionInteraction {
     private lateinit var binding: FragmentToyListBinding
@@ -45,6 +48,7 @@ class ToyListFragment : Fragment(), CategoryOptionInteraction {
         observeViewModel()
         searchItem()
         clickPopularProduct()
+        showFillterDialog()
         return binding.root
     }
 
@@ -98,5 +102,32 @@ class ToyListFragment : Fragment(), CategoryOptionInteraction {
             toyListViewModel.filterToyList(toyListViewModel.currentSearchLiveData.value.toString())
         }
     }
+
+    private fun showFillterDialog() {
+        binding.imFillter.setOnClickListener {
+            val dialogView = layoutInflater.inflate(R.layout.dialog_fillter_toys, null)
+
+            dialogView.layoutParams = ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                convertDpToPx(500)
+            )
+            val dialog = BottomSheetDialog(requireContext())
+            dialog.setContentView(dialogView)
+
+
+            // Turn Off Dialog
+            dialogView.findViewById<ImageView>(R.id.im_dissmissDialog).setOnClickListener {
+                dialog.dismiss()
+            }
+
+
+            dialog.show()
+        }
+    }
+    private fun convertDpToPx(dp: Int): Int {
+        val density = requireContext().resources.displayMetrics.density
+        return (dp * density).toInt()
+    }
+
 
 }
