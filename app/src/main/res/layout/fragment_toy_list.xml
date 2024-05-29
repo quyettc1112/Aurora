@@ -45,7 +45,7 @@
             android:drawablePadding="12dp"
             android:ems="10"
             android:hint="Tìm kiếm sản phẩm"
-            android:inputType="textEmailAddress"
+            android:inputType="text"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:textSize="16dp" />

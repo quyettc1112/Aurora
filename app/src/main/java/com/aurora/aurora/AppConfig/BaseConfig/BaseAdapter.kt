@@ -3,6 +3,7 @@ package com.aurora.aurora.AppConfig.BaseConfig
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.aurora.aurora.Model.ToyModel
 
 abstract class BaseAdapter<T : Any, VH : BaseItemViewHolderCF<T, *>> : RecyclerView.Adapter<VH>() {
 
@@ -28,11 +29,11 @@ abstract class BaseAdapter<T : Any, VH : BaseItemViewHolderCF<T, *>> : RecyclerV
         }
     }
 
-    open fun submitList(list: MutableList<T>) {
+    open fun submitList(list: List<T>?) {
         setItemOrderBy?.let {
-            it(list.toList())
+            list?.let { it1 -> it(it1.toList()) }
         }
-        differ.submitList(list.toList())
+        differ.submitList(list?.toList())
         notifyDataSetChanged()
     }
 
