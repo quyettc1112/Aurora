@@ -78,8 +78,10 @@ class ToyListFragment : Fragment(), CategoryOptionInteraction {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
             }
             override fun afterTextChanged(s: Editable?) {
-                val inputText = s.toString()
-                toyListViewModel.filterToyList(inputText)
+                val query = s.toString()
+                toyListViewModel.setCurrentSearchValue(query)
+                toyListViewModel.filterToyList(query = query)
+
             }
         })
     }
@@ -92,10 +94,9 @@ class ToyListFragment : Fragment(), CategoryOptionInteraction {
 
     private fun clickPopularProduct() {
         categoryAdapter.onItemClickListenerID = { position ->
-            Toast.makeText(requireContext(), position.toString(), Toast.LENGTH_SHORT).show()
+            toyListViewModel.setCurrentPopular(position);
+            toyListViewModel.filterToyList(toyListViewModel.currentSearchLiveData.value.toString())
         }
-
-
     }
 
 }

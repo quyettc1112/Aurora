@@ -13,18 +13,37 @@ class ToyListViewModel @Inject constructor() : ViewModel() {
     private val _currentToyList = MutableLiveData<List<ToyModel>?>()
     val currentToyList: MutableLiveData<List<ToyModel>?> get() = _currentToyList
 
+    var currentPopularLiveData = MutableLiveData<Int>()
+    val currentSearchLiveData = MutableLiveData<String>()
+    init {
+        currentPopularLiveData.value = 2
+        currentSearchLiveData.value = ""
+    }
+
     fun setToyList(toyList: List<ToyModel>) {
         _fullToyList.clear()
         _fullToyList.addAll(toyList)
         _currentToyList.value = _fullToyList
     }
 
+    fun setCurrentPopular(id: Int) {
+        currentPopularLiveData.value = id
+    }
+    fun setCurrentSearchValue(query: String) {
+        currentSearchLiveData.value = query
+    }
+
+
     fun filterToyList(query: String) {
-        val filteredList = if (query.isEmpty()) {
-            _fullToyList
-        } else {
-            _fullToyList.filter { it.toyName.contains(query, ignoreCase = true) }
+        val filteredList = _fullToyList.filter {
+            val matchesQuery = it.toyName.contains(query, ignoreCase = true)
+            val matchesTypePopular = when (currentPopularLiveData.value) {
+                0 -> true // Nếu currentPopularLiveData.value == 0 thì không lọc theo typePopular
+                else -> it.typePoppular == currentPopularLiveData.value
+            }
+            matchesQuery && matchesTypePopular
         }
         _currentToyList.value = filteredList
     }
+
 }
