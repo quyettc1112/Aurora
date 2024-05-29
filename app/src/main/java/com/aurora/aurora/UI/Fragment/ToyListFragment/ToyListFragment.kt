@@ -1,38 +1,40 @@
 package com.aurora.aurora.UI.Fragment.ToyListFragment
 
-import androidx.fragment.app.viewModels
 import android.os.Bundle
-import android.util.Log
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.aurora.aurora.Common.CommonAdapter.CategoryOptionAdapter
 import com.aurora.aurora.Common.CommonAdapter.CategoryOptionInteraction
-import com.aurora.aurora.Common.CommonAdapter.ToyListAdapter
 import com.aurora.aurora.Common.CommonAdapter.ToyListAdapterBase
 import com.aurora.aurora.Common.Constant.Constant
-import com.aurora.aurora.R
-import com.aurora.aurora.Until.BottomMarginItemDecoration
-import com.aurora.aurora.Until.NonScrollableGridLayoutManager
-import com.aurora.aurora.databinding.FragmentHomeBinding
+import com.aurora.aurora.Model.ToyModel
 import com.aurora.aurora.databinding.FragmentToyListBinding
-import com.google.android.play.integrity.internal.ad
 
 class ToyListFragment : Fragment(), CategoryOptionInteraction {
 
     private lateinit var binding: FragmentToyListBinding
     private lateinit var categoryAdapter: CategoryOptionAdapter
     private lateinit var toyListAdapter: ToyListAdapterBase
+    private lateinit var toyListViewModel: ToyListViewModel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         categoryAdapter = CategoryOptionAdapter(Constant.getListString(), this)
+
+        toyListViewModel = ViewModelProvider(this).get(ToyListViewModel::class.java)
+        toyListViewModel.setToyList(Constant.getListToys())
+
         toyListAdapter = ToyListAdapterBase()
-        toyListAdapter.submitList(Constant.getListToys())
+        toyListAdapter.submitList(toyListViewModel.currentToyList.value as MutableList<ToyModel>)
     }
 
     override fun onCreateView(
@@ -42,6 +44,8 @@ class ToyListFragment : Fragment(), CategoryOptionInteraction {
         binding = FragmentToyListBinding.inflate(layoutInflater, container,false)
         setCateRecycleView()
         setToyListAdapter()
+        observeViewModel()
+        searchItem()
         return binding.root
     }
 
@@ -71,8 +75,26 @@ class ToyListFragment : Fragment(), CategoryOptionInteraction {
 
     }
     private fun searchItem() {
+        binding.edtSearch.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
+            }
 
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                val inputText = s.toString()
+                toyListViewModel.filterToyList(inputText)
+            }
+        })
+    }
+
+    private fun observeViewModel() {
+        toyListViewModel.currentToyList.observe(viewLifecycleOwner, Observer { toyList ->
+            toyListAdapter.submitList(toyList)
+        })
     }
 
 }
