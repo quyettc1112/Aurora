@@ -86,7 +86,7 @@ class Constant {
             return mutableListOf(
                 ToyModel(
                     id = 1,
-                    toyName ="Đồ chơi trẻ em",
+                    toyName ="Xe Tăng",
                     toyImage = R.drawable.ic_material_toy,
                     toyDescription = "Đồ chơi trẻ em vip pro",
                     toyRating = 4.5,
@@ -108,7 +108,7 @@ class Constant {
                 ),
                 ToyModel(
                     id = 2,
-                    toyName ="Đồ chơi trẻ em",
+                    toyName ="Máy Bay",
                     toyImage = R.drawable.ic_material_toy,
                     toyDescription = "Đồ chơi trẻ em vip pro",
                     toyRating = 4.5,
@@ -130,7 +130,7 @@ class Constant {
                 ),
                 ToyModel(
                     id = 3,
-                    toyName ="Đồ chơi trẻ em",
+                    toyName ="Tên Lửa",
                     toyImage = R.drawable.ic_material_toy,
                     toyDescription = "Đồ chơi trẻ em vip pro",
                     toyRating = 4.5,
@@ -152,7 +152,7 @@ class Constant {
                 ),
                 ToyModel(
                     id = 4,
-                    toyName ="Đồ chơi trẻ em",
+                    toyName ="Nhà Hàng Đồ Chơi",
                     toyImage = R.drawable.ic_material_toy,
                     toyDescription = "Đồ chơi trẻ em vip pro",
                     toyRating = 4.5,
@@ -174,7 +174,7 @@ class Constant {
                 ),
                 ToyModel(
                     id = 5,
-                    toyName ="Đồ chơi trẻ em",
+                    toyName ="Xe Cấp Cứu",
                     toyImage = R.drawable.ic_material_toy,
                     toyDescription = "Đồ chơi trẻ em vip pro",
                     toyRating = 4.5,
@@ -196,7 +196,7 @@ class Constant {
                 ),
                 ToyModel(
                     id = 6,
-                    toyName ="Đồ chơi trẻ em",
+                    toyName ="Laptop Gaming",
                     toyImage = R.drawable.ic_material_toy,
                     toyDescription = "Đồ chơi trẻ em vip pro",
                     toyRating = 4.5,
@@ -240,7 +240,7 @@ class Constant {
                 ),
                 ToyModel(
                     id = 8,
-                    toyName ="Đồ chơi trẻ em",
+                    toyName ="Chuột Máy Tính",
                     toyImage = R.drawable.ic_material_toy,
                     toyDescription = "Đồ chơi trẻ em vip pro",
                     toyRating = 4.5,
@@ -261,8 +261,6 @@ class Constant {
                     listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy )
                 )
             )
-
-
         }
 
 

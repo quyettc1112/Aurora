@@ -28,7 +28,6 @@ abstract class BaseAdapter<T : Any, VH : BaseItemViewHolderCF<T, *>> : RecyclerV
             }
         }
     }
-
     open fun submitList(list: List<T>?) {
         setItemOrderBy?.let {
             list?.let { it1 -> it(it1.toList()) }
