@@ -19,12 +19,10 @@ import com.aurora.aurora.Model.ToyModel
 import com.aurora.aurora.databinding.FragmentToyListBinding
 
 class ToyListFragment : Fragment(), CategoryOptionInteraction {
-
     private lateinit var binding: FragmentToyListBinding
     private lateinit var categoryAdapter: CategoryOptionAdapter
     private lateinit var toyListAdapter: ToyListAdapterBase
     private lateinit var toyListViewModel: ToyListViewModel
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +44,7 @@ class ToyListFragment : Fragment(), CategoryOptionInteraction {
         setToyListAdapter()
         observeViewModel()
         searchItem()
+        clickPopularProduct()
         return binding.root
     }
 
@@ -67,23 +66,17 @@ class ToyListFragment : Fragment(), CategoryOptionInteraction {
         toyListAdapter.setItemOnclickListener {
             Toast.makeText(context, "Clicked: ${it.toyName}", Toast.LENGTH_SHORT).show()
         }
-
         // Add To Cart Click
         toyListAdapter.onItemCartClickListener = {
             Toast.makeText(context, "Add To Cart: ${it.toyName}", Toast.LENGTH_SHORT).show()
         }
-
     }
     private fun searchItem() {
         binding.edtSearch.addTextChangedListener(object: TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-
             }
-
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-
             }
-
             override fun afterTextChanged(s: Editable?) {
                 val inputText = s.toString()
                 toyListViewModel.filterToyList(inputText)
@@ -95,6 +88,14 @@ class ToyListFragment : Fragment(), CategoryOptionInteraction {
         toyListViewModel.currentToyList.observe(viewLifecycleOwner, Observer { toyList ->
             toyListAdapter.submitList(toyList)
         })
+    }
+
+    private fun clickPopularProduct() {
+        categoryAdapter.onItemClickListenerID = { position ->
+            Toast.makeText(requireContext(), position.toString(), Toast.LENGTH_SHORT).show()
+        }
+
+
     }
 
 }

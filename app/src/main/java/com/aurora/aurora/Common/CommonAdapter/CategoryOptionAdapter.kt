@@ -11,17 +11,18 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.aurora.aurora.Model.ToyModel
 import com.aurora.aurora.R
 
 class CategoryOptionAdapter(private val items: List<CategoryString>,  private val interaction: CategoryOptionInteraction)
     : RecyclerView.Adapter<CategoryOptionAdapter.CateOptionViewHolder>()
 {
-    var activePosition = 1
+    var onItemClickListenerID: ((Int) -> Unit)? = null
+    var activePosition = 0
     inner class CateOptionViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val title: TextView = view.findViewById(R.id.text)
         fun bind(content: CategoryOptionAdapter.CategoryString,  isActive: Boolean) {
             title.text = content.title
-
             if (isActive) {
                 setActiveItem()
             } else {
@@ -29,12 +30,11 @@ class CategoryOptionAdapter(private val items: List<CategoryString>,  private va
             }
             itemView.setOnClickListener {
                 if (adapterPosition == RecyclerView.NO_POSITION) return@setOnClickListener
-
-                // Notify any previously active item to be inactive
                 notifyItemChanged(activePosition)
                 activePosition = adapterPosition
                 notifyItemChanged(activePosition)
                 interaction.setActive(adapterPosition)
+                onItemClickListenerID?.let { it1 -> it1(position) }
             }
         }
 
