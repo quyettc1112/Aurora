@@ -40,9 +40,8 @@ class HomeFragment : Fragment(), CategoryOptionInteraction {
         toyListAdaper = ToyListAdapter(Constant.getListToys())
 
         toyListAdaper.onItemCartClickListener = {
-           // Toast.makeText(requireContext(), it.toyName, Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), it.toyName, Toast.LENGTH_SHORT).show()
         }
-        // TODO: Use the ViewModel
     }
 
     override fun onCreateView(

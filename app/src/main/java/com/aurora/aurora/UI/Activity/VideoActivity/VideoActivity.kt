@@ -62,64 +62,6 @@ class VideoActivity : BaseActivity() {
 
     }
 
-    private fun callYoutubeVideoList() {
-        youtubeapiRepository.getVideoList(
-            id = "7lCDEYXw3mM",
-            apiKey = "AIzaSyCfH9LJPxphcne7DED5y7YzUvEM7TZ43UI",
-            part = "snippet,contentDetails"
-        ).enqueue(object : Callback<YouTubeVideoListResponse>{
-            override fun onResponse(
-                call: Call<YouTubeVideoListResponse>,
-                response: Response<YouTubeVideoListResponse>
-            ) {
-                if (response.isSuccessful) {
-                    val videoListResponse = response.body()
-                    videoListResponse?.let {
-                        val youTubeVideoListResponse = YouTubeVideoListResponse(
-                            kind = it.kind,
-                            etag = it.etag,
-                            items = it.items.map { videoItem ->
-                                YouTubeVideoListResponse.VideoItem(
-                                    kind = videoItem.kind,
-                                    etag = videoItem.etag,
-                                    id = videoItem.id,
-                                    snippet = YouTubeVideoListResponse.Snippet(
-                                        title = videoItem.snippet.title,
-                                        description = videoItem.snippet.description,
-                                        thumbnails = YouTubeVideoListResponse.Thumbnails(
-                                            default = videoItem.snippet.thumbnails.default,
-                                            medium = videoItem.snippet.thumbnails.medium,
-                                            high = videoItem.snippet.thumbnails.high
-                                        ),
-                                    )
-                                )
-                            },
-                            pageInfo = YouTubeVideoListResponse.PageInfo(
-                                totalResults = it.pageInfo.totalResults,
-                                resultsPerPage = it.pageInfo.resultsPerPage
-                            )
-                        )
-                        val firstVideoId = youTubeVideoListResponse.items.firstOrNull()
-                        firstVideoId?.let {
-                            Log.d("YouTubeApi", "ID of the first video: ${it?.id}")
-                            Log.d("YouTubeApi", "ID of the first video: ${it?.snippet?.title}")
-                            Log.d("YouTubeApi", "ID of the first video: ${it?.snippet?.description}")
-                        } ?: run {
-                            Log.d("YouTubeApi", "No videos found in the response")
-                        }
-                    } ?: run {
-                        Log.d("YouTubeApi", "Response body is null")
-                    }
-                } else {
-                    Log.d("YouTubeApi", "Response failed with code: ${response.code()} and message: ${response.message()}")
-                }
-            }
-
-            override fun onFailure(call: Call<YouTubeVideoListResponse>, t: Throwable) {
-                Log.d("YouTubeApi", "Call Failure")
-            }
-        })
-    }
 
 
 
