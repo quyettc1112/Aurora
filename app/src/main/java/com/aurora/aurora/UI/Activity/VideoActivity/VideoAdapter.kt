@@ -35,7 +35,7 @@ class VideoAdapter(val videoList: List<VideoModel>, val context: VideoActivity, 
         val tv_video_header = view.findViewById<TextView>(R.id.tv_video_header)
         val tv_video_description = view.findViewById<TextView>(R.id.tv_video_description)
         fun bind(video: VideoModel) {
-            callYoutubeVideoList(video.id, im_video, tv_video_header, tv_video_description)
+           //callYoutubeVideoList(video.id, im_video, tv_video_header, tv_video_description)
 
         }
     }
