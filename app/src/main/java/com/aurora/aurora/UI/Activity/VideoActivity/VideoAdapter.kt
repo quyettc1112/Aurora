@@ -30,13 +30,11 @@ class VideoAdapter(val videoList: List<VideoModel>, val context: VideoActivity, 
     private val apiKey = context.getString(R.string.API_YOUTUBE_KEY)
 
     inner class VideoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
         val im_video = view.findViewById<ImageView>(R.id.im_video);
         val tv_video_header = view.findViewById<TextView>(R.id.tv_video_header)
         val tv_video_description = view.findViewById<TextView>(R.id.tv_video_description)
         fun bind(video: VideoModel) {
            callYoutubeVideoList(video.id, im_video, tv_video_header, tv_video_description)
-
         }
     }
     private fun callYoutubeVideoList(id: String, im_video: ImageView, tv_video_header: TextView, tv_video_description: TextView) {
