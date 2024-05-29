@@ -91,7 +91,20 @@ class Constant {
                     toyDescription = "Đồ chơi trẻ em vip pro",
                     toyRating = 4.5,
                     isLike = true,
-                    toyPrice = 145000.0
+                    toyPrice = 145000.0,
+                    typePoppular = 1,
+                    categoryModel = ToyModel.CategoryModel(
+                        id = 1,
+                        name = "Trẻ Em",
+                        image = R.drawable.ic_teddy,
+                    ),
+                    sellerInfo = ToyModel.SellerInfoModel(
+                        id = 1,
+                        name = "Đạt Võ",
+                        email = "quyettc@gmail.com",
+                        phone = "0356790686"
+                    ),
+                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy )
                 ),
                 ToyModel(
                     id = 2,
@@ -100,7 +113,20 @@ class Constant {
                     toyDescription = "Đồ chơi trẻ em vip pro",
                     toyRating = 4.5,
                     isLike = true,
-                    toyPrice = 145000.0
+                    toyPrice = 145000.0,
+                    typePoppular = 1,
+                    categoryModel = ToyModel.CategoryModel(
+                        id = 1,
+                        name = "Trẻ Em",
+                        image = R.drawable.ic_teddy,
+                    ),
+                    sellerInfo = ToyModel.SellerInfoModel(
+                        id = 1,
+                        name = "Đạt Võ",
+                        email = "quyettc@gmail.com",
+                        phone = "0356790686"
+                    ),
+                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy )
                 ),
                 ToyModel(
                     id = 3,
@@ -109,7 +135,20 @@ class Constant {
                     toyDescription = "Đồ chơi trẻ em vip pro",
                     toyRating = 4.5,
                     isLike = true,
-                    toyPrice = 145000.0
+                    toyPrice = 145000.0,
+                    typePoppular = 2,
+                    categoryModel = ToyModel.CategoryModel(
+                        id = 1,
+                        name = "Giải Đố",
+                        image = R.drawable.ic_teddy,
+                    ),
+                    sellerInfo = ToyModel.SellerInfoModel(
+                        id = 1,
+                        name = "Đạt Võ",
+                        email = "quyettc@gmail.com",
+                        phone = "0356790686"
+                    ),
+                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy )
                 ),
                 ToyModel(
                     id = 4,
@@ -118,7 +157,20 @@ class Constant {
                     toyDescription = "Đồ chơi trẻ em vip pro",
                     toyRating = 4.5,
                     isLike = true,
-                    toyPrice = 145000.0
+                    toyPrice = 145000.0,
+                    typePoppular = 1,
+                    categoryModel = ToyModel.CategoryModel(
+                        id = 2,
+                        name = "Giải Đố",
+                        image = R.drawable.ic_teddy,
+                    ),
+                    sellerInfo = ToyModel.SellerInfoModel(
+                        id = 1,
+                        name = "Đạt Võ",
+                        email = "quyettc@gmail.com",
+                        phone = "0356790686"
+                    ),
+                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy )
                 ),
                 ToyModel(
                     id = 5,
@@ -127,7 +179,20 @@ class Constant {
                     toyDescription = "Đồ chơi trẻ em vip pro",
                     toyRating = 4.5,
                     isLike = true,
-                    toyPrice = 145000.0
+                    toyPrice = 145000.0,
+                    typePoppular = 1,
+                    categoryModel = ToyModel.CategoryModel(
+                        id = 1,
+                        name = "Robot",
+                        image = R.drawable.ic_teddy,
+                    ),
+                    sellerInfo = ToyModel.SellerInfoModel(
+                        id = 1,
+                        name = "Đạt Võ",
+                        email = "quyettc@gmail.com",
+                        phone = "0356790686"
+                    ),
+                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy )
                 ),
                 ToyModel(
                     id = 6,
@@ -136,7 +201,20 @@ class Constant {
                     toyDescription = "Đồ chơi trẻ em vip pro",
                     toyRating = 4.5,
                     isLike = true,
-                    toyPrice = 145000.0
+                    toyPrice = 145000.0,
+                    typePoppular = 1,
+                    categoryModel = ToyModel.CategoryModel(
+                        id = 1,
+                        name = "Robot",
+                        image = R.drawable.ic_teddy,
+                    ),
+                    sellerInfo = ToyModel.SellerInfoModel(
+                        id = 1,
+                        name = "Đạt Võ",
+                        email = "quyettc@gmail.com",
+                        phone = "0356790686"
+                    ),
+                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy )
                 ),
                 ToyModel(
                     id = 7,
@@ -145,7 +223,42 @@ class Constant {
                     toyDescription = "Đồ chơi trẻ em vip pro",
                     toyRating = 4.5,
                     isLike = true,
-                    toyPrice = 145000.0
+                    toyPrice = 145000.0,
+                    typePoppular = 1,
+                    categoryModel = ToyModel.CategoryModel(
+                        id = 1,
+                        name = "Phương Tiện",
+                        image = R.drawable.ic_teddy,
+                    ),
+                    sellerInfo = ToyModel.SellerInfoModel(
+                        id = 1,
+                        name = "Đạt Võ",
+                        email = "quyettc@gmail.com",
+                        phone = "0356790686"
+                    ),
+                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy )
+                ),
+                ToyModel(
+                    id = 8,
+                    toyName ="Đồ chơi trẻ em",
+                    toyImage = R.drawable.ic_material_toy,
+                    toyDescription = "Đồ chơi trẻ em vip pro",
+                    toyRating = 4.5,
+                    isLike = true,
+                    toyPrice = 145000.0,
+                    typePoppular = 1,
+                    categoryModel = ToyModel.CategoryModel(
+                        id = 1,
+                        name = "Phương Tiện",
+                        image = R.drawable.ic_teddy,
+                    ),
+                    sellerInfo = ToyModel.SellerInfoModel(
+                        id = 1,
+                        name = "Đạt Võ",
+                        email = "quyettc@gmail.com",
+                        phone = "0356790686"
+                    ),
+                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy )
                 )
             )
 

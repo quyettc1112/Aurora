@@ -29,8 +29,6 @@ class ToyListAdapter(private val toys: List<ToyModel> )
                 tv_toy_price.text =  "${formatPrice(toy.toyPrice)} VND"
                 tv_toy_name.text = toy.toyName
                 tv_star_rating.text = "(${toy.toyRating.toString()})"
-
-
                 la_addToCarts.setOnClickListener {
                     onItemCartClickListener?.let { it1 -> it1(toy) }
                 }
