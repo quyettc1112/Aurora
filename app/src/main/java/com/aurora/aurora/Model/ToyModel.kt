@@ -13,7 +13,8 @@ data class ToyModel(
      val typePoppular: Int,
      val listImage: List<Int>,
      val categoryModel: CategoryModel,
-     val sellerInfo: SellerInfoModel
+     val sellerInfo: SellerInfoModel,
+     val gender: String
 ) {
      class CategoryModel(
           val id: Int,

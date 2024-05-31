@@ -1,5 +1,8 @@
 package com.aurora.aurora.UI.Fragment.ToyListFragment
 
+import android.content.res.ColorStateList
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -8,7 +11,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -37,7 +43,6 @@ class ToyListFragment : Fragment(), CategoryOptionInteraction {
         toyListAdapter = ToyListAdapterBase()
         toyListAdapter.submitList(toyListViewModel.currentToyList.value as MutableList<ToyModel>)
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -106,28 +111,68 @@ class ToyListFragment : Fragment(), CategoryOptionInteraction {
     private fun showFillterDialog() {
         binding.imFillter.setOnClickListener {
             val dialogView = layoutInflater.inflate(R.layout.dialog_fillter_toys, null)
-
             dialogView.layoutParams = ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 convertDpToPx(670)
             )
             val dialog = BottomSheetDialog(requireContext())
             dialog.setContentView(dialogView)
-
-
             // Turn Off Dialog
             dialogView.findViewById<ImageView>(R.id.im_dissmissDialog).setOnClickListener {
                 dialog.dismiss()
             }
 
+            // Initialize TextViews
+            val tv_g_all = dialogView.findViewById<TextView>(R.id.tv_g_all)
+            val tv_g_nam = dialogView.findViewById<TextView>(R.id.tv_g_nam)
+            val tv_g_nu = dialogView.findViewById<TextView>(R.id.tv_g_nu)
+
+            // Set OnClickListener for each TextView
+            tv_g_all.setOnClickListener(onClickListener)
+            tv_g_nam.setOnClickListener(onClickListener)
+            tv_g_nu.setOnClickListener(onClickListener)
+
 
             dialog.show()
         }
     }
+
+    private val onClickListener = View.OnClickListener { view ->
+        val dialogView = (view.parent as ViewGroup)
+        val textViewTatCa = dialogView.findViewById<TextView>(R.id.tv_g_all)
+        val textViewNam = dialogView.findViewById<TextView>(R.id.tv_g_nam)
+        val textViewNu = dialogView.findViewById<TextView>(R.id.tv_g_nu)
+
+        // Set all TextViews to inactive
+        setInactive(textViewTatCa)
+        setInactive(textViewNam)
+        setInactive(textViewNu)
+
+        // Set clicked TextView to active
+        setActive(view as TextView)
+    }
+
+    private fun setActive(textView: TextView) {
+        textView.setTextColor(Color.WHITE)
+        // Set background tint (requires API level 21+)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            textView.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(textView.context, R.color.redPrimary))
+        }
+    }
+
+    private fun setInactive(textView: TextView) {
+        textView.setTextColor(Color.BLACK)  // Set the text color to black
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            textView.backgroundTintList = null
+        }
+    }
+
     private fun convertDpToPx(dp: Int): Int {
         val density = requireContext().resources.displayMetrics.density
         return (dp * density).toInt()
     }
+
+
 
 
 }
