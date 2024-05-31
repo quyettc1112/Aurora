@@ -73,7 +73,7 @@ class HomeFragment : Fragment(), CategoryOptionInteraction {
             it.addItemDecoration(BottomMarginItemDecoration(bottomMarginInPx))
             val itemCount = toyListAdaper?.itemCount ?: 0
             val rowCount = if (itemCount % 2 == 0) itemCount / 2 else (itemCount / 2) + 1
-            val newHeight = rowCount * convertDpToPx(270) + (rowCount - 1) * bottomMarginInPx
+            val newHeight = rowCount * convertDpToPx(300) + (rowCount - 1) * bottomMarginInPx
 
             // Thiết lập chiều cao mới cho RecyclerView
             it.layoutParams = it.layoutParams.apply {

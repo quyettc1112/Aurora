@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@drawable/background_toy_fillter"
-
     android:layout_height="670dp">
 
     <TextView
@@ -19,6 +18,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <ImageView
+        android:layout_margin="20dp"
         android:id="@+id/im_dissmissDialog"
         android:layout_width="30dp"
         android:layout_height="30dp"
@@ -46,12 +46,29 @@
             android:textStyle="bold"/>
 
         <LinearLayout
+            android:id="@+id/layout_Gender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_g_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/background_text_category"
+                android:gravity="center"
+                android:minWidth="70dp"
+                android:paddingStart="13dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="13dp"
+                android:paddingBottom="10dp"
+                android:text="Tất Cả"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
 
             <TextView
+                android:id="@+id/tv_g_nam"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
@@ -64,9 +81,10 @@
                 android:paddingBottom="10dp"
                 android:text="Nam"
                 android:textColor="@color/black"
-                android:textSize="15dp"/>
+                android:textSize="15dp" />
 
             <TextView
+                android:id="@+id/tv_g_nu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
@@ -79,7 +97,7 @@
                 android:paddingBottom="10dp"
                 android:text="Nữ"
                 android:textColor="@color/black"
-                android:textSize="15dp"/>
+                android:textSize="15dp" />
 
         </LinearLayout>
     </LinearLayout>
@@ -306,7 +324,7 @@
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/appCompatButton"
+        android:id="@+id/btn_saveFillter"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
@@ -330,7 +348,7 @@
         android:textSize="23dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatButton"/>
+        app:layout_constraintTop_toBottomOf="@+id/btn_saveFillter"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
