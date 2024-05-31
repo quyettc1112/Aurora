@@ -109,7 +109,7 @@ class ToyListFragment : Fragment(), CategoryOptionInteraction {
 
             dialogView.layoutParams = ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
-                convertDpToPx(500)
+                convertDpToPx(670)
             )
             val dialog = BottomSheetDialog(requireContext())
             dialog.setContentView(dialogView)

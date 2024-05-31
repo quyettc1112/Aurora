@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@drawable/background_toy_fillter"
-    android:padding="20dp"
-    android:layout_height="500dp">
+
+    android:layout_height="670dp">
 
     <TextView
+        android:layout_margin="20dp"
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,7 +31,7 @@
         android:id="@+id/linearLayout12"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginTop="20dp"
+        android:layout_margin="20dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,6 +89,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_margin="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout12">
@@ -213,9 +215,10 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="20dp"
+        android:id="@+id/linearLayout14"
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:layout_margin="20dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout13">
@@ -232,13 +235,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:weightSum="10"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="10">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
+                android:layout_weight="2.5"
                 android:background="@drawable/background_text_category"
                 android:gravity="center"
                 android:minWidth="70dp"
@@ -246,14 +250,15 @@
                 android:paddingTop="10dp"
                 android:paddingEnd="13dp"
                 android:paddingBottom="10dp"
-                android:text="Nam"
+                android:text="&lt; 500K"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
+                android:layout_weight="2.5"
                 android:background="@drawable/background_text_category"
                 android:gravity="center"
                 android:minWidth="70dp"
@@ -261,15 +266,71 @@
                 android:paddingTop="10dp"
                 android:paddingEnd="13dp"
                 android:paddingBottom="10dp"
-                android:text="Nữ"
+                android:text="&lt; 1Tr"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="2.5"
+                android:background="@drawable/background_text_category"
+                android:gravity="center"
+                android:minWidth="70dp"
+                android:paddingStart="13dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="13dp"
+                android:paddingBottom="10dp"
+                android:text="&lt; 3tr"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="2.5"
+                android:background="@drawable/background_text_category"
+                android:gravity="center"
+                android:minWidth="70dp"
+                android:paddingStart="13dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="13dp"
+                android:paddingBottom="10dp"
+                android:text="&lt; 5tr"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
         </LinearLayout>
     </LinearLayout>
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appCompatButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="100dp"
+        android:background="@drawable/background_apply_fillter"
+        android:text="Lưu "
+        android:textColor="@color/white"
+        android:textSize="23dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout14"/>
 
-
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/background_cancle_fillter"
+        android:text="Thoát"
+        android:textColor="@color/white"
+        android:layout_marginEnd="100dp"
+        android:textSize="23dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatButton"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
