@@ -95,7 +95,6 @@ class HomeFragment : Fragment(), CategoryOptionInteraction {
         })
     }
 
-
     private fun setIndicator() {
         val indicator = arrayOfNulls<ImageView>(videoAdapter.itemCount)
         val layoutParams: LinearLayout.LayoutParams =
@@ -117,7 +116,6 @@ class HomeFragment : Fragment(), CategoryOptionInteraction {
             }
             binding.indicatorContainer.addView(indicator[i])
         }
-
     }
 
     private fun setCurrentIndicator(index: Int) {
