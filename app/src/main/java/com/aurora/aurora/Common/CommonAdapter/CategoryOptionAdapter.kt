@@ -47,7 +47,6 @@ class CategoryOptionAdapter(private val items: List<CategoryString>,  private va
             }
         }
         fun setInactiveItem() {
-            title.setTextColor(Color.BLACK)  // Assume black is the normal text color
             title.setTextColor(Color.BLACK)  // Set the text color to black
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 title.backgroundTintList = null
