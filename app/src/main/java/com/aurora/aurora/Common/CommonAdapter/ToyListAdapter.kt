@@ -25,9 +25,9 @@ class ToyListAdapter(private val toys: List<ToyModel> )
             val la_addToCarts: LinearLayout = view.findViewById(R.id.la_addToCarts) // Thêm view này
 
             fun bind(toy: ToyModel) {
-                toyImageView.setImageResource(R.drawable.ic_material_toy)
+                toyImageView.setImageResource(toy.toyImage)
                 tv_toy_price.text =  "${formatPrice(toy.toyPrice)} VND"
-                tv_toy_name.text = toy.toyName
+                tv_toy_name.text = toy.toyName.toString()
                 tv_star_rating.text = "(${toy.toyRating.toString()})"
                 la_addToCarts.setOnClickListener {
                     onItemCartClickListener?.let { it1 -> it1(toy) }

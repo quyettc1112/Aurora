@@ -19,13 +19,14 @@ class ToyListAdapterBase : BaseAdapter<ToyModel, ToyListAdapterBase.ToyBaseItemV
     var onItemCartClickListener: ((ToyModel) -> Unit)? = null
     inner class ToyBaseItemViewHolder(binding: RecycleItemToyListBinding): BaseItemViewHolderCF<ToyModel, RecycleItemToyListBinding>(binding) {
         override fun bind(item: ToyModel) {
-            binding.imToyImage.setImageResource(R.drawable.ic_material_toy)
+            binding.imToyImage.setImageResource(item.toyImage)
             binding.tvToyPrice.text =  "${formatPrice(item.toyPrice)} VND"
             binding.tvToyName.text = item.toyName
             binding.tvStarRating.text = "(${item.toyRating.toString()})"
             binding.laAddToCarts.setOnClickListener {
                 onItemCartClickListener?.let { it1 -> it1(item) }
             }
+
         }
         fun formatPrice(price: Double): String {
             val formatter = DecimalFormat("#,###")
