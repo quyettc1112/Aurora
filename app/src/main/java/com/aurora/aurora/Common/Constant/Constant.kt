@@ -86,12 +86,12 @@ class Constant {
             return mutableListOf(
                 ToyModel(
                     id = 1,
-                    toyName ="Xe Tăng",
-                    toyImage = R.drawable.ic_material_toy,
-                    toyDescription = "Đồ chơi trẻ em vip pro",
+                    toyName ="Bộ xếp hình nam châm 72 chi tiết",
+                    toyImage = R.drawable.ic_image_toy_01,
+                    toyDescription = "Khám phá bộ đồ chơi mới với bé yêu BỘ XẾP HÌNH NAM CHÂM 72 CHI TIẾT Với Bộ Xếp Hình Nam Châm, bé sẽ học được gì? - Phát triển tư duy sáng tạo thông qua việc tạo ra nhiều hình khối đa dạng, từ các hình dạng que đến hình tròn. - Tăng cường khả năng quan sát và phát triển khả năng tưởng tượng không gian thông",
                     toyRating = 4.5,
                     isLike = true,
-                    toyPrice = 145000.0,
+                    toyPrice = 155000.0,
                     typePoppular = 1,
                     categoryModel = ToyModel.CategoryModel(
                         id = 1,
@@ -104,16 +104,17 @@ class Constant {
                         email = "quyettc@gmail.com",
                         phone = "0356790686"
                     ),
-                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy )
+                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
+                    gender = "ALL"
                 ),
                 ToyModel(
                     id = 2,
-                    toyName ="Máy Bay",
-                    toyImage = R.drawable.ic_material_toy,
-                    toyDescription = "Đồ chơi trẻ em vip pro",
+                    toyName ="8 CUỐN SÁCH VẢI MINI NHIỀU CHỦ ĐỀ",
+                    toyImage = R.drawable.ic_image_toy_02,
+                    toyDescription = "Khám phá bộ đồ chơi mới với bé yêu BỘ XẾP HÌNH NAM CHÂM 72 CHI TIẾT Với Bộ Xếp Hình Nam Châm, bé sẽ học được gì? - Phát triển tư duy sáng tạo thông qua việc tạo ra nhiều hình khối đa dạng, từ các hình dạng que đến hình tròn. - Tăng cường khả năng quan sát và phát triển khả năng tưởng tượng không gian thông",
                     toyRating = 4.5,
                     isLike = true,
-                    toyPrice = 145000.0,
+                    toyPrice = 155000.0,
                     typePoppular = 1,
                     categoryModel = ToyModel.CategoryModel(
                         id = 1,
@@ -126,19 +127,20 @@ class Constant {
                         email = "quyettc@gmail.com",
                         phone = "0356790686"
                     ),
-                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy )
+                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
+                    gender = "ALL"
                 ),
                 ToyModel(
                     id = 3,
-                    toyName ="Tên Lửa",
-                    toyImage = R.drawable.ic_material_toy,
-                    toyDescription = "Đồ chơi trẻ em vip pro",
+                    toyName ="Bộ xếp hình người thăng bằng",
+                    toyImage = R.drawable.ic_image_03,
+                    toyDescription = "ĐỒ CHƠI XẾP THĂNG BẰNG HÌNH NGƯỜI RẠP XIẾC VUI NHỘN Đồ Chơi Xếp Thăng Bằng với 32 nhân vật, 32 sticker đôi và 4 quả bóng sẽ mang lại những giờ phút vui vẻ cho bé và gia đình. ",
                     toyRating = 4.5,
                     isLike = true,
-                    toyPrice = 145000.0,
+                    toyPrice = 99000.0,
                     typePoppular = 2,
                     categoryModel = ToyModel.CategoryModel(
-                        id = 1,
+                        id = 2,
                         name = "Giải Đố",
                         image = R.drawable.ic_teddy,
                     ),
@@ -148,7 +150,8 @@ class Constant {
                         email = "quyettc@gmail.com",
                         phone = "0356790686"
                     ),
-                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy )
+                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
+                    gender = "ALL"
                 ),
                 ToyModel(
                     id = 4,
@@ -170,7 +173,8 @@ class Constant {
                         email = "quyettc@gmail.com",
                         phone = "0356790686"
                     ),
-                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy )
+                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
+                    gender = "ALL"
                 ),
                 ToyModel(
                     id = 5,
@@ -192,7 +196,8 @@ class Constant {
                         email = "quyettc@gmail.com",
                         phone = "0356790686"
                     ),
-                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy )
+                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
+                    gender = "ALL"
                 ),
                 ToyModel(
                     id = 6,
@@ -214,7 +219,8 @@ class Constant {
                         email = "quyettc@gmail.com",
                         phone = "0356790686"
                     ),
-                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy )
+                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
+                    gender = "ALL"
                 ),
                 ToyModel(
                     id = 7,
@@ -236,7 +242,8 @@ class Constant {
                         email = "quyettc@gmail.com",
                         phone = "0356790686"
                     ),
-                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy )
+                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
+                    gender = "ALL"
                 ),
                 ToyModel(
                     id = 8,
@@ -258,7 +265,8 @@ class Constant {
                         email = "quyettc@gmail.com",
                         phone = "0356790686"
                     ),
-                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy )
+                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
+                    gender = "ALL"
                 )
             )
         }
