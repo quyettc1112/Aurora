@@ -326,9 +326,9 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_saveFillter"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="150dp"
         android:background="@drawable/background_apply_fillter"
         android:text="Lưu "
         android:textColor="@color/white"
@@ -339,12 +339,12 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/background_cancle_fillter"
         android:text="Thoát"
         android:textColor="@color/white"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="150dp"
         android:textSize="23dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
