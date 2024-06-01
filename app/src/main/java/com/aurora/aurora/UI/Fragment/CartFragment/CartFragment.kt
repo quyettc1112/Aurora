@@ -7,25 +7,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.aurora.aurora.R
+import com.aurora.aurora.databinding.FragmentCartBinding
 
 class CartFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = CartFragment()
-    }
-
-    private val viewModel: CartViewModel by viewModels()
+    private lateinit var binding: FragmentCartBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // TODO: Use the ViewModel
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_cart, container, false)
+        binding = FragmentCartBinding.inflate(layoutInflater, container, false);
+        return binding.root
     }
 }
