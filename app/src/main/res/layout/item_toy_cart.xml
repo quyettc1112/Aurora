@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:layout_marginBottom="40dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:weightSum="10">
+    <androidx.cardview.widget.CardView
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="5dp"
+        app:cardCornerRadius="20dp"
+        android:layout_weight="2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/im_item_cart_image"
+            android:src="@drawable/ic_image_toy_01"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </ImageView>
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="5.5"
+        android:layout_width="0dp"
+        android:layout_gravity="center"
+        android:paddingStart="40dp"
+        android:weightSum="5"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv_item_cart_product_name"
+            android:textStyle="bold"
+            android:textSize="13dp"
+            android:text="Teddy Bears with 2 girl asdaasd"
+            android:layout_width="match_parent"
+            android:layout_weight="2"
+            android:layout_height="0dp">
+        </TextView>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3">
+            <TextView
+                android:id="@+id/tv_item_cart_product_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="Giải Đố">
+            </TextView>
+            <TextView
+                android:id="@+id/tv_item_cart_product_price"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="200.000 VND">
+            </TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:weightSum="3"
+        android:gravity="center"
+        android:layout_weight="2.5"
+        android:layout_width="0dp"
+        android:layout_marginEnd="10dp"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/im_minus_quantity"
+            android:src="@drawable/ic_material_minus"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/tv_item_cart_product_quantity"
+            android:gravity="center"
+            android:text="1"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+
+        <ImageView
+            android:id="@+id/im_plus_quantity"
+            android:src="@drawable/ic_material_plus"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+        </ImageView>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
