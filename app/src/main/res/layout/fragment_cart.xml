@@ -19,7 +19,7 @@
     <LinearLayout
         android:id="@+id/layout_empty_cart"
         android:orientation="vertical"
-        android:visibility="gone"
+        android:visibility="visible"
         android:layout_marginTop="100dp"
         android:layout_width="match_parent"
         android:layout_height="400dp">
@@ -45,7 +45,7 @@
 
     <LinearLayout
         android:id="@+id/layout_cart"
-        android:visibility="visible"
+        android:visibility="invisible"
         android:orientation="vertical"
         android:weightSum="10"
         android:layout_width="match_parent"
