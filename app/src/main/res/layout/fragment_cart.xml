@@ -10,28 +10,53 @@
 
     <com.aurora.aurora.AppConfig.CustomView.CustomToolBar.CustomToolbar
         android:background="@color/white"
-        android:title="Cart"
+        android:title="Giỏ Hàng"
         app:showStartIcon="false"
         app:showStartText="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </com.aurora.aurora.AppConfig.CustomView.CustomToolBar.CustomToolbar>
+    <LinearLayout
+        android:id="@+id/layout_empty_cart"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lt_empty_cart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:padding="50dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/anim_cart_empty"/>
+       <TextView
+           android:textStyle="bold"
+           android:textSize="30dp"
+           android:gravity="center"
+           android:textColor="@color/primaryColor"
+           android:text="Giỏ Hàng Đang Trống"
+           android:layout_width="match_parent"
+           android:layout_height="100dp">
+       </TextView>
+    </LinearLayout>
 
 
     <LinearLayout
+        android:id="@+id/layout_cart"
+        android:visibility="visible"
         android:orientation="vertical"
         android:weightSum="10"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rl_cart"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="30dp"
             android:layout_weight="8"
-            tools:listitem="@layout/item_toy_cart" />
-
+            tools:listitem="@layout/item_toy_cart"/>
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_payment"
             android:layout_width="match_parent"
@@ -40,13 +65,13 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_weight="0.7"
-            android:background="@drawable/ripple_effect"
+            android:backgroundTint="@color/redPrimary"
+            android:background="@drawable/ripple_effect_white"
             android:fontFamily="@font/app_font_black"
             android:text="Thanh Toán"
             android:textColor="@color/white"
             android:textSize="22dp"
             app:layout_constraintBottom_toBottomOf="parent" />
-
     </LinearLayout>
 
 

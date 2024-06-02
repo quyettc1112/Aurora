@@ -49,8 +49,6 @@ class ProfileFragment : Fragment() {
             convertDpToPx(300)
         )
 
-        // Gắn view vào dialog
-        dialog.setContentView(view)
 
         // Gắn view vào dialog
         dialog.setContentView(view)
