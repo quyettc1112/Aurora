@@ -43,19 +43,18 @@
             android:id="@+id/tv_video_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Header sh sa fsd gfs jhs js sg hsjdf sdhsjd sg djhsjgdfsgdf hjs"
+            android:text="Đang Tải Dữ Liệu"
             android:maxLines="2"
             android:layout_marginStart="5dp"
             android:textSize="20dp"
             android:textStyle="bold" />
-
 
         <TextView
             android:id="@+id/tv_video_description"
             android:layout_marginTop="10dp"
             android:layout_marginStart="5dp"
             android:textSize="13dp"
-            android:text="Anh ấy sẽ muốn sử dụng du thuyền của bạn và tôi không muốn thứ này có mùi cá."
+            android:text="Đang Tải Dữ Liệu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
