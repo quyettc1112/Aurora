@@ -23,9 +23,9 @@ class ShareViewModel: ViewModel() {
 
     fun removeItem(cartModel: CartModel) {
         val currentList = _cartItems.value ?: mutableListOf()
-        val existingItem = currentList.find { it.toyModel.id == cartModel.id }
+        val existingItem = currentList.find { it.id == cartModel.id }
         if (existingItem != null) {
-            if (existingItem.quantity >= 1) {
+            if (existingItem.quantity > 1) {
                 existingItem.quantity -= 1
             } else {
                 currentList.remove(existingItem)
