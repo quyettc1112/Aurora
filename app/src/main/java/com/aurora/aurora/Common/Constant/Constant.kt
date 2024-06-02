@@ -290,9 +290,10 @@ class Constant {
             val toyModel2 = getListToys()[1]
             val toyMode3 = getListToys()[2]
             return arrayListOf(
-                CartModel(1, toyModel, 2),
-                CartModel(2, toyModel2, 2),
-                CartModel(3, toyMode3, 2),
+                CartModel.create(toyModel, 2),
+                CartModel.create(toyModel2, 2),
+                CartModel.create(toyMode3, 2),
+
             )
         }
 
