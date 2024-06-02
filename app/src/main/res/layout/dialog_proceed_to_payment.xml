@@ -60,6 +60,7 @@
             android:textSize="16dp"/>
 
         <TextView
+            android:id="@+id/tv_tong_tien_hang"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="4"
@@ -88,6 +89,7 @@
             android:textSize="16dp"/>
 
         <TextView
+            android:id="@+id/tv_phi_giao_hang"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="4"
@@ -116,6 +118,7 @@
             android:textSize="16dp" />
 
         <TextView
+            android:id="@+id/tv_chiet_khau"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="4"
@@ -161,6 +164,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/tv_tong_tien_thanh_toan"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="4"
