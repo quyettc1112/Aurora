@@ -21,11 +21,11 @@ class ShareViewModel: ViewModel() {
         _cartItems.value = currentList
     }
 
-    fun removeItem(toyModel: ToyModel) {
+    fun removeItem(cartModel: CartModel) {
         val currentList = _cartItems.value ?: mutableListOf()
-        val existingItem = currentList.find { it.toyModel.id == toyModel.id }
+        val existingItem = currentList.find { it.toyModel.id == cartModel.id }
         if (existingItem != null) {
-            if (existingItem.quantity > 1) {
+            if (existingItem.quantity >= 1) {
                 existingItem.quantity -= 1
             } else {
                 currentList.remove(existingItem)
@@ -33,6 +33,10 @@ class ShareViewModel: ViewModel() {
         }
         _cartItems.value = currentList
     }
+    fun updateCartItems(newCartItems: MutableList<CartModel>) {
+        _cartItems.value = newCartItems
+    }
+
 
 
 }
