@@ -2,11 +2,13 @@ package com.aurora.aurora.UI.Fragment.CartFragment
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
@@ -22,6 +24,7 @@ class CartFragment : Fragment() {
     private lateinit var binding: FragmentCartBinding
     private lateinit var cartAdapter: CartAdapter
     private val sharedViewModel: ShareViewModel by activityViewModels()
+    private var totalAmount: Double = 0.0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -47,11 +50,15 @@ class CartFragment : Fragment() {
         cartAdapter.onAddQuantityItemClickListener = {
             Toast.makeText(requireContext(), "Add", Toast.LENGTH_SHORT).show()
             cartAdapter.addItem(it.toyModel)
+
         }
 
         cartAdapter.onRemoveQuantityItemClickListener = {
             Toast.makeText(requireContext(), "Minus", Toast.LENGTH_SHORT).show()
             cartAdapter.removeItem(it.toyModel)
+
+
+
         }
     }
 
@@ -59,6 +66,9 @@ class CartFragment : Fragment() {
         sharedViewModel.cartItems.observe(viewLifecycleOwner, Observer { cartItems ->
             cartAdapter.updateCartItems(cartItems)
             checkShowUI()
+            totalAmount = 0.0;
+            totalAmount = cartItems.sumOf { it.toyModel.toyPrice * it.quantity }
+            Log.d("TienHang", totalAmount.toString())
         })
     }
 
@@ -70,7 +80,12 @@ class CartFragment : Fragment() {
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 convertDpToPx(430)
             )
+
+            val tong_tien_hang = view.findViewById<TextView>(R.id.tv_tong_tien_hang)
+            tong_tien_hang?.text = ""
+            tong_tien_hang?.text = cartAdapter.getTotalItemsPrice().toString()
             // Gắn view vào dialog
+
             dialog.setContentView(view)
             dialog.show()
         }
