@@ -9,7 +9,7 @@
     tools:context=".UI.Fragment.CartFragment.CartFragment">
 
     <com.aurora.aurora.AppConfig.CustomView.CustomToolBar.CustomToolbar
-
+        android:background="@color/white"
         android:title="Cart"
         app:showStartIcon="false"
         app:showStartText="false"
@@ -28,7 +28,7 @@
             android:id="@+id/rl_cart"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:layout_weight="8"
             tools:listitem="@layout/item_toy_cart" />
 
