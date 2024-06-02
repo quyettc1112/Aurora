@@ -15,6 +15,7 @@ import com.aurora.aurora.Common.Constant.Constant
 import com.aurora.aurora.R
 import com.aurora.aurora.UI.ShareViewModel.ShareViewModel
 import com.aurora.aurora.databinding.FragmentCartBinding
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class CartFragment : Fragment() {
 
@@ -36,11 +37,9 @@ class CartFragment : Fragment() {
         binding.rlCart.layoutManager = LinearLayoutManager(requireContext())
         binding.rlCart.adapter = cartAdapter
 
-
-
         setAddOrRemoveQuantity()
         observeViewModel()
-
+        showPaymentDialog()
         return binding.root
     }
 
@@ -54,12 +53,40 @@ class CartFragment : Fragment() {
             Toast.makeText(requireContext(), "Minus", Toast.LENGTH_SHORT).show()
             cartAdapter.removeItem(it.toyModel)
         }
-
     }
 
     private fun observeViewModel() {
         sharedViewModel.cartItems.observe(viewLifecycleOwner, Observer { cartItems ->
             cartAdapter.updateCartItems(cartItems)
+            checkShowUI()
         })
+    }
+
+    private fun showPaymentDialog() {
+        binding.btnPayment.setOnClickListener {
+            val dialog = BottomSheetDialog(requireContext())
+            val view = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_proceed_to_payment, null)
+            view.layoutParams = ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                convertDpToPx(430)
+            )
+            // Gắn view vào dialog
+            dialog.setContentView(view)
+            dialog.show()
+        }
+    }
+
+    private fun convertDpToPx(dp: Int): Int {
+        val density = requireContext().resources.displayMetrics.density
+        return (dp * density).toInt()
+    }
+    private fun checkShowUI() {
+        if (sharedViewModel.cartItems.value?.size == 0) {
+            binding.ltEmptyCart.visibility = View.VISIBLE
+            binding.layoutCart.visibility = View.GONE
+        } else {
+            binding.ltEmptyCart.visibility = View.GONE
+            binding.layoutCart.visibility = View.VISIBLE
+        }
     }
 }
