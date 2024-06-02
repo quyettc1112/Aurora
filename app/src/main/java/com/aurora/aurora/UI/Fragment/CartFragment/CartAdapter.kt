@@ -67,6 +67,14 @@ class CartAdapter(): BaseAdapter<CartModel, CartAdapter.CartAdapterViewHoilder>(
         return differ.currentList.sumOf { it.quantity }
     }
 
+    fun getTotalItemsPrice(): Double {
+        return differ.currentList.sumOf { it.toyModel.toyPrice * it.quantity }
+    }
+
+    fun getCurrentList(): MutableList<CartModel> {
+        return differ.currentList
+    }
+
     fun updateCartItems(newCartItems: MutableList<CartModel>) {
         differ.submitList(newCartItems)
         notifyDataSetChanged()
