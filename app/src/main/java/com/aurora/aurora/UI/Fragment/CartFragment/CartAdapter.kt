@@ -72,17 +72,21 @@ class CartAdapter(): BaseAdapter<CartModel, CartAdapter.CartAdapterViewHoilder>(
         return differ.currentList.sumOf { it.quantity }
     }
 
+    fun updateCartItems(newCartItems: MutableList<CartModel>) {
+        differ.submitList(newCartItems)
+        notifyDataSetChanged()
+    }
     override fun differCallBack(): DiffUtil.ItemCallback<CartModel> {
         return object : DiffUtil.ItemCallback<CartModel> () {
             override fun areItemsTheSame(oldItem: CartModel, newItem: CartModel): Boolean {
                 return oldItem.id == newItem.id
             }
-
             override fun areContentsTheSame(oldItem: CartModel, newItem: CartModel): Boolean {
                 return oldItem == newItem
             }
         }
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartAdapterViewHoilder {
         val inflater = LayoutInflater.from(parent.context)

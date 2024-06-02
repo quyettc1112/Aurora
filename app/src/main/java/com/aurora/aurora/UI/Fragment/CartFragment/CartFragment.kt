@@ -8,24 +8,25 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.aurora.aurora.Common.Constant.Constant
 import com.aurora.aurora.R
+import com.aurora.aurora.UI.ShareViewModel.ShareViewModel
 import com.aurora.aurora.databinding.FragmentCartBinding
 
 class CartFragment : Fragment() {
 
     private lateinit var binding: FragmentCartBinding
-
     private lateinit var cartAdapter: CartAdapter
-
+    private val sharedViewModel: ShareViewModel by activityViewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         cartAdapter = CartAdapter()
         cartAdapter.submitList(Constant.getListCart())
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -53,5 +54,11 @@ class CartFragment : Fragment() {
             cartAdapter.removeItem(it.toyModel)
         }
 
+    }
+
+    private fun observeViewModel() {
+        sharedViewModel.cartItems.observe(viewLifecycleOwner, Observer { cartItems ->
+            // Update UI with new list
+        })
     }
 }
