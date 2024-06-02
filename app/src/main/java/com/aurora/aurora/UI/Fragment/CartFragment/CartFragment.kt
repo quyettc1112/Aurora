@@ -25,7 +25,7 @@ class CartFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         cartAdapter = CartAdapter()
-        cartAdapter.submitList(Constant.getListCart())
+        cartAdapter.submitList(sharedViewModel.cartItems.value ?: mutableListOf())
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +39,7 @@ class CartFragment : Fragment() {
 
 
         setAddOrRemoveQuantity()
+        observeViewModel()
 
         return binding.root
     }
@@ -58,7 +59,7 @@ class CartFragment : Fragment() {
 
     private fun observeViewModel() {
         sharedViewModel.cartItems.observe(viewLifecycleOwner, Observer { cartItems ->
-            // Update UI with new list
+            cartAdapter.updateCartItems(cartItems)
         })
     }
 }

@@ -13,11 +13,8 @@ import com.google.android.play.integrity.internal.i
 import java.text.DecimalFormat
 
 class CartAdapter(): BaseAdapter<CartModel, CartAdapter.CartAdapterViewHoilder>(){
-
-
     var onAddQuantityItemClickListener: ((CartModel) -> Unit)? = null
     var onRemoveQuantityItemClickListener: ((CartModel) -> Unit)? = null
-
 
     inner class CartAdapterViewHoilder(binding: ItemToyCartBinding): BaseItemViewHolderCF<CartModel,ItemToyCartBinding>(binding) {
         override fun bind(item: CartModel) {
@@ -30,12 +27,10 @@ class CartAdapter(): BaseAdapter<CartModel, CartAdapter.CartAdapterViewHoilder>(
                 onAddQuantityItemClickListener.let { it -> it?.invoke(item) }
                 binding.tvItemCartProductQuantity.text = item.quantity.toString()
             }
-
             binding.imMinusQuantity.setOnClickListener {
                 onRemoveQuantityItemClickListener.let { it -> it?.invoke(item) }
                 binding.tvItemCartProductQuantity.text = item.quantity.toString()
             }
-
         }
 
         fun formatPrice(price: Double): String {

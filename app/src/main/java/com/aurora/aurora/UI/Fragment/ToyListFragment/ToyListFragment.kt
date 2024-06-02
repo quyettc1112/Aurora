@@ -15,6 +15,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -22,8 +23,10 @@ import com.aurora.aurora.Common.CommonAdapter.CategoryOptionAdapter
 import com.aurora.aurora.Common.CommonAdapter.CategoryOptionInteraction
 import com.aurora.aurora.Common.CommonAdapter.ToyListAdapterBase
 import com.aurora.aurora.Common.Constant.Constant
+import com.aurora.aurora.Model.CartModel
 import com.aurora.aurora.Model.ToyModel
 import com.aurora.aurora.R
+import com.aurora.aurora.UI.ShareViewModel.ShareViewModel
 import com.aurora.aurora.databinding.FragmentToyListBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
@@ -32,6 +35,8 @@ class ToyListFragment : Fragment(), CategoryOptionInteraction {
     private lateinit var categoryAdapter: CategoryOptionAdapter
     private lateinit var toyListAdapter: ToyListAdapterBase
     private lateinit var toyListViewModel: ToyListViewModel
+
+    private val sharedViewModel: ShareViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,7 +83,7 @@ class ToyListFragment : Fragment(), CategoryOptionInteraction {
 
         // Add To Cart Click
         toyListAdapter.onItemCartClickListener = {
-            Toast.makeText(context, "Add To Cart: ${it.toyName}", Toast.LENGTH_SHORT).show()
+            sharedViewModel.addItem(CartModel.create(it, 1))
         }
     }
     private fun searchItem() {
