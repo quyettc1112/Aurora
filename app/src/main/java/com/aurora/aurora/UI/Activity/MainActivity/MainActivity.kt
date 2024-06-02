@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.aurora.aurora.AppConfig.BaseConfig.BaseActivity
@@ -14,12 +15,14 @@ import com.aurora.aurora.UI.Fragment.CartFragment.CartFragment
 import com.aurora.aurora.UI.Fragment.HomeFragment.HomeFragment
 import com.aurora.aurora.UI.Fragment.ProfileFragment.ProfileFragment
 import com.aurora.aurora.UI.Fragment.ToyListFragment.ToyListFragment
+import com.aurora.aurora.UI.ShareViewModel.ShareViewModel
 import com.aurora.aurora.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity() {
 
+    private val sharedViewModel: ShareViewModel by viewModels()
     private lateinit var binding: ActivityMainBinding
     private lateinit var FragmentAdapter: FragmentAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +32,7 @@ class MainActivity : BaseActivity() {
 
         setUpFragmentWithViewPager()
         setUpBottomNav()
+
 
     }
 
