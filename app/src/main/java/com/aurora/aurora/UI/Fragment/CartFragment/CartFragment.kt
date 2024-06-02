@@ -25,7 +25,6 @@ class CartFragment : Fragment() {
     private lateinit var binding: FragmentCartBinding
     private lateinit var cartAdapter: CartAdapter
     private val sharedViewModel: ShareViewModel by activityViewModels()
-    private var totalAmount: Double = 0.0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -41,6 +40,7 @@ class CartFragment : Fragment() {
         binding.rlCart.layoutManager = LinearLayoutManager(requireContext())
         binding.rlCart.adapter = cartAdapter
 
+        checkShowUI()
         setAddOrRemoveQuantity()
         observeViewModel()
         showPaymentDialog()
@@ -51,15 +51,12 @@ class CartFragment : Fragment() {
         cartAdapter.onAddQuantityItemClickListener = {
             Toast.makeText(requireContext(), "Add", Toast.LENGTH_SHORT).show()
             cartAdapter.addItem(it.toyModel)
-
         }
-
         cartAdapter.onRemoveQuantityItemClickListener = {
             Toast.makeText(requireContext(), "Minus", Toast.LENGTH_SHORT).show()
-            cartAdapter.removeItem(it.toyModel)
-
-
-
+           // cartAdapter.removeItem(it.toyModel)
+            sharedViewModel.removeItem(it)
+            checkShowUI()
         }
     }
 
@@ -67,9 +64,6 @@ class CartFragment : Fragment() {
         sharedViewModel.cartItems.observe(viewLifecycleOwner, Observer { cartItems ->
             cartAdapter.updateCartItems(cartItems)
             checkShowUI()
-            totalAmount = 0.0;
-            totalAmount = cartItems.sumOf { it.toyModel.toyPrice * it.quantity }
-            Log.d("TienHang", totalAmount.toString())
         })
     }
 
@@ -102,12 +96,12 @@ class CartFragment : Fragment() {
         return (dp * density).toInt()
     }
     private fun checkShowUI() {
-        if (sharedViewModel.cartItems.value?.size == 0) {
-            binding.ltEmptyCart.visibility = View.VISIBLE
-            binding.layoutCart.visibility = View.GONE
-        } else {
-            binding.ltEmptyCart.visibility = View.GONE
+        if (cartAdapter.getCurrentList().count() > 0) {
+            binding.layoutEmptyCart.visibility = View.GONE
             binding.layoutCart.visibility = View.VISIBLE
+        } else {
+            binding.layoutEmptyCart.visibility = View.VISIBLE
+            binding.layoutCart.visibility = View.GONE
         }
     }
     fun formatPrice(price: Double): String {
