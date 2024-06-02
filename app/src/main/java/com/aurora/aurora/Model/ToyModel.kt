@@ -28,8 +28,4 @@ data class ToyModel(
           val email: String,
           val phone: String
      )
-
-
-
-
 }

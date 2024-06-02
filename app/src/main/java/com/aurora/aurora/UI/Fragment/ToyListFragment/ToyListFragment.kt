@@ -75,6 +75,7 @@ class ToyListFragment : Fragment(), CategoryOptionInteraction {
         toyListAdapter.setItemOnclickListener {
             Toast.makeText(context, "Clicked: ${it.toyName}", Toast.LENGTH_SHORT).show()
         }
+
         // Add To Cart Click
         toyListAdapter.onItemCartClickListener = {
             Toast.makeText(context, "Add To Cart: ${it.toyName}", Toast.LENGTH_SHORT).show()
