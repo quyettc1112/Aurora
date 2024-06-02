@@ -18,6 +18,7 @@ import com.aurora.aurora.R
 import com.aurora.aurora.UI.ShareViewModel.ShareViewModel
 import com.aurora.aurora.databinding.FragmentCartBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import java.text.DecimalFormat
 
 class CartFragment : Fragment() {
 
@@ -83,8 +84,13 @@ class CartFragment : Fragment() {
 
             val tong_tien_hang = view.findViewById<TextView>(R.id.tv_tong_tien_hang)
             tong_tien_hang?.text = ""
-            tong_tien_hang?.text = cartAdapter.getTotalItemsPrice().toString()
+            tong_tien_hang?.text = "${formatPrice(cartAdapter.getTotalItemsPrice())} VND"
             // Gắn view vào dialog
+
+
+            val tong_tien = view.findViewById<TextView>(R.id.tv_tong_tien_thanh_toan)
+            tong_tien?.text = ""
+            tong_tien?.text = "${formatPrice(cartAdapter.getTotalItemsPrice() + 20000.0)} VND"
 
             dialog.setContentView(view)
             dialog.show()
@@ -103,5 +109,9 @@ class CartFragment : Fragment() {
             binding.ltEmptyCart.visibility = View.GONE
             binding.layoutCart.visibility = View.VISIBLE
         }
+    }
+    fun formatPrice(price: Double): String {
+        val formatter = DecimalFormat("#,###")
+        return formatter.format(price)
     }
 }
