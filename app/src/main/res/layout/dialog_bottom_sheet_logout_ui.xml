@@ -12,6 +12,7 @@
         android:layout_height="5dp"
         android:layout_marginTop="15dp"
         android:background="@color/gray_400"
+        android:orientation="horizontal"
         android:translationZ="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
