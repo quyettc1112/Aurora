@@ -21,7 +21,7 @@ class CartFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        cartAdapter = CartAdapter(Constant.getListCart())
+        cartAdapter = CartAdapter()
         cartAdapter.submitList(Constant.getListCart())
     }
 

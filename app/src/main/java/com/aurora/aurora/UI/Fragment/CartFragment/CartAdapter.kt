@@ -12,7 +12,7 @@ import com.aurora.aurora.databinding.ItemToyCartBinding
 import com.google.android.play.integrity.internal.i
 import java.text.DecimalFormat
 
-class CartAdapter(private val cartItems: ArrayList<CartModel>): BaseAdapter<CartModel, CartAdapter.CartAdapterViewHoilder>(){
+class CartAdapter(): BaseAdapter<CartModel, CartAdapter.CartAdapterViewHoilder>(){
 
 
     var onItemCartClickListener: ((CartModel) -> Unit)? = null
@@ -33,29 +33,31 @@ class CartAdapter(private val cartItems: ArrayList<CartModel>): BaseAdapter<Cart
     }
 
     fun addItem(toyModel: ToyModel) {
-        val existingItem = cartItems.find { it.toyModel.id == toyModel.id }
+        val currentList = differ.currentList.toMutableList()
+        val existingItem = currentList.find { it.toyModel.id == toyModel.id }
         if (existingItem != null) {
             existingItem.quantity += 1
         } else {
-            cartItems.add(CartModel(1, toyModel, 1))
+            currentList.add(CartModel(1, toyModel, 1))
         }
-        notifyDataSetChanged()
+        differ.submitList(currentList)
     }
 
     fun removeItem(toyModel: ToyModel) {
-        val existingItem = cartItems.find { it.toyModel.id == toyModel.id }
+        val currentList = differ.currentList.toMutableList()
+        val existingItem = currentList.find { it.toyModel.id == toyModel.id }
         if (existingItem != null) {
             if (existingItem.quantity > 1) {
                 existingItem.quantity -= 1
             } else {
-                cartItems.remove(existingItem)
+                currentList.remove(existingItem)
             }
         }
-        notifyDataSetChanged()
+        differ.submitList(currentList)
     }
 
     fun getTotalItems(): Int {
-        return cartItems.sumOf { it.quantity }
+        return differ.currentList.sumOf { it.quantity }
     }
 
     override fun differCallBack(): DiffUtil.ItemCallback<CartModel> {
