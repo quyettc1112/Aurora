@@ -9,6 +9,7 @@
     tools:context=".UI.Fragment.CartFragment.CartFragment">
 
     <com.aurora.aurora.AppConfig.CustomView.CustomToolBar.CustomToolbar
+
         android:title="Cart"
         app:showStartIcon="false"
         app:showStartText="false"
@@ -24,11 +25,12 @@
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_marginTop="50dp"
+            android:id="@+id/rl_cart"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginTop="50dp"
             android:layout_weight="8"
-            tools:listitem="@layout/item_toy_cart"/>
+            tools:listitem="@layout/item_toy_cart" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="match_parent"
