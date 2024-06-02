@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.aurora.aurora.BuildConfig
 import com.aurora.aurora.Common.CommonAdapter.CategoryOptionAdapter
 import com.aurora.aurora.Common.CommonAdapter.VideoMainAdapter
+import com.aurora.aurora.Model.CartModel
 import com.aurora.aurora.Model.ToyModel
 import com.aurora.aurora.Model.VideoModel
 import com.aurora.aurora.R
@@ -282,6 +283,17 @@ class Constant {
                 VideoModel("9mL-TS0gcmA"),
             )
 
+        }
+
+        fun getListCart(): ArrayList<CartModel> {
+            val toyModel = getListToys()[0]
+            val toyModel2 = getListToys()[1]
+            val toyMode3 = getListToys()[2]
+            return arrayListOf(
+                CartModel(1, toyModel, 2),
+                CartModel(2, toyModel2, 2),
+                CartModel(3, toyMode3, 2),
+            )
         }
 
 
