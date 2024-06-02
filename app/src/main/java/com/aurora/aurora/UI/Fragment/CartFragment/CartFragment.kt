@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.aurora.aurora.Common.Constant.Constant
 import com.aurora.aurora.R
@@ -36,6 +37,21 @@ class CartFragment : Fragment() {
 
 
 
+        setAddOrRemoveQuantity()
+
         return binding.root
+    }
+
+    private fun setAddOrRemoveQuantity() {
+        cartAdapter.onAddQuantityItemClickListener = {
+            Toast.makeText(requireContext(), "Add", Toast.LENGTH_SHORT).show()
+            cartAdapter.addItem(it.toyModel)
+        }
+
+        cartAdapter.onRemoveQuantityItemClickListener = {
+            Toast.makeText(requireContext(), "Minus", Toast.LENGTH_SHORT).show()
+            cartAdapter.removeItem(it.toyModel)
+        }
+
     }
 }

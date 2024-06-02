@@ -15,7 +15,9 @@ import java.text.DecimalFormat
 class CartAdapter(): BaseAdapter<CartModel, CartAdapter.CartAdapterViewHoilder>(){
 
 
-    var onItemCartClickListener: ((CartModel) -> Unit)? = null
+    var onAddQuantityItemClickListener: ((CartModel) -> Unit)? = null
+    var onRemoveQuantityItemClickListener: ((CartModel) -> Unit)? = null
+
 
     inner class CartAdapterViewHoilder(binding: ItemToyCartBinding): BaseItemViewHolderCF<CartModel,ItemToyCartBinding>(binding) {
         override fun bind(item: CartModel) {
@@ -24,6 +26,16 @@ class CartAdapter(): BaseAdapter<CartModel, CartAdapter.CartAdapterViewHoilder>(
             binding.tvItemCartProductPrice.text =  "${formatPrice(item.toyModel.toyPrice)} VND"
             binding.tvItemCartProductCategory.text = item.toyModel.categoryModel.name
             binding.tvItemCartProductQuantity.text = item.quantity.toString()
+            binding.imPlusQuantity.setOnClickListener {
+                onAddQuantityItemClickListener.let { it -> it?.invoke(item) }
+                binding.tvItemCartProductQuantity.text = item.quantity.toString()
+            }
+
+            binding.imMinusQuantity.setOnClickListener {
+                onRemoveQuantityItemClickListener.let { it -> it?.invoke(item) }
+                binding.tvItemCartProductQuantity.text = item.quantity.toString()
+            }
+
         }
 
         fun formatPrice(price: Double): String {
@@ -38,7 +50,7 @@ class CartAdapter(): BaseAdapter<CartModel, CartAdapter.CartAdapterViewHoilder>(
         if (existingItem != null) {
             existingItem.quantity += 1
         } else {
-            currentList.add(CartModel(1, toyModel, 1))
+            currentList.add(CartModel.create(toyModel, 1))
         }
         differ.submitList(currentList)
     }
