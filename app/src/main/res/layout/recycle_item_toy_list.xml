@@ -19,7 +19,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_margin="5dp"
             android:id="@+id/im_toy_image"
             android:scaleType="fitXY"
             android:layout_width="match_parent"

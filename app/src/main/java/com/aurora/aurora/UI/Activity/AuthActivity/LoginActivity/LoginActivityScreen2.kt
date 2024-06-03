@@ -107,7 +107,10 @@ class LoginActivityScreen2 : BaseActivity() {
                 override fun onResponse(call: Call<String>, response: Response<String>) {
                     if (response.isSuccessful) {
                         Log.d("CheclResponeValue", response.body().toString())
-
+                    } else {
+                        Log.d("CheclResponeValue", response.message())
+                        Log.d("CheclResponeValue", response.code().toString())
+                        Log.d("CheclResponeValue", response.errorBody().toString())
                     }
                 }
 
