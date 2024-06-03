@@ -14,7 +14,4 @@ interface UserAPI_Service {
         @Body userCretidentialDTO: UserCretidentialDTO
     ): Call<String>
 
-
-
-
 }
