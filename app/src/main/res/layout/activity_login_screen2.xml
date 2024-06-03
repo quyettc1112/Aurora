@@ -128,7 +128,7 @@
                 tools:layout_editor_absoluteX="20dp">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_register"
+                    android:id="@+id/btn_login"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
                     android:layout_marginTop="20dp"
