@@ -1,5 +1,6 @@
 package com.aurora.aurora.UI.Activity.AuthActivity.LoginActivity
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
@@ -18,6 +19,8 @@ import com.aurora.aurora.AppConfig.CustomView.CustomDialog.ErrorDialog
 import com.aurora.aurora.Model.RequestDTO.UserCretidentialDTO
 import com.aurora.aurora.Model.Respone.JWTObject
 import com.aurora.aurora.R
+import com.aurora.aurora.UI.Activity.MainActivity.MainActivity
+import com.aurora.aurora.UI.ShareViewModel.ShareViewModel
 import com.aurora.aurora.UI.ShareViewModel.UserShareViewModel
 import com.aurora.aurora.databinding.ActivityLoginScreen2Binding
 import dagger.hilt.android.AndroidEntryPoint
@@ -31,6 +34,8 @@ class LoginActivityScreen2 : BaseActivity() {
     private lateinit var binding: ActivityLoginScreen2Binding
 
     private val userShareViewModel : UserShareViewModel by viewModels()
+
+
     @Inject
     lateinit var userapiRepository: UserAPI_Repository
 
@@ -60,14 +65,12 @@ class LoginActivityScreen2 : BaseActivity() {
         binding.btnLogin.setOnClickListener {
             val email = binding.edtEmail.text.toString()
             val password = binding.edtPassword.text.toString()
-
             if (checkValidNumber(email, password)) {
                 userShareViewModel.updateUserCretidential(UserCretidentialDTO(email, password))
                 if (userShareViewModel.userCredentials.value != null) {
                     userShareViewModel.getUserCretidentail()
                         ?.let { it1 -> callUserCretidential(it1) }
                 }
-
             }
         }
     }
@@ -97,7 +100,6 @@ class LoginActivityScreen2 : BaseActivity() {
 
     private fun observeViewModel() {
         userShareViewModel.userCredentials.observe(this, Observer { userCretidential ->
-
         })
 
     }
@@ -107,14 +109,33 @@ class LoginActivityScreen2 : BaseActivity() {
             .enqueue(object: retrofit2.Callback<JWTObject>{
                 override fun onResponse(call: Call<JWTObject>, response: Response<JWTObject>) {
                     if (response.isSuccessful) {
-                        Log.d("CheclResponeValue", response.body().toString())
+                        if ( !response.body().toString().isNullOrEmpty()) {
+                            val jwtObject = response.body() as JWTObject
+                            userShareViewModel.updateJWTToken(jwtObject)
+                            startActivity(Intent(this@LoginActivityScreen2, MainActivity::class.java))
+                            finish()
+                        }
                     } else {
-                        Log.d("CheclResponeValue", response.message())
+                        if(response.code() == 404) {
+                            val errorDialog = ErrorDialog(
+                                this@LoginActivityScreen2,
+                                errorContent = "Không tìm thấy tài khoản của bạn",
+                                textButton = "Quay Lại"
+                            )
+                            errorDialog.show()
+                        }
+
+                        if(response.code() == 400) {
+                            val errorDialog = ErrorDialog(
+                                this@LoginActivityScreen2,
+                                errorContent = "Sai Mật Khẩu",
+                                textButton = "Quay Lại"
+                            )
+                            errorDialog.show()
+                        }
                         Log.d("CheclResponeValue", response.code().toString())
-                        Log.d("CheclResponeValue", response.errorBody().toString())
                     }
                 }
-
                 override fun onFailure(call: Call<JWTObject>, t: Throwable) {
                     Log.d("CheclResponeValue", t.message.toString())
                 }
