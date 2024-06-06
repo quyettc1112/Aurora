@@ -8,7 +8,7 @@
 
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/vp2_main"
+        android:id="@+id/vp2Main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,7 +26,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <com.aurora.aurora.AppConfig.CustomView.CustomBottomNav.NiceBottomBar
-            android:id="@+id/nice_bottom_nav"
+            android:id="@+id/niceBottomNav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
