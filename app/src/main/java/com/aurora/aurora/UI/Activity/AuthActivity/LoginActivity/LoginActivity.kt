@@ -48,7 +48,6 @@ class LoginActivity : BaseActivity() {
         val bottomAnimation = AnimationUtils.loadAnimation(this, R.anim.bottom_animation)
         binding.imageLogin.startAnimation(topAnimation)
         binding.imageContent.startAnimation(bottomAnimation)
-
     }
 
     private fun backButtonClick() {
@@ -56,6 +55,7 @@ class LoginActivity : BaseActivity() {
             goBackActivity(this, MainActivity::class.java)
         }
     }
+
 
 
 }
