@@ -16,6 +16,7 @@ import com.aurora.aurora.API_Repotitory.UserAPI_Repository
 import com.aurora.aurora.AppConfig.BaseConfig.BaseActivity
 import com.aurora.aurora.AppConfig.CustomView.CustomDialog.ErrorDialog
 import com.aurora.aurora.Model.RequestDTO.UserCretidentialDTO
+import com.aurora.aurora.Model.Respone.JWTObject
 import com.aurora.aurora.R
 import com.aurora.aurora.UI.ShareViewModel.UserShareViewModel
 import com.aurora.aurora.databinding.ActivityLoginScreen2Binding
@@ -103,8 +104,8 @@ class LoginActivityScreen2 : BaseActivity() {
 
     private fun callUserCretidential(userCretidentialDTO: UserCretidentialDTO) {
         userapiRepository.getUserCretidential(userCretidentialDTO)
-            .enqueue(object: retrofit2.Callback<String>{
-                override fun onResponse(call: Call<String>, response: Response<String>) {
+            .enqueue(object: retrofit2.Callback<JWTObject>{
+                override fun onResponse(call: Call<JWTObject>, response: Response<JWTObject>) {
                     if (response.isSuccessful) {
                         Log.d("CheclResponeValue", response.body().toString())
                     } else {
@@ -114,13 +115,8 @@ class LoginActivityScreen2 : BaseActivity() {
                     }
                 }
 
-                override fun onFailure(call: Call<String>, t: Throwable) {
-                    val errorDialog = ErrorDialog(
-                        this@LoginActivityScreen2,
-                        textButton = "Quay Lại",
-                        errorContent = "Lỗi: ${t.message}"
-                    )
-                    errorDialog.show()
+                override fun onFailure(call: Call<JWTObject>, t: Throwable) {
+                    Log.d("CheclResponeValue", t.message.toString())
                 }
 
 
