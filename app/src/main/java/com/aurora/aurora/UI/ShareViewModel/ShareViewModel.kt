@@ -5,8 +5,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.aurora.aurora.Model.CartModel
 import com.aurora.aurora.Model.ToyModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class ShareViewModel: ViewModel() {
+@HiltViewModel
+class ShareViewModel @Inject constructor(): ViewModel() {
     private val _cartItems = MutableLiveData<MutableList<CartModel>>(mutableListOf())
     val cartItems: LiveData<MutableList<CartModel>> get() = _cartItems
 
