@@ -1,5 +1,6 @@
 package com.aurora.aurora.API_Services
 
+import com.aurora.aurora.Model.RequestDTO.RegisterRequestDTO
 import com.aurora.aurora.Model.RequestDTO.UserCretidentialDTO
 import com.aurora.aurora.Model.Respone.JWTObject
 import retrofit2.Call
@@ -14,5 +15,10 @@ interface UserAPI_Service {
     fun getUserCretidential(
         @Body userCretidentialDTO: UserCretidentialDTO
     ): Call<JWTObject>
+
+    @POST("/auth/sign-up")
+    fun callRegisterUser(
+        @Body registerRequestDTO: RegisterRequestDTO
+    )
 
 }
