@@ -5,11 +5,15 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModel
 import com.aurora.aurora.AppConfig.BaseConfig.BaseActivity
 import com.aurora.aurora.R
 import com.aurora.aurora.UI.Activity.AuthActivity.LoginActivity.LoginActivity
+import com.aurora.aurora.UI.ShareViewModel.RegisterViewModel
 import com.aurora.aurora.databinding.ActivityRegisterBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -28,6 +32,8 @@ class RegisterActivity : BaseActivity() {
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var googleSignInOption: GoogleSignInOptions
 
+    private val registerViewModel: RegisterViewModel by viewModels()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,10 +46,8 @@ class RegisterActivity : BaseActivity() {
             insets
         }
         initializedGoogle()
-
         backToLogin()
         showEmailInfo()
-
         nextToRegisterScreen2()
     }
 
@@ -51,7 +55,6 @@ class RegisterActivity : BaseActivity() {
         googleSignInOption = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build()
         googleSignInClient = GoogleSignIn.getClient(this, googleSignInOption)
     }
-
     private fun backToLogin(){
         binding.customToolbar3.onStartIconClick = {
             goBackActivity(this, LoginActivity::class.java)
@@ -93,12 +96,20 @@ class RegisterActivity : BaseActivity() {
             Toast.makeText(this, "Error signing in: ${e.statusCode}", Toast.LENGTH_SHORT).show()
         }
     }
-
     private fun nextToRegisterScreen2() {
         binding.btnRegister.setOnClickListener {
-            val intent = Intent(this, RegisterActivity_Screen2::class.java)
-            startActivity(intent)
+            val email = binding.edtRegisterEmail.text.toString()
+            if (isValidEmail(email)) {
+                val intent = Intent(this, RegisterActivity_Screen2::class.java)
+                startActivity(intent)
+            } else {
+                binding.edtRegisterEmail.error = "Email không hợp lệ"
+            }
         }
+    }
+    private fun isValidEmail(email: String): Boolean {
+        val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
+        return email.matches(emailPattern.toRegex())
     }
 
 
