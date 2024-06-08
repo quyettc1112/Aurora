@@ -34,6 +34,7 @@ class RegisterActivity_Screen2 : BaseActivity() {
             insets
         }
         binding.customToolbarScreen2.onStartIconClick = {
+
             val intent  = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
             finish()
@@ -42,7 +43,10 @@ class RegisterActivity_Screen2 : BaseActivity() {
             if (isPasswordMatched == false) {
                 Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
             } else {
+                val email = intent.getStringExtra("intent_email")
                 val intent  = Intent(this, RegisterActivity_Screen3::class.java)
+                intent.putExtra("intent_email", email)
+                intent.putExtra("intent_password", binding.edtRegisterPasswordConfirm.text.toString())
                 registerViewModel.updatePassword(binding.edtRegisterPasswordConfirm.toString().toString())
                 startActivity(intent)
             }
@@ -58,6 +62,9 @@ class RegisterActivity_Screen2 : BaseActivity() {
             override fun afterTextChanged(s: Editable?) {
             }
         })
+
+
+
     }
 
 
