@@ -10,18 +10,32 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.aurora.aurora.API_Repotitory.UserAPI_Repository
 import com.aurora.aurora.AppConfig.BaseConfig.BaseActivity
+import com.aurora.aurora.AppConfig.CustomView.CustomDialog.ErrorDialog
+import com.aurora.aurora.Common.CommonAdapter.MessageAdapter
+import com.aurora.aurora.Model.Respone.ErrorResponse
+import com.aurora.aurora.Model.Respone.MessageRespone
 import com.aurora.aurora.R
 import com.aurora.aurora.UI.Activity.MainActivity.MainActivity
 import com.aurora.aurora.UI.ShareViewModel.RegisterViewModel
 import com.aurora.aurora.databinding.ActivityRegisterScreen3Binding
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import dagger.hilt.android.AndroidEntryPoint
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.Calendar
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class RegisterActivity_Screen3 : BaseActivity() {
     private lateinit var binding: ActivityRegisterScreen3Binding
     private val registerViewModel: RegisterViewModel by viewModels()
+
+    @Inject
+    lateinit var userapiRepository: UserAPI_Repository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,9 +67,10 @@ class RegisterActivity_Screen3 : BaseActivity() {
                     registerViewModel.updateGender(true)
                 } else registerViewModel.updateGender(false)
 
-                val intent = Intent(this, MainActivity::class.java)
+                callRegister()
+              /*  val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
-                finish()
+                finish()*/
                 Log.d("CheckValueRegisterDTO", registerViewModel.getRegisterDTO().toString())
             }
         }
@@ -146,4 +161,48 @@ class RegisterActivity_Screen3 : BaseActivity() {
             false
         }
     }
+
+    fun callRegister() {
+        userapiRepository.callRegister(
+            registerViewModel.getRegisterDTO()
+        ).enqueue(object : Callback<MessageRespone> {
+            override fun onResponse(
+                call: Call<MessageRespone>,
+                response: Response<MessageRespone>
+            ) {
+                if (response.isSuccessful) {
+                    val message = response.body() as MessageRespone
+                    Log.d("checkRespone", message.message.toString())
+                    startActivity(Intent(this@RegisterActivity_Screen3, MainActivity::class.java))
+                    finish()
+                } else {
+                    Log.d("checkRespone", response.code().toString())
+                    val errorBody = response.errorBody()?.string()
+                    errorBody?.let {
+                        try {
+                            val gson = GsonBuilder()
+                                .registerTypeAdapter(List::class.java, MessageAdapter())
+                                .create()
+                            val errorResponse = gson.fromJson(it, ErrorResponse::class.java)
+                            Log.d("checkRespone", errorResponse.message.toString())
+                            val errorDialog = ErrorDialog(
+                                this@RegisterActivity_Screen3,
+                                errorContent = "Message: ${errorResponse.message.joinToString("\n")} \n",
+                                textButton = "Quay Lại"
+                            )
+                            errorDialog.show()
+                        } catch (e: Exception) {
+                            e.printStackTrace()
+                            Log.d("checkRespone", "Lỗi khi chuyển đổi errorBody")
+                        }
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<MessageRespone>, t: Throwable) {
+                Log.d("checkRespone", t.message.toString())
+            }
+        })
+    }
+
 }
