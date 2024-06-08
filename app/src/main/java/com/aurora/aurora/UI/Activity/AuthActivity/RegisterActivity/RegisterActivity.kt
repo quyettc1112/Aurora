@@ -101,6 +101,7 @@ class RegisterActivity : BaseActivity() {
             val email = binding.edtRegisterEmail.text.toString()
             if (isValidEmail(email)) {
                 val intent = Intent(this, RegisterActivity_Screen2::class.java)
+                registerViewModel.updateEmail(email)
                 startActivity(intent)
             } else {
                 binding.edtRegisterEmail.error = "Email không hợp lệ"
