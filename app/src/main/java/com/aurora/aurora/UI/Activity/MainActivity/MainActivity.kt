@@ -32,8 +32,6 @@ class MainActivity : BaseActivity() {
 
         setUpFragmentWithViewPager()
         setUpBottomNav()
-
-
     }
 
     private fun setUpFragmentWithViewPager() {
