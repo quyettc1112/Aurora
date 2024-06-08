@@ -28,10 +28,10 @@
             android:exported="true" />
         <activity
             android:name=".UI.Activity.AuthActivity.RegisterActivity.RegisterActivity_Screen3"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".UI.Activity.AuthActivity.RegisterActivity.RegisterActivity_Screen2"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".UI.Activity.AuthActivity.RegisterActivity.RegisterActivity"
             android:exported="true" />
