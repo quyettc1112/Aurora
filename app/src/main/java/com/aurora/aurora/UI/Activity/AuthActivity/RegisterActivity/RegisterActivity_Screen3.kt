@@ -34,12 +34,19 @@ class RegisterActivity_Screen3 : BaseActivity() {
             insets
         }
 
+
+
         inputValue()
     }
 
     private fun inputValue() {
         binding.btnRegisterScreen3.setOnClickListener {
             if (checkFieldsNotNullOrEmpty() == true && checkPhoneNumber(binding.edtRegisterPhone.text.toString())) {
+                val email = intent.getStringExtra("intent_email")
+                val password = intent.getStringExtra("intent_password")
+
+                registerViewModel.updateEmail(email.toString())
+                registerViewModel.updatePassword(password.toString())
                 registerViewModel.updatePhone(binding.edtRegisterPhone.text.toString())
                 registerViewModel.updateName(binding.edtRegisterName.text.toString())
                 if (binding.edtRegisterGender.text.equals("Name")) {
