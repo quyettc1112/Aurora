@@ -1,5 +1,6 @@
 package com.aurora.aurora.UI.Fragment.ToyListFragment
 
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Build
@@ -26,6 +27,7 @@ import com.aurora.aurora.Common.Constant.Constant
 import com.aurora.aurora.Model.CartModel
 import com.aurora.aurora.Model.ToyModel
 import com.aurora.aurora.R
+import com.aurora.aurora.UI.Activity.ProductDetailActivity.ProductDetailActivity
 import com.aurora.aurora.UI.ShareViewModel.ShareViewModel
 import com.aurora.aurora.databinding.FragmentToyListBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -76,9 +78,12 @@ class ToyListFragment : Fragment(), CategoryOptionInteraction {
             it.layoutManager = GridLayoutManager(requireContext(), 2)
             it.adapter = toyListAdapter
         }
-        // Item Click Add To Cart
+        // Item Click Product Detail
         toyListAdapter.setItemOnclickListener {
             Toast.makeText(context, "Clicked: ${it.toyName}", Toast.LENGTH_SHORT).show()
+            val intent = Intent(requireContext(), ProductDetailActivity::class.java)
+            intent.putExtra("product_id", it.id)
+            requireContext().startActivity(intent)
         }
 
         // Add To Cart Click
