@@ -86,7 +86,7 @@ class Constant {
         fun getListToys(): MutableList<ToyModel> {
             return mutableListOf(
                 ToyModel(
-                    id = 1,
+                    id = 0,
                     toyName ="Bộ xếp hình nam châm 72 chi tiết",
                     toyImage = R.drawable.ic_image_toy_01,
                     toyDescription = "Khám phá bộ đồ chơi mới với bé yêu BỘ XẾP HÌNH NAM CHÂM 72 CHI TIẾT Với Bộ Xếp Hình Nam Châm, bé sẽ học được gì? - Phát triển tư duy sáng tạo thông qua việc tạo ra nhiều hình khối đa dạng, từ các hình dạng que đến hình tròn. - Tăng cường khả năng quan sát và phát triển khả năng tưởng tượng không gian thông",
@@ -105,11 +105,11 @@ class Constant {
                         email = "quyettc@gmail.com",
                         phone = "0356790686"
                     ),
-                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
+                    listImage = listOf(R.drawable.ic_image_toy_01,R.drawable.ic_image_1_2jpg, R.drawable.ic_image_1_3 ),
                     gender = "ALL"
                 ),
                 ToyModel(
-                    id = 2,
+                    id = 1,
                     toyName ="8 CUỐN SÁCH VẢI MINI NHIỀU CHỦ ĐỀ",
                     toyImage = R.drawable.ic_image_toy_02,
                     toyDescription = "Khám phá bộ đồ chơi mới với bé yêu BỘ XẾP HÌNH NAM CHÂM 72 CHI TIẾT Với Bộ Xếp Hình Nam Châm, bé sẽ học được gì? - Phát triển tư duy sáng tạo thông qua việc tạo ra nhiều hình khối đa dạng, từ các hình dạng que đến hình tròn. - Tăng cường khả năng quan sát và phát triển khả năng tưởng tượng không gian thông",
@@ -132,7 +132,7 @@ class Constant {
                     gender = "ALL"
                 ),
                 ToyModel(
-                    id = 3,
+                    id = 2,
                     toyName ="Bộ xếp hình người thăng bằng",
                     toyImage = R.drawable.ic_image_03,
                     toyDescription = "ĐỒ CHƠI XẾP THĂNG BẰNG HÌNH NGƯỜI RẠP XIẾC VUI NHỘN Đồ Chơi Xếp Thăng Bằng với 32 nhân vật, 32 sticker đôi và 4 quả bóng sẽ mang lại những giờ phút vui vẻ cho bé và gia đình. ",
@@ -155,7 +155,7 @@ class Constant {
                     gender = "ALL"
                 ),
                 ToyModel(
-                    id = 4,
+                    id = 3,
                     toyName ="Mô hình con vật 58 chi tiết",
                     toyImage = R.drawable.ic_iamge_mo_hinh_con_vat,
                     toyDescription = "Đồ chơi trẻ em vip pro",
@@ -178,7 +178,7 @@ class Constant {
                     gender = "ALL"
                 ),
                 ToyModel(
-                    id = 5,
+                    id = 4,
                     toyName ="Rối ngón tay gia đình 6 con",
                     toyImage = R.drawable.ic_image_6_ngon,
                     toyDescription = "Đồ chơi trẻ em vip pro",
@@ -201,7 +201,7 @@ class Constant {
                     gender = "ALL"
                 ),
                 ToyModel(
-                    id = 6,
+                    id = 5,
                     toyName ="Đồng hồ nước màu sắc kích thích thị giác",
                     toyImage = R.drawable.ic_image_dong_ho,
                     toyDescription = "Đồ chơi trẻ em vip pro",
@@ -224,7 +224,7 @@ class Constant {
                     gender = "ALL"
                 ),
                 ToyModel(
-                    id = 7,
+                    id = 6,
                     toyName ="Bóng bóp tay màu sắc vui nhộn",
                     toyImage = R.drawable.ic_image_bong_bong,
                     toyDescription = "Đồ chơi trẻ em vip pro",
@@ -247,7 +247,7 @@ class Constant {
                     gender = "ALL"
                 ),
                 ToyModel(
-                    id = 8,
+                    id = 7,
                     toyName ="Xe gỗ trượt cao tốc vui nhộn",
                     toyImage = R.drawable.ic_xe_go,
                     toyDescription = "Đồ chơi trẻ em vip pro",
@@ -272,6 +272,9 @@ class Constant {
             )
         }
 
+        fun getListToysId(id: Int): ToyModel{
+            return getListToys().get(id)
+        }
 
         fun getListVideos(): List<VideoModel> {
             return listOf(
