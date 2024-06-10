@@ -15,6 +15,7 @@ import com.aurora.aurora.R
 import com.aurora.aurora.UI.Activity.MainActivity.MainActivity
 import com.aurora.aurora.databinding.ActivityProductDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
+import java.text.DecimalFormat
 
 @AndroidEntryPoint
 class ProductDetailActivity : BaseActivity() {
@@ -38,6 +39,7 @@ class ProductDetailActivity : BaseActivity() {
         }
         setUpImageRelevent()
         backToPreviousActivity()
+        bindDataProductDetail()
     }
 
     private fun setUpImageRelevent() {
@@ -57,13 +59,26 @@ class ProductDetailActivity : BaseActivity() {
     }
     private fun backToPreviousActivity() {
         binding.customToolbar2.onStartIconClick = {
-            finish() // This will close the current activity and return to the previous one in the stack
+            finish()
         }
     }
 
     private fun getToyModelByIDFromConstans() {
         val id = intent.getIntExtra("product_id", 0);
         toyModel = Constant.getListToys().get(id)
+    }
+
+    private fun bindDataProductDetail() {
+        binding.tvProductPrice.text = "${formatPrice(toyModel.toyPrice)} VND"
+        binding.tvProductCategory.text = toyModel.categoryModel.name
+        binding.tvProductName.text = toyModel.toyName
+        binding.tvProductDescription.text = toyModel.toyDescription
+        binding.imToyImage.setImageResource(toyModel.toyImage)
+    }
+
+    fun formatPrice(price: Double): String {
+        val formatter = DecimalFormat("#,###")
+        return formatter.format(price)
     }
 
 

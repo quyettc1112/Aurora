@@ -194,7 +194,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/tv_product_name" />
                     <TextView
                         android:layout_marginTop="3dp"
-                        android:id="@+id/textView12"
+                        android:id="@+id/tv_product_category"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Phát triển kỹ năng vận động và tính độc lập"
@@ -211,10 +211,10 @@
                         android:textColor="@color/gray_text"
                         android:textSize="13dp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_product_category" />
 
                     <TextView
-                        android:id="@+id/textView14"
+                        android:id="@+id/tv_product_description"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
@@ -234,7 +234,7 @@
                         android:textColor="@color/gray_text"
                         android:textSize="13dp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_product_description" />
 
 
                     <ImageView
