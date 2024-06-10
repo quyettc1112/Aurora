@@ -1,6 +1,8 @@
 package com.aurora.aurora.UI.Fragment.ProfileFragment
 
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -35,6 +37,25 @@ class ProfileFragment : Fragment() {
 
 
             showLogoutDialog()
+        }
+
+        binding.laIntentToFacebook.setOnClickListener {
+            val facebookUrl = "https://www.facebook.com/AuroraToys68"
+            val facebookIntent = Intent(Intent.ACTION_VIEW)
+
+            try {
+                val packageManager = context?.packageManager
+                // Kiểm tra xem Facebook có được cài đặt hay không
+                if (packageManager != null) {
+                    packageManager.getPackageInfo("com.facebook.katana", 0)
+                }
+                val uri = Uri.parse("fb://facewebmodal/f?href=$facebookUrl")
+                facebookIntent.data = uri
+            } catch (e: PackageManager.NameNotFoundException) {
+                // Nếu Facebook không được cài đặt, mở bằng trình duyệt
+                facebookIntent.data = Uri.parse(facebookUrl)
+            }
+            startActivity(facebookIntent)
         }
 
         return binding.root

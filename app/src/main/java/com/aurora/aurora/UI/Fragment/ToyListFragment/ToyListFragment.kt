@@ -159,7 +159,6 @@ class ToyListFragment : Fragment(), CategoryOptionInteraction {
         setInactive(textViewNam)
         setInactive(textViewNu)
 
-        // Set clicked TextView to active
         setActive(view as TextView)
     }
 
