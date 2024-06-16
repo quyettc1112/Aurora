@@ -280,7 +280,6 @@ class Constant {
             return listOf(
                 VideoModel("czbB8AQsBzU"),
                 VideoModel("UFAKw0wgcjA"),
-                VideoModel("kv26Mw4l8jg"),
                 VideoModel("hn_teOwL_iA"),
                 VideoModel("3-gjAL20WGE"),
                 VideoModel("9mL-TS0gcmA"),

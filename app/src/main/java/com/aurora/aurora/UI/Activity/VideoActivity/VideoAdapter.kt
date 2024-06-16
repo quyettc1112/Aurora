@@ -88,7 +88,6 @@ class VideoAdapter(val videoList: List<VideoModel>, val context: VideoActivity, 
                     Log.d("YouTubeApi", "Response failed with code: ${response.code()} and message: ${response.message()}")
                 }
             }
-
             override fun onFailure(call: Call<YouTubeVideoListResponse>, t: Throwable) {
                 Log.d("YouTubeApi", "Call Failure")
             }
