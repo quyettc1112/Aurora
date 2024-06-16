@@ -63,11 +63,4 @@ class VideoActivity : BaseActivity() {
 
     }
 
-
-
-
-
-
-
-
 }
