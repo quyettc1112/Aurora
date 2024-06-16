@@ -37,7 +37,6 @@ class PaymentActivity : BaseActivity() {
            finish()
         }
     }
-
     private fun clickIntentMomo() {
         binding.btnPayment.setOnClickListener {
             // Mã QR
