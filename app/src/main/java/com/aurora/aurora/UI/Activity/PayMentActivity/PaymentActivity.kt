@@ -42,8 +42,8 @@ class PaymentActivity : BaseActivity() {
         binding.btnPayment.setOnClickListener {
             // Mã QR
             val qrCode = "00020101021138620010A00000072701320006970454011899MM23327M586673350208QRIBFTTA530370454064660005802VN62190515MOMOW2W5866733580036866304DA1C"
-            // Tạo URL để mở ứng dụng MoMo
-            val momoUrl = "momo://openservice/?app_scheme=app_name&action=qrCode&msg=$qrCode"
+            // Tạo URL để mở ứng dụng MoMo và chuyển đến phần chức năng Nhận Tiền
+            val momoUrl = "momo://openservice/?app_scheme=app_name&action=receiveMoney&msg=$qrCode"
 
             // Tạo intent
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(momoUrl))

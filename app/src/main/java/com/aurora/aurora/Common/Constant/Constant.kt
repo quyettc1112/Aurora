@@ -284,7 +284,6 @@ class Constant {
                 VideoModel("3-gjAL20WGE"),
                 VideoModel("9mL-TS0gcmA"),
             )
-
         }
 
         fun getListCart(): ArrayList<CartModel> {
