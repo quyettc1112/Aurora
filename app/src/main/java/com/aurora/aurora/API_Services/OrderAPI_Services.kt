@@ -11,7 +11,6 @@ interface OrderAPI_Services {
 
     @POST("/toy/create-order")
     fun createOrder(
-        @Header("Authorization") authorization: String,
         @Body oderDetailsDTO: OrderDetailsDTO
     ): Call<MessageRespone>
 }

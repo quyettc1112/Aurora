@@ -11,9 +11,8 @@ class OrderAPI_Repository @Inject constructor(
     private val orderapiServices: OrderAPI_Services
 ) {
     fun createOrder(
-        authorization: String,
         orderDetailsDTO: OrderDetailsDTO
-    ) = orderapiServices.createOrder(authorization, orderDetailsDTO)
+    ) = orderapiServices.createOrder(orderDetailsDTO)
 
 
 }
