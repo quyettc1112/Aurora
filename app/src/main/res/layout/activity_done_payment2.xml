@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.Activity.PayMentActivity.DonePaymentActivity">
+
+    <com.aurora.aurora.AppConfig.CustomView.CustomToolBar.CustomToolbar
+        android:id="@+id/customToolbar5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="Thanh Toán Thành Công"
+        app:layout_constraintTop_toTopOf="parent"
+        app:textStart="Quay Lai">
+
+    </com.aurora.aurora.AppConfig.CustomView.CustomToolBar.CustomToolbar>
+
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gif_duck1"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/gif_done_payemnt"
+        android:translationZ="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customToolbar5" />
+
+    <TextView
+        android:padding="10dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:text="Cám ơn bạn đã mua hàng, hãy truy cập vào Aurora Toy Store hoặc số điện thoại đăng ký trước đó để theo dõi tình trang đơn hàng của bạn \n \n AURORA TOY STORE KẾT NỐI YÊU THƯƠNG, THẤU HIỂU CON TRẺ "
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/background_custome_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/gif_duck1">
+
+    </TextView>
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_back_to_main"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/ripple_no_color"
+        android:backgroundTint="@color/redPrimary"
+        android:text="Tiếp Tục Mua Hàng"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

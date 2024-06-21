@@ -20,22 +20,83 @@
 
     </com.aurora.aurora.AppConfig.CustomView.CustomToolBar.CustomToolbar>
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/ic_material_payment"
-        app:layout_constraintTop_toBottomOf="@+id/customToolbar4"/>
 
+    <EditText
+        android:id="@+id/edt_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/background_custome_input"
+        android:drawableStart="@drawable/ic_material_shiiped"
+        android:drawablePadding="12dp"
+        android:hint="Địa Chỉ Giao Hàng"
+        android:inputType="textEmailAddress"
+        android:minHeight="60dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textSize="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/customToolbar4"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/edt_location">
+
+        <!-- Spinner for selecting payment method -->
+        <Spinner
+            android:id="@+id/spinner_payment_method"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:entries="@array/payment_methods"
+            android:spinnerMode="dropdown" />
+
+        <!-- Button for MoMo payment -->
+
+        <!-- Button for normal payment -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_momo_payment"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ripple_effect_white"
+            android:backgroundTint="#ED0082"
+            android:gravity="center"
+            android:text="THANH TOÁN BẰNG VÍ MOMO"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/edt_location"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_normal_payment"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ripple_effect_white"
+            android:backgroundTint="#737373"
+            android:gravity="center"
+            android:text="THANH TOÁN KHI NHẬN HÀNG"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/btn_momo_payment"
+            tools:layout_editor_absoluteX="0dp" />
+    </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_payment"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="50dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="48dp"
         android:background="@drawable/ripple_no_color"
         android:backgroundTint="@color/redPrimary"
         android:text="Tiến Hành Thanh Toán"
@@ -44,6 +105,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent">
 
     </androidx.appcompat.widget.AppCompatButton>
