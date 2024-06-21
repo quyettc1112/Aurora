@@ -13,6 +13,7 @@ import com.google.android.play.integrity.internal.i
 import okhttp3.internal.notify
 import java.text.DecimalFormat
 
+
 class CartAdapter(): BaseAdapter<CartModel, CartAdapter.CartAdapterViewHoilder>(){
     var onAddQuantityItemClickListener: ((CartModel) -> Unit)? = null
     var onRemoveQuantityItemClickListener: ((CartModel) -> Unit)? = null

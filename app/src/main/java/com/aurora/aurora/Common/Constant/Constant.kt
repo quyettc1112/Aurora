@@ -42,8 +42,8 @@ class Constant {
                     discountedPrice = 350000.0
                 ),
                 VideoMainAdapter.Course(
-                    title = "Độ tuổi dễ bị tổn thương sâu sắc về tình cảm",
-                    image = R.drawable.ic_material_video,
+                    title = "Hành trình khám phá ngôn ngữ cho trẻ",
+                    image = R.drawable.ic_material_banner1,
                     rating = 4.5,
                     reviews = 4242,
                     originalPrice = 400000.0,
@@ -51,8 +51,8 @@ class Constant {
                 ),
 
                 VideoMainAdapter.Course(
-                    title = "Độ tuổi dễ bị tổn thương sâu sắc về tình cảm",
-                    image = R.drawable.ic_material_video,
+                    title = "Hiểu rõ về Rối Loạn Phổ Tự Kỷ (ASD)",
+                    image = R.drawable.ic_material_banner12jpg,
                     rating = 4.5,
                     reviews = 4242,
                     originalPrice = 400000.0,
@@ -60,8 +60,8 @@ class Constant {
                 ),
 
                 VideoMainAdapter.Course(
-                    title = "Độ tuổi dễ bị tổn thương sâu sắc về tình cảm",
-                    image = R.drawable.ic_material_video,
+                    title = "Liệu con có chậm nói không? Làm thế nào để nhận biết điều này?",
+                    image = R.drawable.ic_material_banner3jpg,
                     rating = 4.5,
                     reviews = 4242,
                     originalPrice = 400000.0,
@@ -71,7 +71,6 @@ class Constant {
 
 
         }
-
 
         fun getListString(): List<CategoryOptionAdapter.CategoryString> {
             return listOf(
@@ -106,7 +105,8 @@ class Constant {
                         phone = "0356790686"
                     ),
                     listImage = listOf(R.drawable.ic_image_toy_01,R.drawable.ic_image_1_2jpg, R.drawable.ic_image_1_3 ),
-                    gender = "ALL"
+                    gender = "ALL",
+                    idDb = "677f4d75-d540-431f-86e4-0be19f6f5227"
                 ),
                 ToyModel(
                     id = 1,
@@ -129,7 +129,8 @@ class Constant {
                         phone = "0356790686"
                     ),
                     listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
-                    gender = "ALL"
+                    gender = "ALL",
+                    idDb = "983a6cda-382d-4a13-8de0-cda97a2d9e83"
                 ),
                 ToyModel(
                     id = 2,
@@ -152,7 +153,8 @@ class Constant {
                         phone = "0356790686"
                     ),
                     listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
-                    gender = "ALL"
+                    gender = "ALL",
+                    idDb = "948a2ab9-14e3-4caf-a29f-439ba9442899"
                 ),
                 ToyModel(
                     id = 3,
@@ -175,7 +177,8 @@ class Constant {
                         phone = "0356790686"
                     ),
                     listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
-                    gender = "ALL"
+                    gender = "ALL",
+                    idDb = "83645329-087b-4533-9785-40c4c708a5b8"
                 ),
                 ToyModel(
                     id = 4,
@@ -198,7 +201,8 @@ class Constant {
                         phone = "0356790686"
                     ),
                     listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
-                    gender = "ALL"
+                    gender = "ALL",
+                    idDb = "e01e9c9d-754b-479e-b093-8312db7e593b"
                 ),
                 ToyModel(
                     id = 5,
@@ -221,7 +225,8 @@ class Constant {
                         phone = "0356790686"
                     ),
                     listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
-                    gender = "ALL"
+                    gender = "ALL",
+                    idDb = "6933b5fc-125f-472e-95df-955182367955"
                 ),
                 ToyModel(
                     id = 6,
@@ -244,7 +249,8 @@ class Constant {
                         phone = "0356790686"
                     ),
                     listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
-                    gender = "ALL"
+                    gender = "ALL",
+                    idDb = "a432133d-32ce-47b7-b609-47d384624f83"
                 ),
                 ToyModel(
                     id = 7,
@@ -267,7 +273,8 @@ class Constant {
                         phone = "0356790686"
                     ),
                     listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
-                    gender = "ALL"
+                    gender = "ALL",
+                    idDb = "7ecd4222-814b-43e7-af22-3c293bb9c9c6"
                 )
             )
         }
@@ -283,6 +290,9 @@ class Constant {
                 VideoModel("hn_teOwL_iA"),
                 VideoModel("3-gjAL20WGE"),
                 VideoModel("9mL-TS0gcmA"),
+                VideoModel("3Txw-0QStHQ"),
+                VideoModel("iNoSL65z6Mc"),
+                VideoModel("i0tIR-GWTso"),
             )
         }
 
