@@ -1,6 +1,7 @@
 package com.aurora.aurora.DI
 
 import android.content.Context
+import com.aurora.aurora.API_Services.OrderAPI_Services
 import com.aurora.aurora.API_Services.UserAPI_Service
 import com.aurora.aurora.API_Services.YoutubeAPI_Service
 import com.aurora.aurora.AppConfig.BaseAPI.BaseAPI
@@ -98,6 +99,16 @@ object APIModule {
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
             .create(UserAPI_Service::class.java)
+
+    @Provides
+    @Singleton
+    fun provideOrderAPI(@Named("user") baseUrl: String, gson: Gson, client: OkHttpClient): OrderAPI_Services =
+        Retrofit.Builder()
+            .baseUrl(baseUrl)
+            .client(client)
+            .addConverterFactory(GsonConverterFactory.create(gson))
+            .build()
+            .create(OrderAPI_Services::class.java)
 
 
 }

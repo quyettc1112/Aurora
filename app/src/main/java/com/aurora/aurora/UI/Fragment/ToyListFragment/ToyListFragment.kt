@@ -80,7 +80,7 @@ class ToyListFragment : Fragment(), CategoryOptionInteraction {
         }
         // Item Click Product Detail
         toyListAdapter.setItemOnclickListener {
-            Toast.makeText(context, "Clicked: ${it.toyName}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Clicked: ${it.idDb}", Toast.LENGTH_SHORT).show()
             val intent = Intent(requireContext(), ProductDetailActivity::class.java)
             intent.putExtra("product_id", it.id)
             requireContext().startActivity(intent)
