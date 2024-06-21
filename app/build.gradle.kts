@@ -178,5 +178,8 @@ dependencies {
     // PlayerView
     implementation("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0")
 
+    // Gif
+    implementation ("pl.droidsonroids.gif:android-gif-drawable:1.2.28")
+
 
 }

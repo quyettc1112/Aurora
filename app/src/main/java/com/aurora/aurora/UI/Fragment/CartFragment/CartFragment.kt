@@ -88,9 +88,21 @@ class CartFragment : Fragment() {
             tong_tien?.text = ""
             tong_tien?.text = "${formatPrice(cartAdapter.getTotalItemsPrice() + 20000.0)} VND"
 
+
+
+
             view.findViewById<AppCompatButton>(R.id.btn_payment).setOnClickListener {
-                startActivity(Intent(requireContext(), PaymentActivity::class.java))
+                val deliveryLocation = "53 Tân Lập 1, Phường Hiệp Phú, Thành phố Thủ Đức, Thành phố Hồ Chí Minh"
+                val note = "Đã thanh toán bằng Momo. Mã giao dịch 123456"
+
+                val orderDetailsDTO = sharedViewModel.createOrderDetailsDTO(deliveryLocation, note)
+                val intent = Intent(requireContext(), PaymentActivity::class.java).apply {
+                    putExtra("orderDetails", orderDetailsDTO)
+                }
+                startActivity(intent)
             }
+
+
 
             dialog.setContentView(view)
             dialog.show()
