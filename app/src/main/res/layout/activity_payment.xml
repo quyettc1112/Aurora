@@ -17,9 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:textStart="Quay Lại">
-
     </com.aurora.aurora.AppConfig.CustomView.CustomToolBar.CustomToolbar>
-
 
     <EditText
         android:id="@+id/edt_register_phone"
