@@ -95,7 +95,7 @@ class Constant {
                     typePoppular = 1,
                     categoryModel = ToyModel.CategoryModel(
                         id = 1,
-                        name = "Trẻ Em",
+                        name = "Phát triển trí thông minh - Tư duy sáng tạo",
                         image = R.drawable.ic_teddy,
                     ),
                     sellerInfo = ToyModel.SellerInfoModel(
@@ -119,7 +119,7 @@ class Constant {
                     typePoppular = 1,
                     categoryModel = ToyModel.CategoryModel(
                         id = 1,
-                        name = "Trẻ Em",
+                        name = "Phát triển trí thông minh - Tư duy sáng tạo",
                         image = R.drawable.ic_teddy,
                     ),
                     sellerInfo = ToyModel.SellerInfoModel(
@@ -143,7 +143,7 @@ class Constant {
                     typePoppular = 2,
                     categoryModel = ToyModel.CategoryModel(
                         id = 2,
-                        name = "Giải Đố",
+                        name = "Phát triển trí thông minh - Tư duy sáng tạo",
                         image = R.drawable.ic_teddy,
                     ),
                     sellerInfo = ToyModel.SellerInfoModel(
@@ -191,7 +191,7 @@ class Constant {
                     typePoppular = 1,
                     categoryModel = ToyModel.CategoryModel(
                         id = 1,
-                        name = "Robot",
+                        name = "Điều hoà giác quan - Tăng khả năng tập trung",
                         image = R.drawable.ic_teddy,
                     ),
                     sellerInfo = ToyModel.SellerInfoModel(
@@ -215,7 +215,7 @@ class Constant {
                     typePoppular = 1,
                     categoryModel = ToyModel.CategoryModel(
                         id = 1,
-                        name = "Robot",
+                        name = "Vận động tinh - Tương tác xã hội",
                         image = R.drawable.ic_teddy,
                     ),
                     sellerInfo = ToyModel.SellerInfoModel(
@@ -239,7 +239,7 @@ class Constant {
                     typePoppular = 1,
                     categoryModel = ToyModel.CategoryModel(
                         id = 1,
-                        name = "Phương Tiện",
+                        name = "Vận động tinh - Tương tác xã hội",
                         image = R.drawable.ic_teddy,
                     ),
                     sellerInfo = ToyModel.SellerInfoModel(
@@ -275,6 +275,55 @@ class Constant {
                     listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
                     gender = "ALL",
                     idDb = "7ecd4222-814b-43e7-af22-3c293bb9c9c6"
+                ),
+                ToyModel(
+                    id = 8,
+                    toyName ="Set 20 cuốn truyện cổ tích việt nam",
+                    toyImage = R.drawable.ic_material_sanh,
+                    toyDescription = "ĐỌC TRUYỆN CÙNG BÉ TRƯỚC GIỜ ĐI NGỦ - COMBO 20 TRUYỆN CỔ TÍCH SONG NGỮ Việt Nam có kho tàng truyện cổ tích vô cùng đa dạng và phong phú. Những câu chuyện cổ tích gắn liền với tuổi thơ của mỗi người qua lời kể của ông bà, cha mẹ. Truyện cổ tích không chỉ mang giá trị giải trí mà còn chứa đựng nhữn",
+                    toyRating = 4.5,
+                    isLike = true,
+                    toyPrice = 90000.0,
+                    typePoppular = 1,
+                    categoryModel = ToyModel.CategoryModel(
+                        id = 1,
+                        name = "Phát triển trí thông minh - Tư duy sáng tạo",
+                        image = R.drawable.ic_teddy,
+                    ),
+                    sellerInfo = ToyModel.SellerInfoModel(
+                        id = 1,
+                        name = "Đạt Võ",
+                        email = "quyettc@gmail.com",
+                        phone = "0356790686"
+                    ),
+                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
+                    gender = "ALL",
+                    idDb = "ddb8770d-4599-424e-91d9-6f9ce3a55098"
+                ),
+
+                ToyModel(
+                    id = 9,
+                    toyName ="Truyện kể cho bé trước giờ đi ngủ",
+                    toyImage = R.drawable.ic_material_anh_dong,
+                    toyDescription =  "NHÀ SÁCH THÀNH LÝ GIỚI THIỆU SÁCH MỚI ĐẶC SẮC 365 TRUYỆN KỂ CHO BÉ TRƯỚC GIỜ ĐI NGỦ Tuyển Chọn Những Truyện Ngắn Hay Và Ý Nghĩa Giúp Bé Phát Triển IQ Và EQ Bạn đã bao lâu chưa dành thời gian kể chuyện cho con của mình? Hãy nhớ rằng, những giây phút đơn giản nhưng đầy ý nghĩa khiến con",
+                    toyRating = 4.5,
+                    isLike = true,
+                    toyPrice = 90000.0,
+                    typePoppular = 1,
+                    categoryModel = ToyModel.CategoryModel(
+                        id = 1,
+                        name = "Phát triển trí thông minh - Tư duy sáng tạo",
+                        image = R.drawable.ic_teddy,
+                    ),
+                    sellerInfo = ToyModel.SellerInfoModel(
+                        id = 1,
+                        name = "Đạt Võ",
+                        email = "quyettc@gmail.com",
+                        phone = "0356790686"
+                    ),
+                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
+                    gender = "ALL",
+                    idDb = "ddb8770d-4599-424e-91d9-6f9ce3a55098"
                 )
             )
         }
