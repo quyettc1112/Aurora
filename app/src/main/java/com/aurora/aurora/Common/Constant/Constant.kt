@@ -115,7 +115,7 @@ class Constant {
                     toyDescription = "Khám phá bộ đồ chơi mới với bé yêu BỘ XẾP HÌNH NAM CHÂM 72 CHI TIẾT Với Bộ Xếp Hình Nam Châm, bé sẽ học được gì? - Phát triển tư duy sáng tạo thông qua việc tạo ra nhiều hình khối đa dạng, từ các hình dạng que đến hình tròn. - Tăng cường khả năng quan sát và phát triển khả năng tưởng tượng không gian thông",
                     toyRating = 4.5,
                     isLike = true,
-                    toyPrice = 155000.0,
+                    toyPrice = 199000.0,
                     typePoppular = 1,
                     categoryModel = ToyModel.CategoryModel(
                         id = 1,
@@ -128,7 +128,7 @@ class Constant {
                         email = "quyettc@gmail.com",
                         phone = "0356790686"
                     ),
-                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
+                    listImage = listOf(R.drawable.ic_image_toy_02,R.drawable.ic_image_toy_02,R.drawable.ic_image_toy_02),
                     gender = "ALL",
                     idDb = "983a6cda-382d-4a13-8de0-cda97a2d9e83"
                 ),
@@ -152,7 +152,7 @@ class Constant {
                         email = "quyettc@gmail.com",
                         phone = "0356790686"
                     ),
-                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
+                    listImage = listOf(R.drawable.ic_image_03,R.drawable.ic_image_03,R.drawable.ic_image_03),
                     gender = "ALL",
                     idDb = "948a2ab9-14e3-4caf-a29f-439ba9442899"
                 ),
@@ -176,7 +176,7 @@ class Constant {
                         email = "quyettc@gmail.com",
                         phone = "0356790686"
                     ),
-                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
+                    listImage = listOf(R.drawable.ic_teddy,R.drawable.ic_teddy,R.drawable.ic_teddy),
                     gender = "ALL",
                     idDb = "83645329-087b-4533-9785-40c4c708a5b8"
                 ),
@@ -200,7 +200,7 @@ class Constant {
                         email = "quyettc@gmail.com",
                         phone = "0356790686"
                     ),
-                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
+                    listImage = listOf(R.drawable.ic_image_6_ngon,R.drawable.ic_image_6_ngon,R.drawable.ic_image_6_ngon ),
                     gender = "ALL",
                     idDb = "e01e9c9d-754b-479e-b093-8312db7e593b"
                 ),
@@ -224,7 +224,7 @@ class Constant {
                         email = "quyettc@gmail.com",
                         phone = "0356790686"
                     ),
-                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
+                    listImage = listOf(R.drawable.ic_image_dong_ho,R.drawable.ic_image_dong_ho,R.drawable.ic_image_dong_ho ),
                     gender = "ALL",
                     idDb = "6933b5fc-125f-472e-95df-955182367955"
                 ),
@@ -248,7 +248,7 @@ class Constant {
                         email = "quyettc@gmail.com",
                         phone = "0356790686"
                     ),
-                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
+                    listImage = listOf(R.drawable.ic_image_bong_bong,R.drawable.ic_image_bong_bong,R.drawable.ic_image_bong_bong),
                     gender = "ALL",
                     idDb = "a432133d-32ce-47b7-b609-47d384624f83"
                 ),
@@ -272,7 +272,7 @@ class Constant {
                         email = "quyettc@gmail.com",
                         phone = "0356790686"
                     ),
-                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
+                    listImage = listOf( R.drawable.ic_xe_go, R.drawable.ic_xe_go, R.drawable.ic_xe_go ),
                     gender = "ALL",
                     idDb = "7ecd4222-814b-43e7-af22-3c293bb9c9c6"
                 ),
@@ -296,9 +296,9 @@ class Constant {
                         email = "quyettc@gmail.com",
                         phone = "0356790686"
                     ),
-                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
+                    listImage = listOf(R.drawable.ic_material_sanh,R.drawable.ic_material_sanh,R.drawable.ic_material_sanh ),
                     gender = "ALL",
-                    idDb = "ddb8770d-4599-424e-91d9-6f9ce3a55098"
+                    idDb = "b81d1b53-c478-4569-a13a-a12c98dbe94d"
                 ),
 
                 ToyModel(
@@ -321,9 +321,105 @@ class Constant {
                         email = "quyettc@gmail.com",
                         phone = "0356790686"
                     ),
-                    listImage = listOf(R.drawable.ic_material_toy,R.drawable.ic_material_toy, R.drawable.ic_material_toy ),
+                    listImage = listOf(R.drawable.ic_material_anh_dong,R.drawable.ic_material_anh_dong,R.drawable.ic_material_anh_dong),
                     gender = "ALL",
-                    idDb = "ddb8770d-4599-424e-91d9-6f9ce3a55098"
+                    idDb = "427f3069-76f3-4fad-987e-bc1e49e442ee"
+                ),
+                ToyModel(
+                    id = 10,
+                    toyName ="Hươu lò xo vui nhộn cho trẻ",
+                    toyImage = R.drawable.ic_material_huu_cao_co,
+                    toyDescription = "Nghỉ hè bé chơi gì? Hãy khám phá ngay Đồ chơi ống Pop hươu cao cổ - sản phẩm không thể thiếu để bé thỏa sức sáng tạo và vui chơi! Đặc điểm nổi bật của Đồ chơi ống Pop hươu cao cổ: - Chất liệu nhựa cao cấp và ống mềm dẻo, giúp bé dễ dàng kéo dài và biến dạng theo ý thích. - Đồ chơi sáng đèn nhiều màu sắc, tạo hiệu ứn",
+                    toyRating = 4.5,
+                    isLike = true,
+                    toyPrice = 15000.0,
+                    typePoppular = 1,
+                    categoryModel = ToyModel.CategoryModel(
+                        id = 1,
+                        name = "Phát triển trí thông minh - Tư duy sáng tạo",
+                        image = R.drawable.ic_teddy,
+                    ),
+                    sellerInfo = ToyModel.SellerInfoModel(
+                        id = 1,
+                        name = "Đạt Võ",
+                        email = "quyettc@gmail.com",
+                        phone = "0356790686"
+                    ),
+                    listImage = listOf( R.drawable.ic_material_huu_cao_co, R.drawable.ic_material_huu_cao_co, R.drawable.ic_material_huu_cao_co ),
+                    gender = "ALL",
+                    idDb = "84cfeca1-f959-4593-a13c-95a9440da562"
+                ),
+                ToyModel(
+                    id = 11,
+                    toyName ="Bộ sản phẩm giúp bé bật âm - luyện nói",
+                    toyImage = R.drawable.ic_maetail_ken,
+                    toyDescription = "Nghỉ hè bé chơi gì? Hãy khám phá ngay Đồ chơi ống Pop hươu cao cổ - sản phẩm không thể thiếu để bé thỏa sức sáng tạo và vui chơi! Đặc điểm nổi bật của Đồ chơi ống Pop hươu cao cổ: - Chất liệu nhựa cao cấp và ống mềm dẻo, giúp bé dễ dàng kéo dài và biến dạng theo ý thích. - Đồ chơi sáng đèn nhiều màu sắc, tạo hiệu ứn",
+                    toyRating = 4.5,
+                    isLike = true,
+                    toyPrice = 99000.0,
+                    typePoppular = 1,
+                    categoryModel = ToyModel.CategoryModel(
+                        id = 1,
+                        name = "Phát triển trí thông minh - Tư duy sáng tạo",
+                        image = R.drawable.ic_teddy,
+                    ),
+                    sellerInfo = ToyModel.SellerInfoModel(
+                        id = 1,
+                        name = "Đạt Võ",
+                        email = "quyettc@gmail.com",
+                        phone = "0356790686"
+                    ),
+                    listImage = listOf(  R.drawable.ic_maetail_ken, R.drawable.ic_maetail_ken, R.drawable.ic_maetail_ken ),
+                    gender = "ALL",
+                    idDb = "a9aad9f9-e334-4a83-bc4c-e62ddc102ec0"
+                ),
+                ToyModel(
+                    id = 12,
+                    toyName ="Ếch thăng bằng vui nhộn cho trẻ",
+                    toyImage = R.drawable.ic_matial_ech,
+                    toyDescription = "Hãy cùng khám phá đồ chơi CÂY CÂN ẾCH THĂNG BẰNG THÔNG MINH - trò chơi giải trí tuyệt vời cho bé yêu! Bạn muốn bé thoát khỏi màn hình điện thoại và trải nghiệm niềm vui thực sự? Hãy khám phá Đồ chơi cây cân ếch thăng bằng! Với nhiều tính năng hấp dẫn, sản phẩm này sẽ mang lại niềm vui và sự hứng thú cho...",
+                    toyRating = 4.5,
+                    isLike = true,
+                    toyPrice = 49000.0,
+                    typePoppular = 1,
+                    categoryModel = ToyModel.CategoryModel(
+                        id = 1,
+                        name = "Phát triển trí thông minh - Tư duy sáng tạo",
+                        image = R.drawable.ic_teddy,
+                    ),
+                    sellerInfo = ToyModel.SellerInfoModel(
+                        id = 1,
+                        name = "Đạt Võ",
+                        email = "quyettc@gmail.com",
+                        phone = "0356790686"
+                    ),
+                    listImage = listOf(  R.drawable.ic_matial_ech, R.drawable.ic_matial_ech, R.drawable.ic_matial_ech ),
+                    gender = "ALL",
+                    idDb = "b7c73131-7a12-4405-81a4-eebcd4f89de5"
+                ),
+                ToyModel(
+                    id = 13,
+                    toyName ="Bộ Tìm quái vật (đồ chơi nhanh mắt)",
+                    toyImage = R.drawable.ic_matetial_di_tiem,
+                    toyDescription = "Board game Tìm Quái Vật - Đồ chơi lý tưởng cho bé luyện phản xạ, trí nhớ và nhanh tay nhanh mắt! Ba mẹ muốn bé tránh xa khỏi các thiết bị điện tử như TV, điện thoại để tránh stress và phát triển toàn diện hơn? Cùng khám phá tính năng tuyệt vời của Board game Tìm Quái Vật này nhé! Mô tả sản phẩm: - Với 27 thẻ ...",
+                    toyRating = 4.5,
+                    isLike = true,
+                    toyPrice = 135000.0,
+                    typePoppular = 1,
+                    categoryModel = ToyModel.CategoryModel(
+                        id = 1,
+                        name = "Phát triển trí thông minh - Tư duy sáng tạo",
+                        image = R.drawable.ic_teddy,
+                    ),
+                    sellerInfo = ToyModel.SellerInfoModel(
+                        id = 1,
+                        name = "Đạt Võ",
+                        email = "quyettc@gmail.com",
+                        phone = "0356790686"
+                    ),
+                    listImage = listOf( R.drawable.ic_matetial_di_tiem,R.drawable.ic_matetial_di_tiem,R.drawable.ic_matetial_di_tiem ),
+                    gender = "ALL",
+                    idDb = "23a93311-ce54-4a93-aab4-7ffe919d7f91"
                 )
             )
         }

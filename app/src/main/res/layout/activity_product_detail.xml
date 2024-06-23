@@ -152,7 +152,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="* Giá niêm yết tại Aurora Toystore, chư tính thuế"
+                        android:text="* Giá niêm yết tại Aurora Toystore, chưa tính thuế"
                         android:textColor="@color/gray_text"
                         android:textSize="11dp"
                         app:layout_constraintTop_toBottomOf="@+id/tv_product_price"/>

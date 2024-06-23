@@ -22,7 +22,7 @@
 
     <TextView
         android:textStyle="bold"
-        android:id="@+id/textView6"
+        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
@@ -40,13 +40,15 @@
         android:layout_height="1dp"
         android:layout_marginTop="25dp"
         android:background="@color/black"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6">
+        app:layout_constraintTop_toBottomOf="@+id/tv_title">
 
     </LinearLayout>
 
     <TextView
+        android:id="@+id/tv_desctip"
         android:textSize="17dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
