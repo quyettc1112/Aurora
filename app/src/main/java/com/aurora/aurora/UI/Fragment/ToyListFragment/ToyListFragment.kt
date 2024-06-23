@@ -24,11 +24,14 @@ import com.aurora.aurora.Common.CommonAdapter.CategoryOptionAdapter
 import com.aurora.aurora.Common.CommonAdapter.CategoryOptionInteraction
 import com.aurora.aurora.Common.CommonAdapter.ToyListAdapterBase
 import com.aurora.aurora.Common.Constant.Constant
+import com.aurora.aurora.Common.TokenManager.TokenManager
 import com.aurora.aurora.Model.CartModel
 import com.aurora.aurora.Model.ToyModel
 import com.aurora.aurora.R
+import com.aurora.aurora.UI.Activity.MainActivity.MainActivity
 import com.aurora.aurora.UI.Activity.ProductDetailActivity.ProductDetailActivity
 import com.aurora.aurora.UI.ShareViewModel.ShareViewModel
+import com.aurora.aurora.Until.BottomMarginItemDecoration
 import com.aurora.aurora.databinding.FragmentToyListBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
@@ -75,12 +78,15 @@ class ToyListFragment : Fragment(), CategoryOptionInteraction {
 
     private fun setToyListAdapter() {
         binding.rvToys.let {
+            val bottomMarginInPx = convertDpToPx(20)
             it.layoutManager = GridLayoutManager(requireContext(), 2)
+            it.addItemDecoration(BottomMarginItemDecoration(bottomMarginInPx))
             it.adapter = toyListAdapter
         }
         // Item Click Product Detail
         toyListAdapter.setItemOnclickListener {
-            Toast.makeText(context, "Clicked: ${it.idDb}", Toast.LENGTH_SHORT).show()
+
+
             val intent = Intent(requireContext(), ProductDetailActivity::class.java)
             intent.putExtra("product_id", it.id)
             requireContext().startActivity(intent)
@@ -88,7 +94,15 @@ class ToyListFragment : Fragment(), CategoryOptionInteraction {
 
         // Add To Cart Click
         toyListAdapter.onItemCartClickListener = {
-            sharedViewModel.addItem(CartModel.create(it, 1))
+            if (TokenManager.getAccessToken(requireContext()) != null) {
+                Toast.makeText(context,"Đã Thêm Sản Phẩm Vào Gio Hàng", Toast.LENGTH_SHORT).show()
+                sharedViewModel.addItem(CartModel.create(it, 1))
+
+            } else {
+                Toast.makeText(context,"Hãy đăng nhập trước khi mua hàng", Toast.LENGTH_SHORT).show()
+                val activityBinding = (requireActivity() as MainActivity).binding
+                activityBinding.vp2Main.setCurrentItem(3, true)
+            }
         }
     }
     private fun searchItem() {

@@ -20,4 +20,8 @@ class UserAPI_Repository @Inject constructor(
         registerRequestDTO: RegisterRequestDTO
     ) = userapiService.callRegisterUser(registerRequestDTO)
 
+    fun callGetUserInfo(authorization: String) = userapiService.getUserInfo(
+        authorization = authorization
+    )
+
 }
