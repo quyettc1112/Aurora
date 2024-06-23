@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.aurora.aurora.API_Repotitory.OrderAPI_Repository
 import com.aurora.aurora.API_Repotitory.UserAPI_Repository
 import com.aurora.aurora.AppConfig.BaseConfig.BaseActivity
+import com.aurora.aurora.Common.TokenManager.TokenManager
 import com.aurora.aurora.Model.RequestDTO.OrderDetailsDTO
 import com.aurora.aurora.Model.Respone.MessageRespone
 import com.aurora.aurora.R
@@ -47,6 +48,8 @@ class PaymentActivity : BaseActivity() {
         clickIntentPaymentMethod()
 
         handlePaymetnMothod()
+
+        binding.edtRegisterPhone.setText(TokenManager.getPhoneNumber(this@PaymentActivity).toString())
 
     }
 
