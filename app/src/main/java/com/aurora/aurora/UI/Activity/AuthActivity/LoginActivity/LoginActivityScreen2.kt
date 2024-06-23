@@ -16,6 +16,7 @@ import androidx.lifecycle.ViewModel
 import com.aurora.aurora.API_Repotitory.UserAPI_Repository
 import com.aurora.aurora.AppConfig.BaseConfig.BaseActivity
 import com.aurora.aurora.AppConfig.CustomView.CustomDialog.ErrorDialog
+import com.aurora.aurora.Common.TokenManager.TokenManager
 import com.aurora.aurora.Model.RequestDTO.UserCretidentialDTO
 import com.aurora.aurora.Model.Respone.JWTObject
 import com.aurora.aurora.R
@@ -34,8 +35,6 @@ class LoginActivityScreen2 : BaseActivity() {
     private lateinit var binding: ActivityLoginScreen2Binding
 
     private val userShareViewModel : UserShareViewModel by viewModels()
-
-
     @Inject
     lateinit var userapiRepository: UserAPI_Repository
 
@@ -112,6 +111,7 @@ class LoginActivityScreen2 : BaseActivity() {
                         if ( !response.body().toString().isNullOrEmpty()) {
                             val jwtObject = response.body() as JWTObject
                             userShareViewModel.updateJWTToken(jwtObject)
+                            TokenManager.saveAccessToken(this@LoginActivityScreen2, userShareViewModel.getJWTToken()?.jwtToken.toString())
                             startActivity(Intent(this@LoginActivityScreen2, MainActivity::class.java))
                             finish()
                         }
