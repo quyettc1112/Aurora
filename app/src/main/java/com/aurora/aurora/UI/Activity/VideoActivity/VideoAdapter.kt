@@ -28,6 +28,7 @@ class VideoAdapter(val videoList: List<VideoModel>, val context: VideoActivity, 
     private var youtubeapiRepositoryIner: YoutubeAPI_Repository = youtubeapiRepository
     private lateinit var videoListResponseItem: YouTubeVideoListResponse.VideoItem
     private val apiKey = context.getString(R.string.API_YOUTUBE_KEY)
+    //private val apiKey = ""
 
     inner class VideoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val im_video = view.findViewById<ImageView>(R.id.im_video);

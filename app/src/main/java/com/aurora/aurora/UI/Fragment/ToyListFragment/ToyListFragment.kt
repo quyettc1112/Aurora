@@ -94,7 +94,7 @@ class ToyListFragment : Fragment(), CategoryOptionInteraction {
 
         // Add To Cart Click
         toyListAdapter.onItemCartClickListener = {
-            if (TokenManager.getAccessToken(requireContext()) != null) {
+          /*  if (TokenManager.getAccessToken(requireContext()) != null) {
                 Toast.makeText(context,"Đã Thêm Sản Phẩm Vào Gio Hàng", Toast.LENGTH_SHORT).show()
                 sharedViewModel.addItem(CartModel.create(it, 1))
 
@@ -102,7 +102,9 @@ class ToyListFragment : Fragment(), CategoryOptionInteraction {
                 Toast.makeText(context,"Hãy đăng nhập trước khi mua hàng", Toast.LENGTH_SHORT).show()
                 val activityBinding = (requireActivity() as MainActivity).binding
                 activityBinding.vp2Main.setCurrentItem(3, true)
-            }
+            }*/
+            sharedViewModel.addItem(CartModel.create(it, 1))
+            Toast.makeText(context,"Đã Thêm Sản Phẩm Vào Gio Hàng", Toast.LENGTH_SHORT).show()
         }
     }
     private fun searchItem() {
