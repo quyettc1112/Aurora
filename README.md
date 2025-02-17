@@ -1,11 +1,11 @@
 <h1 align="center">Aurora </h1>
 <div align="center">
-   <img src="https://github.com/quyettc1112/TEP-TimeshareExchangePlatform/blob/master/img/Screenshot_20250210_220423.png" alt="" align="center" width="200">
-  <img src="https://github.com/quyettc1112/TEP-TimeshareExchangePlatform/blob/master/img/Screenshot_20250210_220445.png" alt="" align="center" width="200">
-  <img src="https://github.com/quyettc1112/TEP-TimeshareExchangePlatform/blob/master/img/Screenshot_20250210_220505.png" alt="" align="center" width="200">
-  <img src="https://github.com/quyettc1112/TEP-TimeshareExchangePlatform/blob/master/img/Screenshot_20250210_220526.png" alt="" align="center" width="200">
+   <img src="https://github.com/quyettc1112/Aurora/blob/master/raw_img/Screenshot_20250216_120301.png" alt="" align="center" width="200">
+  <img src="raw_img/Screenshot_20250216_120309.png" alt="" align="center" width="200">
+  <img src="raw_img/Screenshot_20250216_120353.png" alt="" align="center" width="200">
+  <img src="raw_img/Screenshot_20250216_120404.png" alt="" align="center" width="200">
 </div>
-<p align="center"><a href="#project-description">Project Description</a> - <a href="#key-features">Key Features</a> - <a href="#technology-stack">Tech Stack</a></p>
+<p align="center"><a href="#project-description">Project Description</a> - <a href="#key-features">Key Features</a> - <a href="#tech-stack">Tech Stack</a></p>
 
 
 ## Project Description
